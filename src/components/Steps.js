@@ -21,7 +21,7 @@ function Steps() {
           <h4 className="title-part">{land[0].ru.steps.title}</h4>
           <div className="s-20"></div>
           <div className="row">
-            <div className="col-lg-6">
+            <div className="col-lg-5">
               <div className="flex jcfe">
                 <div className="left-steps w-75">
                   <div className="s-80"></div>
@@ -128,18 +128,17 @@ function Steps() {
             </div>
           </div>
           <div className="row">
-            <div className="col-lg-4">
-              <div className="flex jcfe">
+            <div className="col-lg-5">
+              <div className="flex jcc">
                 <div className="right-steps">
                   <div className="s-40"></div>
                   <img src={p6} alt={land[0].ru.steps.step[5].title} />
                 </div>
               </div>
             </div>
-            <div className="col-lg-1"></div>
-            <div className="col-lg-5">
+            <div className="col-lg-6">
               <div className="flex jcc">
-                <div className="right-steps w-75">
+                <div className="right-steps">
                   <div className="s-60"></div>
                   <h4 className="title-part mini">
                     <span>{land[0].ru.steps.step[5].title}</span>
@@ -150,20 +149,25 @@ function Steps() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-2"></div>
+            <div className="col-lg-1"></div>
           </div>
           <div className="row">
-            <div className="col-lg-2"></div>
+            <div className="col-lg-1"></div>
             <div className="col-lg-10">
-              <div className="flex jcc w-100">
-                <div className="right-steps w-50">
-                  <div className="s-60"></div>
-                  <h4 className="title-part mini">
-                    <span>{land[0].ru.steps.step[6].title}</span>
-                    <em className='bg-blue c-white px-1'>{land[0].ru.steps.step[6].time} {land[0].ru.steps.step[6].label}</em>
-                  </h4>
-                  <p className='w-70'>{land[0].ru.steps.step[6].text}</p>
-                  <div className="s-20"></div>
+              <div className="row">
+                <div className="col-lg-1"></div>
+                <div className="col-lg-11">
+                  <div className="flex jcc w-100">
+                    <div className="right-steps w-50">
+                      <div className="s-60"></div>
+                      <h4 className="title-part mini">
+                        <span>{land[0].ru.steps.step[6].title}</span>
+                        <em className='bg-blue c-white px-1'>{land[0].ru.steps.step[6].time} {land[0].ru.steps.step[6].label}</em>
+                      </h4>
+                      <p className='w-70'>{land[0].ru.steps.step[6].text}</p>
+                      <div className="s-20"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -175,7 +179,7 @@ function Steps() {
                 <div className="col-lg-7">
                   <div className="flex jcfe aifs">
                     <div className="left-steps w-75">
-                      <div className="s-70"></div>
+                      <div className="s-50"></div>
                       <h4 className="title-part mini">
                         <span>{land[0].ru.steps.step[7].title}</span>
                         <em className='bg-blue c-white px-1'>{land[0].ru.steps.step[7].time} {land[0].ru.steps.step[7].label}</em>
