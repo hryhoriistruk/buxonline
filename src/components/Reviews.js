@@ -6,7 +6,7 @@ function Reviews() {
   return (
     <>
       <div className="s-80"></div>
-      <h2 className="title-part tc">{land[0].ru.reviews.title}</h2>
+      <h2 className="title-part">{land[0].ru.reviews.title}</h2>
       <div className="s-40"></div>
       <div className="row">
         <div className="col-lg-4">

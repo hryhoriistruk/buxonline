@@ -1,31 +1,25 @@
 import React from 'react'
 
-import {Nav} from '../components/Nav'
 import {Hero} from '../components/Hero'
 import {About} from '../components/About'
 import {Reviews} from '../components/Reviews'
 import {Steps} from '../components/Steps'
-import {Want} from '../components/Want'
+import {Features} from '../components/Features'
 import {Bot} from '../components/Bot'
-import {Table} from '../components/Table'
+import {Vacancies} from '../components/Vacancies'
 import {Form} from '../components/Form'
-import {Faq} from '../components/Faq'
-import {Footer} from '../components/Footer'
 
 function Home() {
   return (
     <>
-      <Nav />
       <Hero />
       <About  />
       <Reviews />
       <Steps  />
-      <Want />
+      <Features />
       <Bot />
-      <Table  />
+      <Vacancies  />
       <Form />
-      <Faq />
-      <Footer />
     </>
   )
 }

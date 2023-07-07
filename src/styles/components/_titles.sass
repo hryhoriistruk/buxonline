@@ -4,22 +4,39 @@
     font-size: 1em
     font-weight: 600
   &-intro
-    color: $blue
+    color: $dark
     font-size: 3em
-    font-weight: 700
+    font-weight: bolder
     &.big
       font-size: 4em
+      font-weight: 800
     &.desc
       color: $dark
       font-size: 1.1em
       font-weight: 500
       line-height: 1.5
   &-part
+    padding-left: 56px
+    padding-top: 20px
+    padding-bottom: 20px
     color: $dark
     font-size: 1.75em
     font-weight: 600
+    background: #ffffff00 url('../../assets/svg/home/row.svg') left center no-repeat
+    background-size: 48px
     &.mini
+      padding-left: 0
+      padding-top: 0
+      padding-bottom: 0
       font-size: 1.25em
+      background: none
+      &.feat
+        display: inline-block
+        padding: 8px 24px
+        font-size: 0.42em
+        font-weight: 500
+        border-radius: 8px
+        border: 2px solid $blue
       em
         display: inline-flex
         margin-left: 16px
@@ -28,5 +45,31 @@
         font-style: normal
         border-radius: 4px
 
+footer
+  .row
+    opacity: .7
+  a
+    &:hover
+      color: $dark !important
+  .title-logo
+    color: lighten($dark, 15%)
+
+.feat-circle
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  margin-right: 10px
+  min-width: 40px
+  min-height: 40px
+  color: $white
+  font-size: .55em !important
+  border-radius: 20px
+  background-color: $blue
+
+.features
+  background: #ffffff00 url('../../assets/svg/home/rocket.svg') 2vw 40vh no-repeat
+  background-size: 30%
+  padding-bottom: 5vh
+
 .steps
-  background: #ffffff00 url('../../assets/svg/steps/left.svg') 30px 200px no-repeat
+  background: #ffffff00 url('../../assets/svg/steps/left.svg') 30px 36.6vh no-repeat
