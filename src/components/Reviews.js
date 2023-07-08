@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import land from '../data/land'
 
 function Reviews() {
@@ -37,7 +36,7 @@ function Reviews() {
               <div className="s-10"></div>
               <p className='w-60 ma'>{land[0].ru.reviews.text}</p>
               <div className="s-10"></div>
-              <Link to={land[0].ru.nav.button[1]} className='button w-70 ma'>{land[0].ru.nav.button[0]}</Link>
+              <a href='#resume' className='button w-70 ma'>{land[0].ru.nav.button}</a>
             </div>
           </div>
         </div>

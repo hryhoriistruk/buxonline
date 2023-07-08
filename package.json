@@ -5,14 +5,18 @@
   "dependencies": {
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
+    "flag-icons": "^6.7.0",
     "node-sass": "^7.0.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
+    "react-flag-kit": "^1.1.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.8.0",
+    "react-languages-select": "^1.0.20",
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
+    "react-scroll": "^1.8.9",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
     "typeface-inter": "^1.0.0"

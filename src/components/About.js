@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import land from '../data/land'
 
@@ -30,7 +29,7 @@ function About() {
       </div>
     </div>
     <div className="s-40"></div>
-    <div className="tc"><Link to={land[0].ru.nav.button[1]} className='button'>{land[0].ru.nav.button[0]}</Link></div>
+    <div className="tc"><a href='#resume' className='button'>{land[0].ru.nav.button}</a></div>
     </>
   )
 }

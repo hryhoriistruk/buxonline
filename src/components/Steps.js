@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import p1 from '../assets/svg/steps/route_1.svg'
 import p2 from '../assets/svg/steps/route_2.svg'
@@ -200,7 +199,7 @@ function Steps() {
           <div className="row">
             <div className="col-lg-4"></div>
             <div className="col-lg-4">
-              <Link to={land[0].ru.nav.button[1]} className='button'>{land[0].ru.nav.button[0]}</Link>
+              <a href='#resume' className='button'>{land[0].ru.nav.button}</a>
             </div>
             <div className="col-lg-4"></div>
           </div>
