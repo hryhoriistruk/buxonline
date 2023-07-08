@@ -23,12 +23,36 @@ a, * a
   color: inherit !important
   text-decoration: none !important
 
+.dropdown-menu[data-bs-popper]
+  left: auto
+  right: 0
+  margin-top: 8px
+  border: 1px solid #eee
+
+.dropdown
+  .btn
+    &.btn-light
+      background-color: $white
+      &:hover
+        background-color: $light
+        border: 1px solid #eee
+
 .dropdown-scroll
   overflow-y: auto
   max-height: 80vh
+  &::-webkit-scrollbar
+    width: 6px
+  &::-webkit-scrollbar-track
+    box-shadow: none
+    border-radius: 3px
+  &::-webkit-scrollbar-thumb
+    background: #eee
+    border-radius: 3px
+  &::-webkit-scrollbar-thumb:hover
+    background: #eee
 
 .scroll-wrapper
-  padding-right: 15px
+  padding-right: 8px
 
 .slick-dots
   bottom: -80px !important

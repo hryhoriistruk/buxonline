@@ -31,7 +31,7 @@ function Footer() {
             <div className="s-10"></div>
             <Link to={land[0].ru.footer.bot[1]} className='title-parts mini c-blue'>{land[0].ru.footer.bot[0]}</Link>
             <div className="s-10"></div>
-            <a href='#resume' className='title-parts mini c-blue'>{land[0].ru.nav.button}</a>
+            <a href='/#resume' className='title-parts mini c-blue'>{land[0].ru.nav.button}</a>
           </div>
           <div className="col-lg-4">
             <div className="s-10"></div>

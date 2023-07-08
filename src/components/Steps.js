@@ -37,7 +37,7 @@ function Steps() {
               </div>
             </div>
           </div>
-          <div className="s-50"></div>
+          <div className="s-50 m-hide"></div>
           <div className="row">
             <div className="col-lg-6">
               <div className="flex jcfe">
@@ -99,7 +99,7 @@ function Steps() {
             </div>
           </div>
           <div className="row">
-            <div className="col-lg-5">
+            <div className="col-lg-5 m-hide">
             </div>
             <div className="col-lg-7">
               <div className="row">
@@ -170,7 +170,7 @@ function Steps() {
             </div>
           </div>
           <div className="row">
-            <div className="col-lg-5"></div>
+            <div className="col-lg-5 m-hide"></div>
             <div className="col-lg-7">
               <div className="row">
                 <div className="col-lg-7">
@@ -188,7 +188,7 @@ function Steps() {
                 </div>
                 <div className="col-lg-5">
                   <div className="s-20"></div>
-                  <div className="right-steps">
+                  <div className="right-steps m-tc">
                     <img src={p8} alt={land[0].ru.steps.step[7].title} />
                   </div>
                 </div>
@@ -198,7 +198,7 @@ function Steps() {
           <div className="s-40"></div>
           <div className="row">
             <div className="col-lg-4"></div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 m-tc">
               <a href='#resume' className='button'>{land[0].ru.nav.button}</a>
             </div>
             <div className="col-lg-4"></div>

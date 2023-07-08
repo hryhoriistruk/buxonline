@@ -39,11 +39,13 @@
         border: 2px solid $blue
       em
         display: inline-flex
-        margin-left: 16px
-        padding: 2px 12px
+        margin-left: 10px
+        padding: 2px 8px 3px !important
         font-size: .85em
         font-style: normal
-        border-radius: 4px
+        font-weight: 400
+        border-radius: 12px
+        transform: translateY(-1px)
 
 footer
   .row
@@ -70,6 +72,113 @@ footer
   background: #ffffff00 url('../../assets/svg/home/rocket.svg') 2vw 40vh no-repeat
   background-size: 30%
   padding-bottom: 5vh
+  +v-md
+    background: none
 
 .steps
   background: #ffffff00 url('../../assets/svg/steps/left.svg') 30px 36.6vh no-repeat
+  +v-md
+    background: none
+
+img
+  +v-md
+    max-width: 96% !important
+
+.m-hide
+  +v-md
+    display: none !important
+
+.m-tc
+  +v-md
+    text-align: center !important
+
+.title-part.w-60.ma
+  +v-md
+    min-width: 80% !important
+    max-width: 80% !important
+    width: 80% !important
+    margin-top: 50px
+  +v-sm
+    min-width: 80% !important
+    max-width: 80% !important
+    width: 80% !important
+    margin-top: 50px
+  +v-xs
+    min-width: 80% !important
+    max-width: 80% !important
+    width: 80% !important
+    margin-top: 50px
+
+footer
+  .container
+    +v-sm
+      width: 80% !important
+
+.w-70
+  +v-md
+    min-width: 100% !important
+    max-width: 100% !important
+    width: 100% !important
+  +v-sm
+    min-width: 100% !important
+    max-width: 100% !important
+    width: 100% !important
+  +v-xs
+    min-width: 100% !important
+    max-width: 100% !important
+    width: 100% !important
+.w-50
+  +v-md
+    min-width: 100% !important
+    max-width: 100% !important
+    width: 100% !important
+  +v-sm
+    min-width: 100% !important
+    max-width: 100% !important
+    width: 100% !important
+  +v-xs
+    min-width: 100% !important
+    max-width: 100% !important
+    width: 100% !important
+.w-80
+.right-steps.w-50
+  +v-md
+    min-width: 100% !important
+    max-width: 100% !important
+    width: 100% !important
+  +v-sm
+    min-width: 100% !important
+    max-width: 100% !important
+    width: 100% !important
+  +v-xs
+    min-width: 100% !important
+    max-width: 100% !important
+    width: 100% !important
+
+.right-steps,
+.left-steps
+  +v-md
+    text-align: center !important
+
+p.c-dark.my-4.h-10
+  width: 100%
+  margin-left: -12%
+
+.r-16.h-70.flex.jcc.aic.bg-light
+  +v-md
+    height: 100%
+  +v-sm
+    padding-top: 40px
+    padding-bottom: 40px
+
+span.feat-circle
+  +v-sm
+    margin-left: 10%
+  +v-xs
+    margin-left: 5%
+
+.feat
+  +v-sm
+    margin-right: 10%
+  +v-xs
+    margin-right: 5%

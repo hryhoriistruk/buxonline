@@ -25,7 +25,7 @@ function Nav() {
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-end">
         <Link to={land[0].ru.nav.link[1]} className='mx-4 c-dark upp'>{land[0].ru.nav.link[0]}</Link>
-        <a href='#resume' className='button'>{land[0].ru.nav.button}</a>
+        <a href='#resume' className='button m-hide'>{land[0].ru.nav.button}</a>
       </Navbar.Collapse>
       <div className="mx-3"></div>
       <LangMenu />
