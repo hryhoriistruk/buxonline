@@ -165,11 +165,6 @@ const lang = [
     name: "Romania"
   },
   {
-    code: "ru",
-    pic: require('../assets/svg/flags/4x3/ru.svg').default,
-    name: "Ukraine"
-  },
-  {
     code: "sm",
     pic: require('../assets/svg/flags/4x3/sm.svg').default,
     name: "San Marino"

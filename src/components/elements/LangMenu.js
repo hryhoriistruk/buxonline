@@ -24,6 +24,7 @@ const LangMenu = () => {
               setCurrent(item.pic)
               setShort(item.code)
             }}
+            className={short === item.code ? 'active' : ''}
           >
             <img src={item.pic} width={18} alt={item.code} className='pb-1 mx-1' /> <small>{item.name}</small>
           </Dropdown.Item>
