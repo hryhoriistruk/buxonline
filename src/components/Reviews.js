@@ -13,7 +13,7 @@ function Reviews() {
             <div className="s-20"></div>
             <h3 className="title-part mini tc">{land[0].ru.reviews.review[0].name}</h3>
             <p className='tc'><strong>{land[0].ru.reviews.review[0].position}</strong></p>
-            <div className="s-20 px-1 ex">{land[0].ru.reviews.review[0].text}</div>
+            <div className="s-20 px-1 ex">{land[0].ru.reviews.review[1].text}</div>
             <p></p>
         </div>
         <div className="col-lg-4">
@@ -34,7 +34,7 @@ function Reviews() {
                 <div className="avatar r-32 bg-blue c-white">+{land[0].ru.reviews.users}</div>
               </div>
               <div className="s-10"></div>
-              <p className='w-60 ma'>{land[0].ru.reviews.text}</p>
+              <p className='w-60 ma'>{land[0].ru.reviews.success[0]} {Math.ceil(land[0].ru.reviews.users / 10) * 10} {land[0].ru.reviews.success[1]}</p>
               <div className="s-10"></div>
               <a href='#resume' className='button w-70 ma'>{land[0].ru.nav.button}</a>
             </div>
