@@ -199,7 +199,7 @@ function Steps() {
           <div className="row">
             <div className="col-lg-4"></div>
             <div className="col-lg-4 m-tc">
-              <a href='#resume' className='button'>{land[0].ru.nav.button}</a>
+              <a href={land[0].ru.nav.button[1]} className='button' target='blank'>{land[0].ru.nav.button[0]}</a>
             </div>
             <div className="col-lg-4"></div>
           </div>

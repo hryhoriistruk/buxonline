@@ -13,7 +13,7 @@ function Hero() {
         <div className="s-20"></div>
         <h3 className="title-intro desc">{land[0].ru.hero.description}</h3>
         <div className="s-30"></div>
-        <a href='#resume' className='button'>{land[0].ru.nav.button}</a>
+        <a href={land[0].ru.nav.button[1]} className='button' target='blank'>{land[0].ru.nav.button[0]}</a>
         </div>
       </div>
       <div className="col-lg-6 flex jcc aic"><img src={hero} alt={land[0].ru.hero.title} /></div>

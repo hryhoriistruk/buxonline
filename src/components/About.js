@@ -29,7 +29,7 @@ function About() {
       </div>
     </div>
     <div className="s-40"></div>
-    <div className="tc"><a href='#resume' className='button'>{land[0].ru.nav.button}</a></div>
+    <div className="tc"><a href={land[0].ru.nav.button[1]} className='button' target='blank'>{land[0].ru.nav.button[0]}</a></div>
     </>
   )
 }

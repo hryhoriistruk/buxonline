@@ -36,7 +36,7 @@ function Reviews() {
               <div className="s-10"></div>
               <p className='w-60 ma'>{land[0].ru.reviews.success[0]} {Math.ceil(land[0].ru.reviews.users / 10) * 10} {land[0].ru.reviews.success[1]}</p>
               <div className="s-10"></div>
-              <a href='#resume' className='button w-70 ma'>{land[0].ru.nav.button}</a>
+              <a href={land[0].ru.nav.button[1]} className='button w-70 ma' target='blank'>{land[0].ru.nav.button[0]}</a>
             </div>
           </div>
         </div>

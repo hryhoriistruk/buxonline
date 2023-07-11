@@ -9,7 +9,7 @@ const land = [
     ru: {
       nav: {
         link: ['Для бизнеса', '/'],
-        button: 'Отправить резюме'
+        button: ['Отправить резюме', 'https://job.buxonline.org/']
       },
       hero: {
         title: 'Сайт для поиска работы удаленно из дому',
