@@ -20,7 +20,7 @@ function Footer() {
             <Link to='/' className='flex'>
               <img src={Logo} width="36" height="36" alt="Buxonline" className='logo-img' />
               <span className="px-1"></span>
-              <p class='pl-2 mt-2 title-logo'>Buxonline</p>
+              <p className='pl-2 mt-2 title-logo'>Buxonline</p>
             </Link>
             <div className="s-10"></div>
             <p className="title-parts mini c-light my-0">{land[0].ru.hero.title}</p>

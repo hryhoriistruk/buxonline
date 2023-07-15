@@ -10,7 +10,7 @@ function Cookie() {
             <h3 className="title-intro tc">Cookie Policy</h3>
             <p className='c-blue tc'>Last updated: July 08, 2023</p>
           </div>
-          <div class="page">
+          <div className="page">
               <p>This Cookie Policy explains what Cookie are and how We use them. You should read this policy so You can understand what type of cookie We use, or the information We collect using Cookie and how that information is used.</p>
               <p>Cookie do not typically contain any information that personally identifies a user, but personal information that we store about You may be linked to the information stored in and obtained from Cookie. For further information on how We use, store and keep your personal data secure, see our Privacy Policy.</p>
               <p>We do not store sensitive personal information, such as mailing addresses, account passwords, etc. in the Cookie We use.</p>

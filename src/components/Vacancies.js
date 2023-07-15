@@ -47,7 +47,7 @@ function Vacancies() {
     <div className="s-50"></div>
     <Slider {...settings}>
     {land[0].ru.vacancy.content.map((el) => (
-      <div className='px-4'>
+      <div className='px-4' key={el.id}>
         <h3 className="title-part mini c-blue">{el.title}</h3>
         <p className="c-dark">
           <strong>Salary: {'$'}{el.salary[0]}K - {'$'}{el.salary[0]}K - {el.salary[2]}</strong>

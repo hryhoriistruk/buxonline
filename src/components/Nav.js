@@ -20,7 +20,7 @@ function Nav() {
           className='logo-img'
         />
         <span className="px-1"></span>
-        <Navbar.Text class='pl-2 mt-2 title-logo'>Buxonline</Navbar.Text>
+        <Navbar.Text className='pl-2 mt-2 title-logo'>Buxonline</Navbar.Text>
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-end">
