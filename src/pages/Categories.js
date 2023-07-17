@@ -1,9 +1,10 @@
 import React from 'react'
-import  {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 import cats from '../data/cats'
 
 function Categories() {
+
   return (
     <>
       <div className="s-70"></div>
@@ -11,7 +12,7 @@ function Categories() {
       <div className="s-50"></div>
       <div className="w-100 tc">
         {cats[0].ru.data.map((el) => (
-          <Link to='/' className='button cat m-1' key={el.id}>{el.role}</Link>
+          <Link to={`/categories/${el.role}`} className='button cat m-1' key={el.id}>{el.role}</Link>
         ))}
       </div>
       <div className="s-100"></div>

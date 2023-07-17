@@ -50,7 +50,7 @@ function Vacancies() {
       <div className='px-4' key={el.id}>
         <h3 className="title-part mini c-blue">{el.title}</h3>
         <p className="c-dark">
-          <strong>Salary: {'$'}{el.salary[0]}K - {'$'}{el.salary[0]}K - {el.salary[2]}</strong>
+          <strong>{land[0].ru.vacancy.salary}: {'$'}{el.salary[0]}K - {'$'}{el.salary[1]}K - {el.salary[2]}</strong>
         </p>
         <div className="w-80">
           <p className="c-dark my-4 h-10">{el.text}</p>

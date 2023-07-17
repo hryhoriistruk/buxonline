@@ -13,7 +13,7 @@ import { NotFound } from './pages/NotFound'
 
 import support from './assets/svg/home/standwith.svg'
 import { Categories } from './pages/Categories'
-//import { Vacancies } from './pages/Vacancies'
+import { VacanciesList } from './pages/VacanciesList'
 
 const App = () => {
   return (
@@ -26,7 +26,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/categories" element={<Categories />} />
-          {/* <Route path="/vacancy/:id" element={<Vacancies />} /> */}
+          <Route path="/categories/:id" element={<VacanciesList />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/cookie" element={<Cookie />} />
           <Route path="*" element={<NotFound />} />

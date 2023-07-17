@@ -115,6 +115,7 @@ const land = [
       ],
       vacancy: {
           title: 'Горячие вакансии',
+          salary: 'Оклад',
           content: [
             {
               id: 0,
