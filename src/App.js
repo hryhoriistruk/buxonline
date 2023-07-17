@@ -12,6 +12,8 @@ import { Cookie } from './pages/Cookie'
 import { NotFound } from './pages/NotFound'
 
 import support from './assets/svg/home/standwith.svg'
+import { Categories } from './pages/Categories'
+//import { Vacancies } from './pages/Vacancies'
 
 const App = () => {
   return (
@@ -23,6 +25,8 @@ const App = () => {
       <Container>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/categories" element={<Categories />} />
+          {/* <Route path="/vacancy/:id" element={<Vacancies />} /> */}
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/cookie" element={<Cookie />} />
           <Route path="*" element={<NotFound />} />

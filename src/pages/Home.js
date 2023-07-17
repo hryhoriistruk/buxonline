@@ -18,7 +18,7 @@ function Home() {
       <Steps  />
       <Features />
       <Bot />
-      <Vacancies  />
+      <Vacancies />
       <Form />
     </>
   )
