@@ -6,25 +6,27 @@ import cats from '../data/cats'
 import vacancy from '../data/vacancy'
 
 function VacanciesList() {
-  const {id} = useParams()
+  const {name} = useParams()
   return (
     <>
       <div className="s-40"></div>
       <h3 className="title-part mx-3">
-        <Link to='/categories' className='c-blue'>{cats[0].ru.page[1]}: </Link>{id}
+        <Link to='/categories' className='c-blue'>{cats[0].ru.page[1]}: </Link>{name}
       </h3>
       <div className="s-50"></div>
       <div className="row">
         {vacancy[0].ru.list.map((el) =>  (
-          id === el.category ?
-          <div className='col-lg-4 px-4' key={el.id}>
-            <h4 className="c-blue">{el.title}</h4>
+          name === el.category ?
+          <div className='col-lg-4 px-4 my-4' key={el.id}>
+            <h4 className="c-blue">{el.title ? el.title : el.category}</h4>
             <p className="c-dark">
               <strong>{land[0].ru.vacancy.salary}: {'$'}{el.salary[0]}K - {'$'}{el.salary[1]}K - {el.salary[2]}</strong>
             </p>
             <p className="c-dark my-3">{el.text}</p>
             <div className="s-10"></div>
-            <Link to={el.link[1]} className='button'>{el.link[0]}</Link>
+            {el.link && el.link.length > 0 && (
+              <Link to={`/categories/${el.id}/${el.category}/${el.title}/${el.salary}/${el.text}`} className='button'>{el.link[0]}</Link>
+            )}
           </div> : ''
         ))}
       </div>

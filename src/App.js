@@ -14,6 +14,7 @@ import { NotFound } from './pages/NotFound'
 import support from './assets/svg/home/standwith.svg'
 import { Categories } from './pages/Categories'
 import { VacanciesList } from './pages/VacanciesList'
+import { SingleVacancy } from './pages/SingleVacancy'
 
 const App = () => {
   return (
@@ -26,7 +27,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/categories" element={<Categories />} />
-          <Route path="/categories/:id" element={<VacanciesList />} />
+          <Route path="/categories/:name" element={<VacanciesList />} />
+          <Route path="/categories/:id/:category/:title/:salary/:text" element={<SingleVacancy />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/cookie" element={<Cookie />} />
           <Route path="*" element={<NotFound />} />
