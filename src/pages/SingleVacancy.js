@@ -1,34 +1,36 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 
-// import land from '../data/land'
+import { HiChevronRight } from 'react-icons/hi2'
 
-const SingleVacancy = () => {
-  //const {category,title, salary, text} = useParams()
-  const {category,title, text} = useParams()
+import land from '../data/land'
+import vacancy from '../data/vacancy'
+
+function SingleVacancy() {
+  const { id } = useParams()
+  const selectedVacancy = vacancy[0].ru.list.find((el) => el.id === Number(id))
+
+  if (!selectedVacancy) {
+    return <div>Вакансия не найдена</div>
+  }
 
   return (
     <>
-   <div className="s-40"></div>
-      {
-          <>
-            <h3 className="title-part mx-3">
-              <Link to='/categories' className='c-blue'>{category}: </Link>{title}
-            </h3>
-            <div className="s-50"></div>
-            <div className="row">
-                <div className='col-lg-4 px-4 my-4'>
-                  <h4 className="c-blue">{title ? title : category}</h4>
-                  {/* <p className="c-dark">
-                    <strong>{land[0].ru.vacancy.salary}: {'$'}{salary[0]}K - {'$'}{salary[1]}K - {salary[2]}</strong>
-                  </p> */}
-                  <p className="c-dark my-3">{text}</p>
-                  <div className="s-10"></div>
-                </div>
-            </div>
-          </>
-      }
-      <div className="s-100"></div>
+      <h3 className="title-part mx-3">
+        <Link to={`/categories/${selectedVacancy.category}`} className='c-blue'>{selectedVacancy.category} <HiChevronRight /> </Link>{selectedVacancy.title}
+      </h3>
+      <div className="row">
+        <div className='col-lg-7 px-4 m-4 ma'>
+          <div className="s-20"></div>
+          <h3 className="title-desc c-dark my-3">{selectedVacancy.title}</h3>
+          <p className="c-dark">
+            <strong>{land[0].ru.vacancy.salary}: {'$'}{selectedVacancy.salary[0]}K - {'$'}{selectedVacancy.salary[1]}K - {selectedVacancy.salary[2]}</strong>
+          </p>
+          <p className="title-desc c-dark my-3">{selectedVacancy.text}</p>
+          <div className="s-10"></div>
+          <Link to={selectedVacancy.link[1]} className='button'>{selectedVacancy.link[2]}</Link>
+        </div>
+      </div>
       <div className="s-100"></div>
     </>
   )
