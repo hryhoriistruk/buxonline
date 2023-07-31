@@ -45,7 +45,7 @@ function VacanciesList() {
             <h4 className="c-blue">{el.title ? el.title : el.category}</h4>
             <p className="c-dark my-3">{el.text.length > 200 ? el.text.substring(0,200) + '...' : el.text }</p>
             <div className="s-10"></div>
-              <Link to={`/vacancy/${el.id}`} className='button'>Переглянути</Link>
+              <Link to={`/vacancy/${el.id}`} className='button'>{el.meta.more}</Link>
           </div>
         ))}
       </div>

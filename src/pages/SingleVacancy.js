@@ -37,7 +37,7 @@ function SingleVacancy() {
           <div className="s-20"></div>
           <p className="title-desc c-dark my-3">{vacancy.text}</p>
           <div className="s-10"></div>
-          <Link to={'https://job.buxonline.org/'} className='button'>{'Вiдправити резюме'}</Link>
+          <Link to={'https://job.buxonline.org/'} className='button'>{vacancy.meta.apply_for_job}</Link>
         </div>
       </div>
       <div className="s-100"></div>
