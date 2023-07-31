@@ -12,7 +12,7 @@ function Categories() {
     const fetchData = async () => {
       try {
         const response = await axios.get(apiUrl)
-        setCategories(response.data) // Изменяем здесь, присваивая response.data напрямую
+        setCategories(response.data)
         setLoading(false)
       } catch (error) {
         console.error('Ошибка при запросе:', error)
