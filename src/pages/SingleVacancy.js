@@ -28,16 +28,23 @@ function SingleVacancy() {
     return <div>Loading...</div>
   }
 
+  const paragraphs = vacancy.text.split("\n")
+
   return (
     <>
       <div className="s-40"></div>
       <h3 className="title-part mx-3">{vacancy.title}</h3>
       <div className="row">
-        <div className='col-lg-7 px-4 m-4 ma'>
-          <div className="s-20"></div>
-          <p className="title-desc c-dark my-3">{vacancy.text}</p>
-          <div className="s-10"></div>
-          <Link to={'https://job.buxonline.org/'} className='button'>{vacancy.meta.apply_for_job}</Link>
+        <div className='col-lg-11 px-4 m-4 ma'>
+          <div className="grid-content">
+            {paragraphs.map((paragraph, index) => (
+              <p key={index} className="title-desc c-dark">{paragraph}</p>
+            ))}
+          </div>
+          <div className="s-60"></div>
+          <div className="w-100 tc">
+            <Link to={'https://job.buxonline.org/'} className='button'>{vacancy.meta.apply_for_job}</Link>
+          </div>
         </div>
       </div>
       <div className="s-100"></div>
