@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# custom
+/src/pages/*Old.js
+
 # testing
 /coverage
 
