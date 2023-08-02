@@ -12,7 +12,7 @@ function SingleVacancy() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://api-dev.buxonline.org/api/v1/vacancy/${id}/?lang=uk`)
+        const response = await axios.get(`https://api-dev.buxonline.org/api/v1/vacancy/${id}`)
         setVacancy(response.data)
         setLoading(false)
       } catch (error) {
@@ -30,17 +30,17 @@ function SingleVacancy() {
 
   const paragraphs = vacancy.text.split("\n")
 
+
+
   return (
     <>
       <div className="s-40"></div>
       <h3 className="title-part mx-3">{vacancy.title}</h3>
       <div className="row">
         <div className='col-lg-11 px-4 m-4 ma'>
-          <div className="grid-content">
             {paragraphs.map((paragraph, index) => (
               <p key={index} className="title-desc c-dark">{paragraph}</p>
             ))}
-          </div>
           <div className="s-60"></div>
           <div className="w-100 tc">
             <Link to={'https://job.buxonline.org/'} className='button'>{vacancy.meta.apply_for_job}</Link>

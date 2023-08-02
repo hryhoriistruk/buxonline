@@ -7,6 +7,7 @@ const apiUrl = 'https://api-dev.buxonline.org/api/v1/category/list/'
 function Categories() {
   const [categories, setCategories] = useState([])
   const [loading, setLoading] = useState(true)
+  const [selectedCategoryName, setSelectedCategoryName] = useState('')
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,7 +35,12 @@ function Categories() {
       <div className="s-50"></div>
       <div className="w-100 tc">
         {categories.map((el) => (
-          <Link to={`/categories/${el.role}`} className='button cat m-1' key={el.id}>
+          <Link
+            to={`/category/${el.id}/${el.role}`}
+            onClick={() => setSelectedCategoryName(el.role)}
+            className={`button cat m-1 ${selectedCategoryName === el.role ? 'active' : ''}`}
+            key={el.id}
+          >
             {el.role}
           </Link>
         ))}
