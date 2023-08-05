@@ -25,8 +25,8 @@ const App = () => {
       </Container>
       <Container>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/categories" element={<Categories />} />
+          <Route path="/:language" element={<Home />} />
+          <Route path="/categories/:language" element={<Categories />} />
           <Route path="/category/:id/:name/:language" element={<VacanciesList />} />
           <Route path="/vacancy/:id/:language" element={<SingleVacancy />} />
           <Route path="/privacy" element={<Privacy />} />
