@@ -1,11 +1,11 @@
 const lang = [
   {
-    code: "ua",
+    code: "uk",
     pic: require('../assets/svg/flags/4x3/ua.svg').default,
     name: "Ukrainian"
   },
   {
-    code: "gb",
+    code: "en",
     pic: require('../assets/svg/flags/4x3/gb.svg').default,
     name: "English"
   },
@@ -155,11 +155,6 @@ const lang = [
     name: "Moldovan"
   },
   {
-    code: "me",
-    pic: require('../assets/svg/flags/4x3/me.svg').default,
-    name: "Montenegrin"
-  },
-  {
     code: "no",
     pic: require('../assets/svg/flags/4x3/no.svg').default,
     name: "Norwegian"
@@ -178,11 +173,6 @@ const lang = [
     code: "si",
     pic: require('../assets/svg/flags/4x3/si.svg').default,
     name: "Slovenian"
-  },
-  {
-    code: "ru",
-    pic: require('../assets/svg/flags/4x3/ru.svg').default,
-    name: "Russian"
-  },
+  }
 ]
 export default lang

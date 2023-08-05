@@ -6,14 +6,15 @@ import { HiChevronRight } from 'react-icons/hi2'
 import cats from '../data/cats'
 
 function VacanciesList() {
-  const { id, name } = useParams()
+
+  const { id, name, language } = useParams()
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://api-dev.buxonline.org/api/v1/vacancy/list/?lang=uk&category=${id}`)
+        const response = await axios.get(`https://api-dev.buxonline.org/api/v1/vacancy/list/?lang=${language}&category=${id}`)
         setData(response.data)
         setLoading(false)
       } catch (error) {
@@ -22,8 +23,10 @@ function VacanciesList() {
       }
     }
 
+    localStorage.setItem('language', language)
     fetchData()
-  }, [id])
+
+  }, [id, language])
 
   if (loading) {
     return <div>Loading...</div>
@@ -45,7 +48,7 @@ function VacanciesList() {
             <h4 className="c-blue">{el.title ? el.title : el.role}</h4>
             <p className="c-dark my-3">{el.text.length > 200 ? el.text.substring(0,200) + '...' : el.text }</p>
             <div className="s-10"></div>
-              <Link to={`/vacancy/${el.id}`} className='button'>{el.meta.more}</Link>
+              <Link to={`/vacancy/${el.id}/${language}`} className='button'>{el.meta.more}</Link>
           </div>
         ))}
       </div>

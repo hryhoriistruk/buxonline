@@ -5,6 +5,13 @@ import axios from 'axios'
 const apiUrl = 'https://api-dev.buxonline.org/api/v1/category/list/'
 
 function Categories() {
+
+  const [language, setLanguage] = useState(localStorage.getItem('language') || 'uk')
+
+  useEffect(() => {
+    localStorage.setItem('language', language)
+  }, [language])
+
   const [categories, setCategories] = useState([])
   const [loading, setLoading] = useState(true)
   const [selectedCategoryName, setSelectedCategoryName] = useState('')
@@ -24,6 +31,8 @@ function Categories() {
     fetchData()
   }, [])
 
+
+
   if (loading) {
     return <div>Loading...</div>
   }
@@ -36,8 +45,12 @@ function Categories() {
       <div className="w-100 tc">
         {categories.map((el) => (
           <Link
-            to={`/category/${el.id}/${el.role}`}
-            onClick={() => setSelectedCategoryName(el.role)}
+            onClick={() => {
+              setSelectedCategoryName(el.role)
+              setSelectedCategoryName(el.role)
+              setLanguage(language)
+            }}
+            to={`/category/${el.id}/${el.role}/${language}`}
             className={`button cat m-1 ${selectedCategoryName === el.role ? 'active' : ''}`}
             key={el.id}
           >

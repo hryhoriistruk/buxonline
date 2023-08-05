@@ -10,6 +10,7 @@ import {Vacancies} from '../components/Vacancies'
 import {Form} from '../components/Form'
 
 function Home() {
+
   return (
     <>
       <Hero />

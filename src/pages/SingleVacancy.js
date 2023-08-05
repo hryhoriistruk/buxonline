@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 function SingleVacancy() {
-  const { id } = useParams()
+  const { id, language } = useParams()
 
   const [vacancy, setVacancy] = useState({})
   const [loading, setLoading] = useState(true)
@@ -12,7 +12,7 @@ function SingleVacancy() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://api-dev.buxonline.org/api/v1/vacancy/${id}`)
+        const response = await axios.get(`https://api-dev.buxonline.org/api/v1/vacancy/${id}?to_lang=${language}`)
         setVacancy(response.data)
         setLoading(false)
       } catch (error) {
@@ -22,7 +22,7 @@ function SingleVacancy() {
     }
 
     fetchData()
-  }, [id])
+  }, [id, language])
 
   if (loading) {
     return <div>Loading...</div>
@@ -37,7 +37,7 @@ function SingleVacancy() {
       <div className="s-40"></div>
       <h3 className="title-part mx-3">{vacancy.title}</h3>
       <div className="row">
-        <div className='col-lg-11 px-4 m-4 ma'>
+        <div className={`col-lg-11 px-4 m-4 ma ${language}`}>
             {paragraphs.map((paragraph, index) => (
               <p key={index} className="title-desc c-dark">{paragraph}</p>
             ))}

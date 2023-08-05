@@ -1,39 +1,84 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Dropdown } from 'react-bootstrap'
 import lang from '../../data/lang'
+import { useNavigate } from 'react-router-dom'
 
 const LangMenu = () => {
-
+  const [language, setLanguage] = useState(localStorage.getItem('language') || 'uk')
   const UA = require('../../assets/svg/flags/4x3/ru.svg').default
+  const ukLanguage = lang.find((item) => item.code === 'uk')
+  const [current, setCurrent] = useState(ukLanguage ? ukLanguage.pic : UA)
+  const [short, setShort] = useState(ukLanguage ? ukLanguage.code : 'ru')
+  const navigate = useNavigate()
 
-  const [current, setCurrent] = useState(UA)
-  const [short,setShort] = useState('ru')
+  useEffect(() => {
+    localStorage.setItem('language', language)
+  }, [language])
+
+  const handleLanguageChange = (code) => {
+    const selectedLanguage = lang.find((item) => item.code === code)
+    if (selectedLanguage) {
+      setCurrent(selectedLanguage.pic)
+      setShort(selectedLanguage.code)
+      setLanguage(selectedLanguage.code)
+      localStorage.setItem('language', selectedLanguage.code)
+      const currentUrl = window.location.pathname
+      const updatedUrl = updateLanguageParam(currentUrl, selectedLanguage.code)
+      navigate(updatedUrl)
+    }
+  }
+
+  const updateLanguageParam = (url, newLanguage) => {
+    const urlSegments = url.split('/').filter(Boolean);
+    const languageIndex = urlSegments.findIndex((segment) =>
+      lang.map((item) => item.code).includes(segment)
+    );
+
+    if (languageIndex !== -1) {
+      urlSegments[languageIndex] = newLanguage;
+    } else {
+      urlSegments.push(newLanguage);
+    }
+
+    return `/${urlSegments.join('/')}`;
+  };
+
 
   return (
     <>
-    <Dropdown>
-      <Dropdown.Toggle variant="light">
-        <img src={current} width={18} alt={'flag'} className='mx-1' style={{marginTop: -1.5, display: 'inline-block'}} /> <small> {short.toUpperCase()} </small>
-      </Dropdown.Toggle>
-      <Dropdown.Menu className="dropdown-scroll">
-        <div className="scroll-wrapper">
-        {lang.map((item) => (
-          <Dropdown.Item
-            key={item.code}
-            onClick={() => {
-              setCurrent(item.pic)
-              setShort(item.code)
-            }}
-            className={short === item.code ? 'active' : ''}
-          >
-            <img src={item.pic} width={18} alt={item.code} className='pb-1 mx-1' /> <small>{item.name}</small>
-          </Dropdown.Item>
-        ))}
-        </div>
-      </Dropdown.Menu>
-    </Dropdown>
+      <Dropdown>
+        <Dropdown.Toggle variant="light">
+          <img
+            src={current}
+            width={18}
+            alt={'flag'}
+            className="mx-1"
+            style={{ marginTop: -1.5, display: 'inline-block' }}
+          />{' '}
+          <small> {short.toUpperCase()} </small>
+        </Dropdown.Toggle>
+        <Dropdown.Menu className="dropdown-scroll">
+          <div className="scroll-wrapper">
+            {lang.map((item) => (
+              <Dropdown.Item
+                key={item.code}
+                onClick={() => handleLanguageChange(item.code)}
+                className={short === item.code ? 'active' : ''}
+              >
+                <img
+                  src={item.pic}
+                  width={18}
+                  alt={item.code}
+                  className="pb-1 mx-1"
+                />{' '}
+                <small>{item.name}</small>
+              </Dropdown.Item>
+            ))}
+          </div>
+        </Dropdown.Menu>
+      </Dropdown>
     </>
-  );
-};
+  )
+}
 
-export default LangMenu
+export {LangMenu}
