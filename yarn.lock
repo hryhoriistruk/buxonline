@@ -9723,6 +9723,16 @@ typeface-inter@^1.0.0:
   resolved "https://registry.yarnpkg.com/typeface-inter/-/typeface-inter-1.1.13.tgz#e6ce2acbfed8ae97f4c3f4b205b5cb26c9e24628"
   integrity sha512-XHTUTR+qqsVAtr1mjJBu3f5q4e3q6PhuhLXJhQbRGKwqLrQmhC7dCoZ5n5Vd+dEmZvc3TdHhOEYfjI01xzM7HA==
 
+typeface-nunito-sans@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/typeface-nunito-sans/-/typeface-nunito-sans-1.1.13.tgz#c27635416b7c8df7414a5ce087ed9e3a9f16772d"
+  integrity sha512-wpRTCwHdHcq4CKBBGzTDNAjck64O1prpCjKiUJyMFHn+E9k1aELJuSVeMBsgScdR1b5u7HFP1Px7Gi2OUMu33w==
+
+typeface-open-sans@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/typeface-open-sans/-/typeface-open-sans-1.1.13.tgz#32a09ebd7df59601e01ad81216f98ce641eeafd1"
+  integrity sha512-lVGVHvYl7UJDFB9vN8r7NHw3sVm7Rjeow6b9AeABc/J+2mDaCkmcdVtw3QZnsJW39P+xm5zeggIj9gLHYGn9Iw==
+
 unbox-primitive@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/unbox-primitive/-/unbox-primitive-1.0.2.tgz#29032021057d5e6cdbd08c5129c226dff8ed6f9e"

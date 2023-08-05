@@ -25,10 +25,10 @@ function Nav() {
       <Navbar.Toggle />
       {currentLanguage ? (
         <Navbar.Collapse className="justify-content-end">
-          <Link onClick={() => setLanguage(language)} to={`/categories/${language}`} className="mx-4 c-dark upp">
+          <Link onClick={() => setLanguage(language)} to={`/categories/${language}`} className="mx-4 c-dark upp title-menu-link">
             {currentLanguage.menu[0]}
           </Link>
-          <Link to={`/${land[0].ru.nav.link[1]}/${language}`} className="mx-4 c-dark upp">
+          <Link to={`/${language}`} className="mx-4 c-dark upp title-menu-link">
             {currentLanguage.menu[1]}
           </Link>
           <a href={land[0].ru.nav.button[1]} className="button nav-button m-hide" target="blank">
