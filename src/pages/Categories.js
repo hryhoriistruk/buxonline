@@ -4,6 +4,8 @@ import axios from 'axios'
 
 const apiUrl = 'https://api-dev.buxonline.org/api/v1/category/list/'
 
+
+
 function Categories() {
 
   const [language, setLanguage] = useState(localStorage.getItem('language') || 'uk')
@@ -40,7 +42,7 @@ function Categories() {
   return (
     <>
       <div className="s-70"></div>
-      <h3 className="title-part mx-3">Категории</h3>
+      <h3 className="title-part mx-3">Категорії</h3>
       <div className="s-20"></div>
       <div className="w-100">
         {categories.map((el) => (
