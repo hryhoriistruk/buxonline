@@ -158,6 +158,11 @@ const CustomPagination = (props) => {
               </button>
             </>
           )}
+          {!(currentPage !== 1) && (
+            <>
+              <div />
+            </>
+          )}
 
           <div className="pagination">
             {generatePaginationBtns(currentPage, totalPages, setCurrentPage)}
@@ -193,6 +198,11 @@ const CustomPagination = (props) => {
                 >
                   <HiArrowSmallLeft />
                 </button>
+              </>
+            )}
+            {!(currentPage !== 1) && (
+              <>
+                <div />
               </>
             )}
             {currentPage !== totalPages && (
