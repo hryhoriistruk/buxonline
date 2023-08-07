@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { HiArrowSmallLeft, HiArrowSmallRight } from "react-icons/hi2";
 import style from "./style.css";
 import { useEffect } from "react";
+import useWindowWidth from "../../custom-hooks/useWindowWidth";
 
 const Elipsis = () => {
   return (
@@ -119,12 +120,9 @@ const generatePaginationBtns = (currentPage, totalPages, setCurrentPage) => {
 };
 
 const CustomPagination = (props) => {
-  const {
-    currentPage,
-    perPage = 10,
-    totalVacancies = 83,
-    setCurrentPage,
-  } = props;
+  const { currentPage, perPage, totalVacancies, setCurrentPage } = props;
+
+  const windowWidth = useWindowWidth();
 
   const totalPages = useMemo(() => {
     return Math.ceil(totalVacancies / perPage);
@@ -146,38 +144,72 @@ const CustomPagination = (props) => {
 
   if (totalPages === 1) return <></>;
 
-  return (
-    <>
-      <div
-        style={{
-          display: "flex",
-          gap: "5px",
-        }}
-      >
-        {currentPage !== 1 && (
-          <>
-            <button
-              className="pagination-arrow"
-              onClick={() => setCurrentPage(1)}
-            >
-              <HiArrowSmallLeft />
-            </button>
-          </>
-        )}
-        {generatePaginationBtns(currentPage, totalPages, setCurrentPage)}
-        {currentPage !== totalPages && (
-          <>
-            <button
-              className="pagination-arrow"
-              onClick={() => setCurrentPage(totalPages)}
-            >
-              <HiArrowSmallRight />
-            </button>
-          </>
-        )}
-      </div>
-    </>
-  );
+  if (windowWidth > 500) {
+    return (
+      <>
+        <div className="pagination-wrapper">
+          {currentPage !== 1 && (
+            <>
+              <button
+                className="pagination-arrow"
+                onClick={() => setCurrentPage((prev) => prev - 1)}
+              >
+                <HiArrowSmallLeft />
+              </button>
+            </>
+          )}
+
+          <div className="pagination">
+            {generatePaginationBtns(currentPage, totalPages, setCurrentPage)}
+          </div>
+
+          {currentPage !== totalPages && (
+            <>
+              <button
+                className="pagination-arrow"
+                onClick={() => setCurrentPage((prev) => prev + 1)}
+              >
+                <HiArrowSmallRight />
+              </button>
+            </>
+          )}
+        </div>
+      </>
+    );
+  }
+  if (windowWidth <= 500) {
+    return (
+      <>
+        <div className="pagination-wrapper">
+          <div className="pagination">
+            {generatePaginationBtns(currentPage, totalPages, setCurrentPage)}
+          </div>
+          <div className="pagination-arrows__wrapper">
+            {currentPage !== 1 && (
+              <>
+                <button
+                  className="pagination-arrow"
+                  onClick={() => setCurrentPage((prev) => prev - 1)}
+                >
+                  <HiArrowSmallLeft />
+                </button>
+              </>
+            )}
+            {currentPage !== totalPages && (
+              <>
+                <button
+                  className="pagination-arrow"
+                  onClick={() => setCurrentPage((prev) => prev + 1)}
+                >
+                  <HiArrowSmallRight />
+                </button>
+              </>
+            )}{" "}
+          </div>
+        </div>
+      </>
+    );
+  }
 };
 
 export default CustomPagination;

@@ -28,7 +28,6 @@ function VacanciesList() {
           setLoading(false);
         }
       };
-
       localStorage.setItem("language", language);
       fetchData();
     }
@@ -93,13 +92,15 @@ function VacanciesList() {
           </div>
         ))}
       </div>
-      <CustomPagination
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        perPage={perPage}
-        totalVacancies={data.count}
-      />
-      <div className="s-100"></div>
+      <div className="s-20"></div>
+      <div className="row justify-content-center">
+        <CustomPagination
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          perPage={perPage}
+          totalVacancies={data.count}
+        />
+      </div>
       <div className="s-100"></div>
     </>
   );
