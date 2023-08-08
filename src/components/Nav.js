@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from 'react-bootstrap/Navbar'
 import { LangMenu } from './elements/LangMenu'
-import land from '../data/land'
 import lang from '../data/lang'
 import Logo from '../logo.svg'
 
@@ -26,13 +25,13 @@ function Nav() {
       {currentLanguage ? (
         <Navbar.Collapse className="justify-content-end">
           <Link onClick={() => setLanguage(language)} to={`/categories/${language}`} className="mx-4 c-dark upp title-menu-link">
-            {currentLanguage.menu[0]}
+            {currentLanguage.page_meta.menu_vacancies}
           </Link>
           <Link to={`/${language}`} className="mx-4 c-dark upp title-menu-link">
-            {currentLanguage.menu[1]}
+            {currentLanguage.page_meta.menu_for_business}
           </Link>
-          <a href={land[0].ru.nav.button[1]} className="button nav-button m-hide" target="blank">
-            {currentLanguage.menu[2]}
+          <a href={'https://job.buxonline.org/'} className="button nav-button m-hide" target="blank">
+            {currentLanguage.page_meta.menu_send_cv}
           </a>
         </Navbar.Collapse>
       ) : null}
