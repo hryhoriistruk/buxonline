@@ -641,4 +641,4 @@ const lang = [
   }
 ]
 
-export default lang
+export default lang;
