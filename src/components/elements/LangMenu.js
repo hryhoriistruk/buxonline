@@ -82,8 +82,9 @@ const LangMenu = ({ setLanguage }) => {
             <div className="scroll-wrapper">
               {languagesList.map((language) => {
                 const { id, name, code_a2 } = language;
-                const picURL =
-                  lang.find((language) => language.code === code_a2)?.pic || "";
+                const picURL = lang.find(
+                  (language) => language.code === code_a2
+                )?.pic;
                 return (
                   <Dropdown.Item
                     key={id}
@@ -91,7 +92,10 @@ const LangMenu = ({ setLanguage }) => {
                     className={short === code_a2 ? "active" : ""}
                   >
                     <img
-                      src={picURL}
+                      src={
+                        picURL ||
+                        "https://user-images.githubusercontent.com/641799/107672773-4d565e00-6c63-11eb-866d-f55c910c21c7.png"
+                      }
                       width={18}
                       alt={code_a2}
                       className="pb-1 mx-1"
