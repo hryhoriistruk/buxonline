@@ -4,6 +4,8 @@ import axios from 'axios'
 
 const apiUrl = 'https://api-dev.buxonline.org/api/v1/category/list/'
 
+
+
 function Categories() {
 
   const [language, setLanguage] = useState(localStorage.getItem('language') || 'uk')
@@ -40,9 +42,9 @@ function Categories() {
   return (
     <>
       <div className="s-70"></div>
-      <h3 className="title-part mx-3">Категории</h3>
-      <div className="s-50"></div>
-      <div className="w-100 tc">
+      <h3 className="title-part mx-3">Категорії</h3>
+      <div className="s-20"></div>
+      <div className="w-100">
         {categories.map((el) => (
           <Link
             onClick={() => {
@@ -51,10 +53,10 @@ function Categories() {
               setLanguage(language)
             }}
             to={`/category/${el.id}/${el.role}/${language}`}
-            className={`button cat m-1 ${selectedCategoryName === el.role ? 'active' : ''}`}
+            className={`button cat jcsb aic py-1 px-3 m-1 ${selectedCategoryName === el.role ? 'active' : ''}`}
             key={el.id}
           >
-            {el.role}
+            <span className="fz-14">{el.role}</span><span className="fz-14">{el.vacancies_count}</span>
           </Link>
         ))}
       </div>
