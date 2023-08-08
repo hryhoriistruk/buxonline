@@ -60,7 +60,7 @@ function VacanciesList() {
       }
     };
     fetchData();
-  }, []);
+  }, [language, id]);
 
   if (loading) {
     return <div>Loading...</div>;
