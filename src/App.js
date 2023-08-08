@@ -25,7 +25,6 @@ const App = () => {
       </Container>
       <Container>
         <Routes>
-          <Route path="/" element={<Navigate path="/en" replace />} />
           <Route path="/:language" element={<Home />} />
           <Route path="/categories/:language" element={<Categories />} />
           <Route
