@@ -1,112 +1,214 @@
 const lang = [
   {
     code: "uk",
-    pic: require('../assets/svg/flags/4x3/ua.svg').default,
+    pic: require("../assets/svg/flags/4x3/ua.svg").default,
     name: "Ukrainian",
-    menu: ['Вакансії', 'Для Бізнесу', 'Відправити Резюме']
+    menu: ["Вакансії", "Для Бізнесу", "Відправити Резюме"],
   },
   {
     code: "en",
-    pic: require('../assets/svg/flags/4x3/gb.svg').default,
+    pic: require("../assets/svg/flags/4x3/gb.svg").default,
     name: "English",
-    menu: ['Vacancies', 'For Business', 'Submit Resume']
+    menu: ["Vacancies", "For Business", "Submit Resume"],
   },
   {
     code: "fr",
-    pic: require('../assets/svg/flags/4x3/fr.svg').default,
+    pic: require("../assets/svg/flags/4x3/fr.svg").default,
     name: "French",
-    menu: ['Offres d\'emploi', 'Pour les entreprises', 'Soumettre un CV']
-  },
-  {
-    code: "de",
-    pic: require('../assets/svg/flags/4x3/de.svg').default,
-    name: "German",
-    menu: ['Stellenangebote', 'Für Unternehmen', 'Lebenslauf einreichen']
+    menu: ["Offres d'emploi", "Pour les entreprises", "Soumettre un CV"],
   },
   {
     code: "it",
-    pic: require('../assets/svg/flags/4x3/it.svg').default,
+    pic: require("../assets/svg/flags/4x3/it.svg").default,
     name: "Italian",
-    menu: ['Offerte di lavoro', 'Per le aziende', 'Invia il curriculum']
+    menu: ["Offerte di lavoro", "Per le aziende", "Invia il curriculum"],
   },
   {
-    code: "es",
-    pic: require('../assets/svg/flags/4x3/es.svg').default,
-    name: "Spanish",
-    menu: ['Ofertas de empleo', 'Para Empresas', 'Enviar Currículum']
+    code: "sq",
+    pic: require("../assets/svg/flags/4x3/al.svg").default,
+    name: "Albanian",
+    menu: null,
   },
   {
-    code: "tr",
-    pic: require('../assets/svg/flags/4x3/tr.svg').default,
-    name: "Turkish",
-    menu: ['İş İlanları', 'İşverenler için', 'Özgeçmiş Gönder']
+    code: "ca",
+    pic: require("../assets/svg/flags/4x3/es-ct.svg").default,
+    name: "Catalan",
+    menu: null,
+  },
+  {
+    code: "hy",
+    pic: require("../assets/svg/flags/4x3/am.svg").default,
+    name: "Armenian",
+    menu: null,
+  },
+  {
+    code: "de",
+    pic: require("../assets/svg/flags/4x3/de.svg").default,
+    name: "German",
+    menu: ["Stellenangebote", "Für Unternehmen", "Lebenslauf einreichen"],
   },
   {
     code: "az",
-    pic: require('../assets/svg/flags/4x3/az.svg').default,
+    pic: require("../assets/svg/flags/4x3/az.svg").default,
     name: "Azerbaijani",
-    menu: ['Vakansiyalar', 'Biznes üçün', 'Özgeçmiş göndər']
+    menu: ["Vakansiyalar", "Biznes üçün", "Özgeçmiş göndər"],
   },
   {
-    code: "bg",
-    pic: require('../assets/svg/flags/4x3/bg.svg').default,
-    name: "Bulgarian",
-    menu: ['Обяви за работа', 'За бизнеса', 'Изпрати резюме']
+    code: "nl",
+    pic: require("../assets/svg/flags/4x3/nl.svg").default,
+    name: "Dutch",
+    menu: null,
+  },
+  {
+    code: "bs",
+    pic: require("../assets/svg/flags/4x3/ba.svg").default,
+    name: "Bosnian",
+    menu: null,
   },
   {
     code: "hr",
-    pic: require('../assets/svg/flags/4x3/hr.svg').default,
+    pic: require("../assets/svg/flags/4x3/hr.svg").default,
     name: "Croatian",
-    menu: ['Poslovi', 'Za poslodavce', 'Pošaljite životopis']
+    menu: ["Poslovi", "Za poslodavce", "Pošaljite životopis"],
+  },
+  {
+    code: "sr",
+    pic: require("../assets/svg/flags/4x3/rs.svg").default,
+    name: "Serbian",
+    menu: null,
+  },
+  {
+    code: "bg",
+    pic: require("../assets/svg/flags/4x3/bg.svg").default,
+    name: "Bulgarian",
+    menu: ["Обяви за работа", "За бизнеса", "Изпрати резюме"],
+  },
+  {
+    code: "cs",
+    pic: require("../assets/svg/flags/4x3/cz.svg").default,
+    name: "Czech",
+    menu: null,
+  },
+  {
+    code: "da",
+    pic: require("../assets/svg/flags/4x3/dk.svg").default,
+    name: "Danish",
+    menu: null,
+  },
+  {
+    code: "et",
+    pic: require("../assets/svg/flags/4x3/ee.svg").default,
+    name: "Estonian",
+    menu: null,
   },
   {
     code: "fi",
-    pic: require('../assets/svg/flags/4x3/fi.svg').default,
+    pic: require("../assets/svg/flags/4x3/fi.svg").default,
     name: "Finnish",
-    menu: ['Työpaikat', 'Yrityksille', 'Lähetä ansioluettelo']
+    menu: ["Työpaikat", "Yrityksille", "Lähetä ansioluettelo"],
+  },
+  {
+    code: "sv",
+    pic: require("../assets/svg/flags/4x3/se.svg").default,
+    name: "Swedish",
+    menu: null,
+  },
+  {
+    code: "ka",
+    pic: require("../assets/svg/flags/4x3/ge.svg").default,
+    name: "Georgian",
+    menu: null,
+  },
+  {
+    code: "el",
+    pic: require("../assets/svg/flags/4x3/gr.svg").default,
+    name: "Greek",
+    menu: null,
   },
   {
     code: "hu",
-    pic: require('../assets/svg/flags/4x3/hu.svg').default,
+    pic: require("../assets/svg/flags/4x3/hu.svg").default,
     name: "Hungarian",
-    menu: ['Állásajánlatok', 'Vállalatoknak', 'Önéletrajz beküldése']
+    menu: ["Állásajánlatok", "Vállalatoknak", "Önéletrajz beküldése"],
   },
   {
     code: "is",
-    pic: require('../assets/svg/flags/4x3/is.svg').default,
+    pic: require("../assets/svg/flags/4x3/is.svg").default,
     name: "Icelandic",
-    menu: ['Staða', 'Fyrir Fyrirtæki', 'Senda ferilskrá']
+    menu: ["Staða", "Fyrir Fyrirtæki", "Senda ferilskrá"],
+  },
+  {
+    code: "ga",
+    pic: require("../assets/svg/flags/4x3/ie.svg").default,
+    name: "Irish",
+    menu: null,
   },
   {
     code: "lv",
-    pic: require('../assets/svg/flags/4x3/lv.svg').default,
+    pic: require("../assets/svg/flags/4x3/lv.svg").default,
     name: "Latvian",
-    menu: ['Vakances', 'Uzņēmumiem', 'Iesūtīt dzīves aprakstu']
+    menu: ["Vakances", "Uzņēmumiem", "Iesūtīt dzīves aprakstu"],
   },
   {
     code: "lt",
-    pic: require('../assets/svg/flags/4x3/lt.svg').default,
+    pic: require("../assets/svg/flags/4x3/lt.svg").default,
     name: "Lithuanian",
-    menu: ['Darbo skelbimai', 'Įmonėms', 'Pateikti CV']
+    menu: ["Darbo skelbimai", "Įmonėms", "Pateikti CV"],
+  },
+  {
+    code: "lb",
+    pic: require("../assets/svg/flags/4x3/lu.svg").default,
+    name: "Luxembourgish",
+    menu: null,
   },
   {
     code: "mt",
-    pic: require('../assets/svg/flags/4x3/mt.svg').default,
+    pic: require("../assets/svg/flags/4x3/mt.svg").default,
     name: "Maltese",
-    menu: ['Vaganzi', 'Għal In-Negozju', 'Ibgħat ir-Riżumé']
+    menu: ["Vaganzi", "Għal In-Negozju", "Ibgħat ir-Riżumé"],
+  },
+  {
+    code: "me",
+    pic: require("../assets/svg/flags/4x3/me.svg").default,
+    name: "Montenegrin",
+    menu: null,
   },
   {
     code: "no",
-    pic: require('../assets/svg/flags/4x3/no.svg').default,
+    pic: require("../assets/svg/flags/4x3/no.svg").default,
     name: "Norwegian",
-    menu: ['Ledige stillinger', 'For Bedrifter', 'Send CV']
+    menu: ["Ledige stillinger", "For Bedrifter", "Send CV"],
   },
   {
     code: "ro",
-    pic: require('../assets/svg/flags/4x3/ro.svg').default,
+    pic: require("../assets/svg/flags/4x3/ro.svg").default,
     name: "Romanian",
-    menu: ['Locuri de Muncă', 'Pentru Companii', 'Trimite CV-ul']
-  }
-]
+    menu: ["Locuri de Muncă", "Pentru Companii", "Trimite CV-ul"],
+  },
+  {
+    code: "sl",
+    pic: require("../assets/svg/flags/4x3/si.svg").default,
+    name: "Slovenian",
+    menu: null,
+  },
+  {
+    code: "es",
+    pic: require("../assets/svg/flags/4x3/es.svg").default,
+    name: "Spanish",
+    menu: ["Ofertas de empleo", "Para Empresas", "Enviar Currículum"],
+  },
+  {
+    code: "rm",
+    pic: require("../assets/svg/flags/4x3/ch.svg").default,
+    name: "Romansh",
+    menu: null,
+  },
+  {
+    code: "tr",
+    pic: require("../assets/svg/flags/4x3/tr.svg").default,
+    name: "Turkish",
+    menu: ["İş İlanları", "İşverenler için", "Özgeçmiş Gönder"],
+  },
+];
 
-export default lang
+export default lang;
