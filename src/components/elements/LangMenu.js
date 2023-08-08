@@ -91,13 +91,7 @@ const LangMenu = ({ setLanguage }) => {
                     menu: language.menu,
                   };
                 })
-                .filter((language) => language)
-                .sort((lang1, lang2) => {
-                  if (lang1.menu === null && lang2.menu === null) return 0;
-                  if (lang1.menu === null) return 1;
-                  if (lang2.menu === null) return -1;
-                  return lang1.menu - lang2.menu;
-                })
+                .filter((language) => language && language.menu)
                 .map((language) => {
                   const { id, pic, name, menu, code_a2 } = language;
                   return (
