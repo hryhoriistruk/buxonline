@@ -25,21 +25,21 @@ const lang = [
   },
   {
     code: "sq",
-    pic: "",
+    pic: require("../assets/svg/flags/4x3/al.svg").default,
     name: "Albanian",
-    menu: ["", "", ""],
+    menu: null,
   },
   {
     code: "ca",
-    pic: "",
+    pic: require("../assets/svg/flags/4x3/es-ct.svg").default,
     name: "Catalan",
-    menu: ["", "", ""],
+    menu: null,
   },
   {
     code: "hy",
-    pic: "",
+    pic: require("../assets/svg/flags/4x3/am.svg").default,
     name: "Armenian",
-    menu: ["", "", ""],
+    menu: null,
   },
   {
     code: "de",
@@ -55,15 +55,15 @@ const lang = [
   },
   {
     code: "nl",
-    pic: "",
+    pic: require("../assets/svg/flags/4x3/nl.svg").default,
     name: "Dutch",
-    menu: ["", "", ""],
+    menu: null,
   },
   {
     code: "bs",
-    pic: "",
+    pic: require("../assets/svg/flags/4x3/ba.svg").default,
     name: "Bosnian",
-    menu: ["", "", ""],
+    menu: null,
   },
   {
     code: "hr",
@@ -73,9 +73,9 @@ const lang = [
   },
   {
     code: "sr",
-    pic: "",
+    pic: require("../assets/svg/flags/4x3/rs.svg").default,
     name: "Serbian",
-    menu: ["", "", ""],
+    menu: null,
   },
   {
     code: "bg",
@@ -85,21 +85,21 @@ const lang = [
   },
   {
     code: "cs",
-    pic: "",
+    pic: require("../assets/svg/flags/4x3/cz.svg").default,
     name: "Czech",
-    menu: ["", "", ""],
+    menu: null,
   },
   {
     code: "da",
-    pic: "",
+    pic: require("../assets/svg/flags/4x3/dk.svg").default,
     name: "Danish",
-    menu: ["", "", ""],
+    menu: null,
   },
   {
     code: "et",
-    pic: "",
+    pic: require("../assets/svg/flags/4x3/ee.svg").default,
     name: "Estonian",
-    menu: ["", "", ""],
+    menu: null,
   },
   {
     code: "fi",
@@ -109,21 +109,21 @@ const lang = [
   },
   {
     code: "sv",
-    pic: "",
+    pic: require("../assets/svg/flags/4x3/se.svg").default,
     name: "Swedish",
-    menu: ["", "", ""],
+    menu: null,
   },
   {
     code: "ka",
-    pic: "",
+    pic: require("../assets/svg/flags/4x3/ge.svg").default,
     name: "Georgian",
-    menu: ["", "", ""],
+    menu: null,
   },
   {
     code: "el",
-    pic: "",
+    pic: require("../assets/svg/flags/4x3/gr.svg").default,
     name: "Greek",
-    menu: ["", "", ""],
+    menu: null,
   },
   {
     code: "hu",
@@ -139,9 +139,9 @@ const lang = [
   },
   {
     code: "ga",
-    pic: "",
+    pic: require("../assets/svg/flags/4x3/ie.svg").default,
     name: "Irish",
-    menu: ["", "", ""],
+    menu: null,
   },
   {
     code: "lv",
@@ -157,9 +157,9 @@ const lang = [
   },
   {
     code: "lb",
-    pic: "",
+    pic: require("../assets/svg/flags/4x3/lu.svg").default,
     name: "Luxembourgish",
-    menu: ["", "", ""],
+    menu: null,
   },
   {
     code: "mt",
@@ -169,9 +169,9 @@ const lang = [
   },
   {
     code: "me",
-    pic: "",
+    pic: require("../assets/svg/flags/4x3/me.svg").default,
     name: "Montenegrin",
-    menu: ["", "", ""],
+    menu: null,
   },
   {
     code: "no",
@@ -187,9 +187,9 @@ const lang = [
   },
   {
     code: "sl",
-    pic: "",
+    pic: require("../assets/svg/flags/4x3/si.svg").default,
     name: "Slovenian",
-    menu: ["", "", ""],
+    menu: null,
   },
   {
     code: "es",
@@ -199,9 +199,9 @@ const lang = [
   },
   {
     code: "rm",
-    pic: "",
+    pic: require("../assets/svg/flags/4x3/ch.svg").default,
     name: "Romansh",
-    menu: ["", "", ""],
+    menu: null,
   },
   {
     code: "tr",

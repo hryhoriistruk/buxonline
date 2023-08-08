@@ -1,1318 +1,1318 @@
 const world = [
   {
     code: "ua",
-    pic: require('../assets/svg/flags/4x3/ua.svg').default,
-    name: "Ukraine"
+    pic: require("../assets/svg/flags/4x3/ua.svg").default,
+    name: "Ukraine",
   },
   {
     code: "us",
-    pic: require('../assets/svg/flags/4x3/us.svg').default,
-    name: "United States of America"
+    pic: require("../assets/svg/flags/4x3/us.svg").default,
+    name: "United States of America",
   },
   {
     code: "fr",
-    pic: require('../assets/svg/flags/4x3/fr.svg').default,
-    name: "France"
+    pic: require("../assets/svg/flags/4x3/fr.svg").default,
+    name: "France",
   },
   {
     code: "it",
-    pic: require('../assets/svg/flags/4x3/it.svg').default,
-    name: "Italy"
+    pic: require("../assets/svg/flags/4x3/it.svg").default,
+    name: "Italy",
   },
   {
     code: "af",
-    pic: require('../assets/svg/flags/4x3/af.svg').default,
-    name: "Afghanistan"
+    pic: require("../assets/svg/flags/4x3/af.svg").default,
+    name: "Afghanistan",
   },
   {
     code: "ax",
-    pic: require('../assets/svg/flags/4x3/ax.svg').default,
-    name: "Aland Islands"
+    pic: require("../assets/svg/flags/4x3/ax.svg").default,
+    name: "Aland Islands",
   },
   {
     code: "al",
-    pic: require('../assets/svg/flags/4x3/al.svg').default,
-    name: "Albania"
+    pic: require("../assets/svg/flags/4x3/al.svg").default,
+    name: "Albania",
   },
   {
     code: "dz",
-    pic: require('../assets/svg/flags/4x3/dz.svg').default,
-    name: "Algeria"
+    pic: require("../assets/svg/flags/4x3/dz.svg").default,
+    name: "Algeria",
   },
   {
     code: "as",
-    pic: require('../assets/svg/flags/4x3/as.svg').default,
-    name: "American Samoa"
+    pic: require("../assets/svg/flags/4x3/as.svg").default,
+    name: "American Samoa",
   },
   {
     code: "ad",
-    pic: require('../assets/svg/flags/4x3/ad.svg').default,
-    name: "Andorra"
+    pic: require("../assets/svg/flags/4x3/ad.svg").default,
+    name: "Andorra",
   },
   {
     code: "ao",
-    pic: require('../assets/svg/flags/4x3/ao.svg').default,
-    name: "Angola"
+    pic: require("../assets/svg/flags/4x3/ao.svg").default,
+    name: "Angola",
   },
   {
     code: "ai",
-    pic: require('../assets/svg/flags/4x3/ai.svg').default,
-    name: "Anguilla"
+    pic: require("../assets/svg/flags/4x3/ai.svg").default,
+    name: "Anguilla",
   },
   {
     code: "aq",
-    pic: require('../assets/svg/flags/4x3/aq.svg').default,
-    name: "Antarctica"
+    pic: require("../assets/svg/flags/4x3/aq.svg").default,
+    name: "Antarctica",
   },
   {
     code: "ag",
-    pic: require('../assets/svg/flags/4x3/ag.svg').default,
-    name: "Antigua and Barbuda"
+    pic: require("../assets/svg/flags/4x3/ag.svg").default,
+    name: "Antigua and Barbuda",
   },
   {
     code: "ar",
-    pic: require('../assets/svg/flags/4x3/ar.svg').default,
-    name: "Argentina"
+    pic: require("../assets/svg/flags/4x3/ar.svg").default,
+    name: "Argentina",
   },
   {
     code: "am",
-    pic: require('../assets/svg/flags/4x3/am.svg').default,
-    name: "Armenia"
+    pic: require("../assets/svg/flags/4x3/am.svg").default,
+    name: "Armenia",
   },
   {
     code: "aw",
-    pic: require('../assets/svg/flags/4x3/aw.svg').default,
-    name: "Aruba"
+    pic: require("../assets/svg/flags/4x3/aw.svg").default,
+    name: "Aruba",
   },
   {
     code: "ac",
-    pic: require('../assets/svg/flags/4x3/ac.svg').default,
-    name: "Ascension Island"
+    pic: require("../assets/svg/flags/4x3/ac.svg").default,
+    name: "Ascension Island",
   },
   {
     code: "au",
-    pic: require('../assets/svg/flags/4x3/au.svg').default,
-    name: "Australia"
+    pic: require("../assets/svg/flags/4x3/au.svg").default,
+    name: "Australia",
   },
   {
     code: "at",
-    pic: require('../assets/svg/flags/4x3/at.svg').default,
-    name: "Austria"
+    pic: require("../assets/svg/flags/4x3/at.svg").default,
+    name: "Austria",
   },
   {
     code: "az",
-    pic: require('../assets/svg/flags/4x3/az.svg').default,
-    name: "Azerbaijan"
+    pic: require("../assets/svg/flags/4x3/az.svg").default,
+    name: "Azerbaijan",
   },
   {
     code: "bs",
-    pic: require('../assets/svg/flags/4x3/bs.svg').default,
-    name: "Bahamas"
+    pic: require("../assets/svg/flags/4x3/bs.svg").default,
+    name: "Bahamas",
   },
   {
     code: "bh",
-    pic: require('../assets/svg/flags/4x3/bh.svg').default,
-    name: "Bahrain"
+    pic: require("../assets/svg/flags/4x3/bh.svg").default,
+    name: "Bahrain",
   },
   {
     code: "bd",
-    pic: require('../assets/svg/flags/4x3/bd.svg').default,
-    name: "Bangladesh"
+    pic: require("../assets/svg/flags/4x3/bd.svg").default,
+    name: "Bangladesh",
   },
   {
     code: "bb",
-    pic: require('../assets/svg/flags/4x3/bb.svg').default,
-    name: "Barbados"
+    pic: require("../assets/svg/flags/4x3/bb.svg").default,
+    name: "Barbados",
   },
   {
     code: "be",
-    pic: require('../assets/svg/flags/4x3/be.svg').default,
-    name: "Belgium"
+    pic: require("../assets/svg/flags/4x3/be.svg").default,
+    name: "Belgium",
   },
   {
     code: "bz",
-    pic: require('../assets/svg/flags/4x3/bz.svg').default,
-    name: "Belize"
+    pic: require("../assets/svg/flags/4x3/bz.svg").default,
+    name: "Belize",
   },
   {
     code: "bj",
-    pic: require('../assets/svg/flags/4x3/bj.svg').default,
-    name: "Benin"
+    pic: require("../assets/svg/flags/4x3/bj.svg").default,
+    name: "Benin",
   },
   {
     code: "bm",
-    pic: require('../assets/svg/flags/4x3/bm.svg').default,
-    name: "Bermuda"
+    pic: require("../assets/svg/flags/4x3/bm.svg").default,
+    name: "Bermuda",
   },
   {
     code: "bt",
-    pic: require('../assets/svg/flags/4x3/bt.svg').default,
-    name: "Bhutan"
+    pic: require("../assets/svg/flags/4x3/bt.svg").default,
+    name: "Bhutan",
   },
   {
     code: "bo",
-    pic: require('../assets/svg/flags/4x3/bo.svg').default,
-    name: "Bolivia"
+    pic: require("../assets/svg/flags/4x3/bo.svg").default,
+    name: "Bolivia",
   },
   {
     code: "bq",
-    pic: require('../assets/svg/flags/4x3/bq.svg').default,
-    name: "Bonaire, Sint Eustatius and Saba"
+    pic: require("../assets/svg/flags/4x3/bq.svg").default,
+    name: "Bonaire, Sint Eustatius and Saba",
   },
   {
     code: "ba",
-    pic: require('../assets/svg/flags/4x3/ba.svg').default,
-    name: "Bosnia and Herzegovina"
+    pic: require("../assets/svg/flags/4x3/ba.svg").default,
+    name: "Bosnia and Herzegovina",
   },
   {
     code: "bw",
-    pic: require('../assets/svg/flags/4x3/bw.svg').default,
-    name: "Botswana"
+    pic: require("../assets/svg/flags/4x3/bw.svg").default,
+    name: "Botswana",
   },
   {
     code: "bv",
-    pic: require('../assets/svg/flags/4x3/bv.svg').default,
-    name: "Bouvet Island"
+    pic: require("../assets/svg/flags/4x3/bv.svg").default,
+    name: "Bouvet Island",
   },
   {
     code: "br",
-    pic: require('../assets/svg/flags/4x3/br.svg').default,
-    name: "Brazil"
+    pic: require("../assets/svg/flags/4x3/br.svg").default,
+    name: "Brazil",
   },
   {
     code: "io",
-    pic: require('../assets/svg/flags/4x3/io.svg').default,
-    name: "British Indian Ocean Territory"
+    pic: require("../assets/svg/flags/4x3/io.svg").default,
+    name: "British Indian Ocean Territory",
   },
   {
     code: "bn",
-    pic: require('../assets/svg/flags/4x3/bn.svg').default,
-    name: "Brunei Darussalam"
+    pic: require("../assets/svg/flags/4x3/bn.svg").default,
+    name: "Brunei Darussalam",
   },
   {
     code: "bg",
-    pic: require('../assets/svg/flags/4x3/bg.svg').default,
-    name: "Bulgaria"
+    pic: require("../assets/svg/flags/4x3/bg.svg").default,
+    name: "Bulgaria",
   },
   {
     code: "bf",
-    pic: require('../assets/svg/flags/4x3/bf.svg').default,
-    name: "Burkina Faso"
+    pic: require("../assets/svg/flags/4x3/bf.svg").default,
+    name: "Burkina Faso",
   },
   {
     code: "bi",
-    pic: require('../assets/svg/flags/4x3/bi.svg').default,
-    name: "Burundi"
+    pic: require("../assets/svg/flags/4x3/bi.svg").default,
+    name: "Burundi",
   },
   {
     code: "cv",
-    pic: require('../assets/svg/flags/4x3/cv.svg').default,
-    name: "Cabo Verde"
+    pic: require("../assets/svg/flags/4x3/cv.svg").default,
+    name: "Cabo Verde",
   },
   {
     code: "kh",
-    pic: require('../assets/svg/flags/4x3/kh.svg').default,
-    name: "Cambodia"
+    pic: require("../assets/svg/flags/4x3/kh.svg").default,
+    name: "Cambodia",
   },
   {
     code: "cm",
-    pic: require('../assets/svg/flags/4x3/cm.svg').default,
-    name: "Cameroon"
+    pic: require("../assets/svg/flags/4x3/cm.svg").default,
+    name: "Cameroon",
   },
   {
     code: "ca",
-    pic: require('../assets/svg/flags/4x3/ca.svg').default,
-    name: "Canada"
+    pic: require("../assets/svg/flags/4x3/ca.svg").default,
+    name: "Canada",
   },
   {
     code: "ic",
-    pic: require('../assets/svg/flags/4x3/ic.svg').default,
-    name: "Canary Islands"
+    pic: require("../assets/svg/flags/4x3/ic.svg").default,
+    name: "Canary Islands",
   },
   {
     code: "es-ct",
-    pic: require('../assets/svg/flags/4x3/es-ct.svg').default,
-    name: "Catalonia"
+    pic: require("../assets/svg/flags/4x3/es-ct.svg").default,
+    name: "Catalonia",
   },
   {
     code: "es-pv",
-    pic: require('../assets/svg/flags/4x3/es-pv.svg').default,
-    name: "Basque Country"
+    pic: require("../assets/svg/flags/4x3/es-pv.svg").default,
+    name: "Basque Country",
   },
   {
     code: "ky",
-    pic: require('../assets/svg/flags/4x3/ky.svg').default,
-    name: "Cayman Islands"
+    pic: require("../assets/svg/flags/4x3/ky.svg").default,
+    name: "Cayman Islands",
   },
   {
     code: "cf",
-    pic: require('../assets/svg/flags/4x3/cf.svg').default,
-    name: "Central African Republic"
+    pic: require("../assets/svg/flags/4x3/cf.svg").default,
+    name: "Central African Republic",
   },
   {
     code: "cefta",
-    pic: require('../assets/svg/flags/4x3/cefta.svg').default,
-    name: "Central European Free Trade Agreement"
+    pic: require("../assets/svg/flags/4x3/cefta.svg").default,
+    name: "Central European Free Trade Agreement",
   },
   {
     code: "ea",
-    pic: require('../assets/svg/flags/4x3/ea.svg').default,
-    name: "Ceuta & Melilla"
+    pic: require("../assets/svg/flags/4x3/ea.svg").default,
+    name: "Ceuta & Melilla",
   },
   {
     code: "td",
-    pic: require('../assets/svg/flags/4x3/td.svg').default,
-    name: "Chad"
+    pic: require("../assets/svg/flags/4x3/td.svg").default,
+    name: "Chad",
   },
   {
     code: "cl",
-    pic: require('../assets/svg/flags/4x3/cl.svg').default,
-    name: "Chile"
+    pic: require("../assets/svg/flags/4x3/cl.svg").default,
+    name: "Chile",
   },
   {
     code: "cx",
-    pic: require('../assets/svg/flags/4x3/cx.svg').default,
-    name: "Christmas Island"
+    pic: require("../assets/svg/flags/4x3/cx.svg").default,
+    name: "Christmas Island",
   },
   {
     code: "cp",
-    pic: require('../assets/svg/flags/4x3/cp.svg').default,
-    name: "Clipperton Island"
+    pic: require("../assets/svg/flags/4x3/cp.svg").default,
+    name: "Clipperton Island",
   },
   {
     code: "cc",
-    pic: require('../assets/svg/flags/4x3/cc.svg').default,
-    name: "Cocos (Keeling) Islands"
+    pic: require("../assets/svg/flags/4x3/cc.svg").default,
+    name: "Cocos (Keeling) Islands",
   },
   {
     code: "co",
-    pic: require('../assets/svg/flags/4x3/co.svg').default,
-    name: "Colombia"
+    pic: require("../assets/svg/flags/4x3/co.svg").default,
+    name: "Colombia",
   },
   {
     code: "km",
-    pic: require('../assets/svg/flags/4x3/km.svg').default,
-    name: "Comoros"
+    pic: require("../assets/svg/flags/4x3/km.svg").default,
+    name: "Comoros",
   },
   {
     code: "ck",
-    pic: require('../assets/svg/flags/4x3/ck.svg').default,
-    name: "Cook Islands"
+    pic: require("../assets/svg/flags/4x3/ck.svg").default,
+    name: "Cook Islands",
   },
   {
     code: "cr",
-    pic: require('../assets/svg/flags/4x3/cr.svg').default,
-    name: "Costa Rica"
+    pic: require("../assets/svg/flags/4x3/cr.svg").default,
+    name: "Costa Rica",
   },
   {
     code: "hr",
-    pic: require('../assets/svg/flags/4x3/hr.svg').default,
-    name: "Croatia"
+    pic: require("../assets/svg/flags/4x3/hr.svg").default,
+    name: "Croatia",
   },
   {
     code: "cu",
-    pic: require('../assets/svg/flags/4x3/cu.svg').default,
-    name: "Cuba"
+    pic: require("../assets/svg/flags/4x3/cu.svg").default,
+    name: "Cuba",
   },
   {
     code: "cw",
-    pic: require('../assets/svg/flags/4x3/cw.svg').default,
-    name: "Curaçao"
+    pic: require("../assets/svg/flags/4x3/cw.svg").default,
+    name: "Curaçao",
   },
   {
     code: "cy",
-    pic: require('../assets/svg/flags/4x3/cy.svg').default,
-    name: "Cyprus"
+    pic: require("../assets/svg/flags/4x3/cy.svg").default,
+    name: "Cyprus",
   },
   {
     code: "cz",
-    pic: require('../assets/svg/flags/4x3/cz.svg').default,
-    name: "Czech Republic"
+    pic: require("../assets/svg/flags/4x3/cz.svg").default,
+    name: "Czech Republic",
   },
   {
     code: "ci",
-    pic: require('../assets/svg/flags/4x3/ci.svg').default,
-    name: "Côte d'Ivoire"
+    pic: require("../assets/svg/flags/4x3/ci.svg").default,
+    name: "Côte d'Ivoire",
   },
   {
     code: "cd",
-    pic: require('../assets/svg/flags/4x3/cd.svg').default,
-    name: "Democratic Republic of the Congo"
+    pic: require("../assets/svg/flags/4x3/cd.svg").default,
+    name: "Democratic Republic of the Congo",
   },
   {
     code: "dk",
-    pic: require('../assets/svg/flags/4x3/dk.svg').default,
-    name: "Denmark"
+    pic: require("../assets/svg/flags/4x3/dk.svg").default,
+    name: "Denmark",
   },
   {
     code: "dg",
-    pic: require('../assets/svg/flags/4x3/dg.svg').default,
-    name: "Diego Garcia"
+    pic: require("../assets/svg/flags/4x3/dg.svg").default,
+    name: "Diego Garcia",
   },
   {
     code: "dj",
-    pic: require('../assets/svg/flags/4x3/dj.svg').default,
-    name: "Djibouti"
+    pic: require("../assets/svg/flags/4x3/dj.svg").default,
+    name: "Djibouti",
   },
   {
     code: "dm",
-    pic: require('../assets/svg/flags/4x3/dm.svg').default,
-    name: "Dominica"
+    pic: require("../assets/svg/flags/4x3/dm.svg").default,
+    name: "Dominica",
   },
   {
     code: "do",
-    pic: require('../assets/svg/flags/4x3/do.svg').default,
-    name: "Dominican Republic"
+    pic: require("../assets/svg/flags/4x3/do.svg").default,
+    name: "Dominican Republic",
   },
   {
     code: "ec",
-    pic: require('../assets/svg/flags/4x3/ec.svg').default,
-    name: "Ecuador"
+    pic: require("../assets/svg/flags/4x3/ec.svg").default,
+    name: "Ecuador",
   },
   {
     code: "eg",
-    pic: require('../assets/svg/flags/4x3/eg.svg').default,
-    name: "Egypt"
+    pic: require("../assets/svg/flags/4x3/eg.svg").default,
+    name: "Egypt",
   },
   {
     code: "sv",
-    pic: require('../assets/svg/flags/4x3/sv.svg').default,
-    name: "El Salvador"
+    pic: require("../assets/svg/flags/4x3/sv.svg").default,
+    name: "El Salvador",
   },
   {
     code: "gb-eng",
-    pic: require('../assets/svg/flags/4x3/gb-eng.svg').default,
-    name: "England"
+    pic: require("../assets/svg/flags/4x3/gb-eng.svg").default,
+    name: "England",
   },
   {
     code: "gq",
-    pic: require('../assets/svg/flags/4x3/gq.svg').default,
-    name: "Equatorial Guinea"
+    pic: require("../assets/svg/flags/4x3/gq.svg").default,
+    name: "Equatorial Guinea",
   },
   {
     code: "er",
-    pic: require('../assets/svg/flags/4x3/er.svg').default,
-    name: "Eritrea"
+    pic: require("../assets/svg/flags/4x3/er.svg").default,
+    name: "Eritrea",
   },
   {
     code: "ee",
-    pic: require('../assets/svg/flags/4x3/ee.svg').default,
-    name: "Estonia"
+    pic: require("../assets/svg/flags/4x3/ee.svg").default,
+    name: "Estonia",
   },
   {
     code: "sz",
-    pic: require('../assets/svg/flags/4x3/sz.svg').default,
-    name: "Eswatini"
+    pic: require("../assets/svg/flags/4x3/sz.svg").default,
+    name: "Eswatini",
   },
   {
     code: "et",
-    pic: require('../assets/svg/flags/4x3/et.svg').default,
-    name: "Ethiopia"
+    pic: require("../assets/svg/flags/4x3/et.svg").default,
+    name: "Ethiopia",
   },
   {
     code: "eu",
-    pic: require('../assets/svg/flags/4x3/eu.svg').default,
-    name: "Europe"
+    pic: require("../assets/svg/flags/4x3/eu.svg").default,
+    name: "Europe",
   },
   {
     code: "fk",
-    pic: require('../assets/svg/flags/4x3/fk.svg').default,
-    name: "Falkland Islands"
+    pic: require("../assets/svg/flags/4x3/fk.svg").default,
+    name: "Falkland Islands",
   },
   {
     code: "fo",
-    pic: require('../assets/svg/flags/4x3/fo.svg').default,
-    name: "Faroe Islands"
+    pic: require("../assets/svg/flags/4x3/fo.svg").default,
+    name: "Faroe Islands",
   },
   {
     code: "fm",
-    pic: require('../assets/svg/flags/4x3/fm.svg').default,
-    name: "Federated States of Micronesia"
+    pic: require("../assets/svg/flags/4x3/fm.svg").default,
+    name: "Federated States of Micronesia",
   },
   {
     code: "fj",
-    pic: require('../assets/svg/flags/4x3/fj.svg').default,
-    name: "Fiji"
+    pic: require("../assets/svg/flags/4x3/fj.svg").default,
+    name: "Fiji",
   },
   {
     code: "fi",
-    pic: require('../assets/svg/flags/4x3/fi.svg').default,
-    name: "Finland"
+    pic: require("../assets/svg/flags/4x3/fi.svg").default,
+    name: "Finland",
   },
   {
     code: "gf",
-    pic: require('../assets/svg/flags/4x3/gf.svg').default,
-    name: "French Guiana"
+    pic: require("../assets/svg/flags/4x3/gf.svg").default,
+    name: "French Guiana",
   },
   {
     code: "pf",
-    pic: require('../assets/svg/flags/4x3/pf.svg').default,
-    name: "French Polynesia"
+    pic: require("../assets/svg/flags/4x3/pf.svg").default,
+    name: "French Polynesia",
   },
   {
     code: "tf",
-    pic: require('../assets/svg/flags/4x3/tf.svg').default,
-    name: "French Southern Territories"
+    pic: require("../assets/svg/flags/4x3/tf.svg").default,
+    name: "French Southern Territories",
   },
   {
     code: "ga",
-    pic: require('../assets/svg/flags/4x3/ga.svg').default,
-    name: "Gabon"
+    pic: require("../assets/svg/flags/4x3/ga.svg").default,
+    name: "Gabon",
   },
   {
     code: "es-ga",
-    pic: require('../assets/svg/flags/4x3/es-ga.svg').default,
-    name: "Galicia"
+    pic: require("../assets/svg/flags/4x3/es-ga.svg").default,
+    name: "Galicia",
   },
   {
     code: "gm",
-    pic: require('../assets/svg/flags/4x3/gm.svg').default,
-    name: "Gambia"
+    pic: require("../assets/svg/flags/4x3/gm.svg").default,
+    name: "Gambia",
   },
   {
     code: "ge",
-    pic: require('../assets/svg/flags/4x3/ge.svg').default,
-    name: "Georgia"
+    pic: require("../assets/svg/flags/4x3/ge.svg").default,
+    name: "Georgia",
   },
   {
     code: "de",
-    pic: require('../assets/svg/flags/4x3/de.svg').default,
-    name: "Germany"
+    pic: require("../assets/svg/flags/4x3/de.svg").default,
+    name: "Germany",
   },
   {
     code: "gh",
-    pic: require('../assets/svg/flags/4x3/gh.svg').default,
-    name: "Ghana"
+    pic: require("../assets/svg/flags/4x3/gh.svg").default,
+    name: "Ghana",
   },
   {
     code: "gi",
-    pic: require('../assets/svg/flags/4x3/gi.svg').default,
-    name: "Gibraltar"
+    pic: require("../assets/svg/flags/4x3/gi.svg").default,
+    name: "Gibraltar",
   },
   {
     code: "gr",
-    pic: require('../assets/svg/flags/4x3/gr.svg').default,
-    name: "Greece"
+    pic: require("../assets/svg/flags/4x3/gr.svg").default,
+    name: "Greece",
   },
   {
     code: "gl",
-    pic: require('../assets/svg/flags/4x3/gl.svg').default,
-    name: "Greenland"
+    pic: require("../assets/svg/flags/4x3/gl.svg").default,
+    name: "Greenland",
   },
   {
     code: "gd",
-    pic: require('../assets/svg/flags/4x3/gd.svg').default,
-    name: "Grenada"
+    pic: require("../assets/svg/flags/4x3/gd.svg").default,
+    name: "Grenada",
   },
   {
     code: "gp",
-    pic: require('../assets/svg/flags/4x3/gp.svg').default,
-    name: "Guadeloupe"
+    pic: require("../assets/svg/flags/4x3/gp.svg").default,
+    name: "Guadeloupe",
   },
   {
     code: "gu",
-    pic: require('../assets/svg/flags/4x3/gu.svg').default,
-    name: "Guam"
+    pic: require("../assets/svg/flags/4x3/gu.svg").default,
+    name: "Guam",
   },
   {
     code: "gt",
-    pic: require('../assets/svg/flags/4x3/gt.svg').default,
-    name: "Guatemala"
+    pic: require("../assets/svg/flags/4x3/gt.svg").default,
+    name: "Guatemala",
   },
   {
     code: "gg",
-    pic: require('../assets/svg/flags/4x3/gg.svg').default,
-    name: "Guernsey"
+    pic: require("../assets/svg/flags/4x3/gg.svg").default,
+    name: "Guernsey",
   },
   {
     code: "gn",
-    pic: require('../assets/svg/flags/4x3/gn.svg').default,
-    name: "Guinea"
+    pic: require("../assets/svg/flags/4x3/gn.svg").default,
+    name: "Guinea",
   },
   {
     code: "gw",
-    pic: require('../assets/svg/flags/4x3/gw.svg').default,
-    name: "Guinea-Bissau"
+    pic: require("../assets/svg/flags/4x3/gw.svg").default,
+    name: "Guinea-Bissau",
   },
   {
     code: "gy",
-    pic: require('../assets/svg/flags/4x3/gy.svg').default,
-    name: "Guyana"
+    pic: require("../assets/svg/flags/4x3/gy.svg").default,
+    name: "Guyana",
   },
   {
     code: "ht",
-    pic: require('../assets/svg/flags/4x3/ht.svg').default,
-    name: "Haiti"
+    pic: require("../assets/svg/flags/4x3/ht.svg").default,
+    name: "Haiti",
   },
   {
     code: "hm",
-    pic: require('../assets/svg/flags/4x3/hm.svg').default,
-    name: "Heard Island and McDonald Islands"
+    pic: require("../assets/svg/flags/4x3/hm.svg").default,
+    name: "Heard Island and McDonald Islands",
   },
   {
     code: "va",
-    pic: require('../assets/svg/flags/4x3/va.svg').default,
-    name: "Holy See"
+    pic: require("../assets/svg/flags/4x3/va.svg").default,
+    name: "Holy See",
   },
   {
     code: "hn",
-    pic: require('../assets/svg/flags/4x3/hn.svg').default,
-    name: "Honduras"
+    pic: require("../assets/svg/flags/4x3/hn.svg").default,
+    name: "Honduras",
   },
   {
     code: "hk",
-    pic: require('../assets/svg/flags/4x3/hk.svg').default,
-    name: "Hong Kong"
+    pic: require("../assets/svg/flags/4x3/hk.svg").default,
+    name: "Hong Kong",
   },
   {
     code: "hu",
-    pic: require('../assets/svg/flags/4x3/hu.svg').default,
-    name: "Hungary"
+    pic: require("../assets/svg/flags/4x3/hu.svg").default,
+    name: "Hungary",
   },
   {
     code: "is",
-    pic: require('../assets/svg/flags/4x3/is.svg').default,
-    name: "Iceland"
+    pic: require("../assets/svg/flags/4x3/is.svg").default,
+    name: "Iceland",
   },
   {
     code: "in",
-    pic: require('../assets/svg/flags/4x3/in.svg').default,
-    name: "India"
+    pic: require("../assets/svg/flags/4x3/in.svg").default,
+    name: "India",
   },
   {
     code: "id",
-    pic: require('../assets/svg/flags/4x3/id.svg').default,
-    name: "Indonesia"
+    pic: require("../assets/svg/flags/4x3/id.svg").default,
+    name: "Indonesia",
   },
   {
     code: "ir",
-    pic: require('../assets/svg/flags/4x3/ir.svg').default,
-    name: "Iran"
+    pic: require("../assets/svg/flags/4x3/ir.svg").default,
+    name: "Iran",
   },
   {
     code: "iq",
-    pic: require('../assets/svg/flags/4x3/iq.svg').default,
-    name: "Iraq"
+    pic: require("../assets/svg/flags/4x3/iq.svg").default,
+    name: "Iraq",
   },
   {
     code: "ie",
-    pic: require('../assets/svg/flags/4x3/ie.svg').default,
-    name: "Ireland"
+    pic: require("../assets/svg/flags/4x3/ie.svg").default,
+    name: "Ireland",
   },
   {
     code: "im",
-    pic: require('../assets/svg/flags/4x3/im.svg').default,
-    name: "Isle of Man"
+    pic: require("../assets/svg/flags/4x3/im.svg").default,
+    name: "Isle of Man",
   },
   {
     code: "il",
-    pic: require('../assets/svg/flags/4x3/il.svg').default,
-    name: "Israel"
+    pic: require("../assets/svg/flags/4x3/il.svg").default,
+    name: "Israel",
   },
   {
     code: "jm",
-    pic: require('../assets/svg/flags/4x3/jm.svg').default,
-    name: "Jamaica"
+    pic: require("../assets/svg/flags/4x3/jm.svg").default,
+    name: "Jamaica",
   },
   {
     code: "jp",
-    pic: require('../assets/svg/flags/4x3/jp.svg').default,
-    name: "Japan"
+    pic: require("../assets/svg/flags/4x3/jp.svg").default,
+    name: "Japan",
   },
   {
     code: "je",
-    pic: require('../assets/svg/flags/4x3/je.svg').default,
-    name: "Jersey"
+    pic: require("../assets/svg/flags/4x3/je.svg").default,
+    name: "Jersey",
   },
   {
     code: "jo",
-    pic: require('../assets/svg/flags/4x3/jo.svg').default,
-    name: "Jordan"
+    pic: require("../assets/svg/flags/4x3/jo.svg").default,
+    name: "Jordan",
   },
   {
     code: "ke",
-    pic: require('../assets/svg/flags/4x3/ke.svg').default,
-    name: "Kenya"
+    pic: require("../assets/svg/flags/4x3/ke.svg").default,
+    name: "Kenya",
   },
   {
     code: "ki",
-    pic: require('../assets/svg/flags/4x3/ki.svg').default,
-    name: "Kiribati"
+    pic: require("../assets/svg/flags/4x3/ki.svg").default,
+    name: "Kiribati",
   },
   {
     code: "xk",
-    pic: require('../assets/svg/flags/4x3/xk.svg').default,
-    name: "Kosovo"
+    pic: require("../assets/svg/flags/4x3/xk.svg").default,
+    name: "Kosovo",
   },
   {
     code: "kw",
-    pic: require('../assets/svg/flags/4x3/kw.svg').default,
-    name: "Kuwait"
+    pic: require("../assets/svg/flags/4x3/kw.svg").default,
+    name: "Kuwait",
   },
   {
     code: "kg",
-    pic: require('../assets/svg/flags/4x3/kg.svg').default,
-    name: "Kyrgyzstan"
+    pic: require("../assets/svg/flags/4x3/kg.svg").default,
+    name: "Kyrgyzstan",
   },
   {
     code: "la",
-    pic: require('../assets/svg/flags/4x3/la.svg').default,
-    name: "Laos"
+    pic: require("../assets/svg/flags/4x3/la.svg").default,
+    name: "Laos",
   },
   {
     code: "lv",
-    pic: require('../assets/svg/flags/4x3/lv.svg').default,
-    name: "Latvia"
+    pic: require("../assets/svg/flags/4x3/lv.svg").default,
+    name: "Latvia",
   },
   {
     code: "lb",
-    pic: require('../assets/svg/flags/4x3/lb.svg').default,
-    name: "Lebanon"
+    pic: require("../assets/svg/flags/4x3/lb.svg").default,
+    name: "Lebanon",
   },
   {
     code: "ls",
-    pic: require('../assets/svg/flags/4x3/ls.svg').default,
-    name: "Lesotho"
+    pic: require("../assets/svg/flags/4x3/ls.svg").default,
+    name: "Lesotho",
   },
   {
     code: "lr",
-    pic: require('../assets/svg/flags/4x3/lr.svg').default,
-    name: "Liberia"
+    pic: require("../assets/svg/flags/4x3/lr.svg").default,
+    name: "Liberia",
   },
   {
     code: "ly",
-    pic: require('../assets/svg/flags/4x3/ly.svg').default,
-    name: "Libya"
+    pic: require("../assets/svg/flags/4x3/ly.svg").default,
+    name: "Libya",
   },
   {
     code: "li",
-    pic: require('../assets/svg/flags/4x3/li.svg').default,
-    name: "Liechtenstein"
+    pic: require("../assets/svg/flags/4x3/li.svg").default,
+    name: "Liechtenstein",
   },
   {
     code: "lt",
-    pic: require('../assets/svg/flags/4x3/lt.svg').default,
-    name: "Lithuania"
+    pic: require("../assets/svg/flags/4x3/lt.svg").default,
+    name: "Lithuania",
   },
   {
     code: "lu",
-    pic: require('../assets/svg/flags/4x3/lu.svg').default,
-    name: "Luxembourg"
+    pic: require("../assets/svg/flags/4x3/lu.svg").default,
+    name: "Luxembourg",
   },
   {
     code: "mo",
-    pic: require('../assets/svg/flags/4x3/mo.svg').default,
-    name: "Macau"
+    pic: require("../assets/svg/flags/4x3/mo.svg").default,
+    name: "Macau",
   },
   {
     code: "mg",
-    pic: require('../assets/svg/flags/4x3/mg.svg').default,
-    name: "Madagascar"
+    pic: require("../assets/svg/flags/4x3/mg.svg").default,
+    name: "Madagascar",
   },
   {
     code: "mw",
-    pic: require('../assets/svg/flags/4x3/mw.svg').default,
-    name: "Malawi"
+    pic: require("../assets/svg/flags/4x3/mw.svg").default,
+    name: "Malawi",
   },
   {
     code: "my",
-    pic: require('../assets/svg/flags/4x3/my.svg').default,
-    name: "Malaysia"
+    pic: require("../assets/svg/flags/4x3/my.svg").default,
+    name: "Malaysia",
   },
   {
     code: "mv",
-    pic: require('../assets/svg/flags/4x3/mv.svg').default,
-    name: "Maldives"
+    pic: require("../assets/svg/flags/4x3/mv.svg").default,
+    name: "Maldives",
   },
   {
     code: "ml",
-    pic: require('../assets/svg/flags/4x3/ml.svg').default,
-    name: "Mali"
+    pic: require("../assets/svg/flags/4x3/ml.svg").default,
+    name: "Mali",
   },
   {
     code: "mt",
-    pic: require('../assets/svg/flags/4x3/mt.svg').default,
-    name: "Malta"
+    pic: require("../assets/svg/flags/4x3/mt.svg").default,
+    name: "Malta",
   },
   {
     code: "mh",
-    pic: require('../assets/svg/flags/4x3/mh.svg').default,
-    name: "Marshall Islands"
+    pic: require("../assets/svg/flags/4x3/mh.svg").default,
+    name: "Marshall Islands",
   },
   {
     code: "mq",
-    pic: require('../assets/svg/flags/4x3/mq.svg').default,
-    name: "Martinique"
+    pic: require("../assets/svg/flags/4x3/mq.svg").default,
+    name: "Martinique",
   },
   {
     code: "mr",
-    pic: require('../assets/svg/flags/4x3/mr.svg').default,
-    name: "Mauritania"
+    pic: require("../assets/svg/flags/4x3/mr.svg").default,
+    name: "Mauritania",
   },
   {
     code: "mu",
-    pic: require('../assets/svg/flags/4x3/mu.svg').default,
-    name: "Mauritius"
+    pic: require("../assets/svg/flags/4x3/mu.svg").default,
+    name: "Mauritius",
   },
   {
     code: "yt",
-    pic: require('../assets/svg/flags/4x3/yt.svg').default,
-    name: "Mayotte"
+    pic: require("../assets/svg/flags/4x3/yt.svg").default,
+    name: "Mayotte",
   },
   {
     code: "mx",
-    pic: require('../assets/svg/flags/4x3/mx.svg').default,
-    name: "Mexico"
+    pic: require("../assets/svg/flags/4x3/mx.svg").default,
+    name: "Mexico",
   },
   {
     code: "md",
-    pic: require('../assets/svg/flags/4x3/md.svg').default,
-    name: "Moldova"
+    pic: require("../assets/svg/flags/4x3/md.svg").default,
+    name: "Moldova",
   },
   {
     code: "mc",
-    pic: require('../assets/svg/flags/4x3/mc.svg').default,
-    name: "Monaco"
+    pic: require("../assets/svg/flags/4x3/mc.svg").default,
+    name: "Monaco",
   },
   {
     code: "mn",
-    pic: require('../assets/svg/flags/4x3/mn.svg').default,
-    name: "Mongolia"
+    pic: require("../assets/svg/flags/4x3/mn.svg").default,
+    name: "Mongolia",
   },
   {
     code: "me",
-    pic: require('../assets/svg/flags/4x3/me.svg').default,
-    name: "Montenegro"
+    pic: require("../assets/svg/flags/4x3/me.svg").default,
+    name: "Montenegro",
   },
   {
     code: "ms",
-    pic: require('../assets/svg/flags/4x3/ms.svg').default,
-    name: "Montserrat"
+    pic: require("../assets/svg/flags/4x3/ms.svg").default,
+    name: "Montserrat",
   },
   {
     code: "ma",
-    pic: require('../assets/svg/flags/4x3/ma.svg').default,
-    name: "Morocco"
+    pic: require("../assets/svg/flags/4x3/ma.svg").default,
+    name: "Morocco",
   },
   {
     code: "mz",
-    pic: require('../assets/svg/flags/4x3/mz.svg').default,
-    name: "Mozambique"
+    pic: require("../assets/svg/flags/4x3/mz.svg").default,
+    name: "Mozambique",
   },
   {
     code: "mm",
-    pic: require('../assets/svg/flags/4x3/mm.svg').default,
-    name: "Myanmar"
+    pic: require("../assets/svg/flags/4x3/mm.svg").default,
+    name: "Myanmar",
   },
   {
     code: "na",
-    pic: require('../assets/svg/flags/4x3/na.svg').default,
-    name: "Namibia"
+    pic: require("../assets/svg/flags/4x3/na.svg").default,
+    name: "Namibia",
   },
   {
     code: "nr",
-    pic: require('../assets/svg/flags/4x3/nr.svg').default,
-    name: "Nauru"
+    pic: require("../assets/svg/flags/4x3/nr.svg").default,
+    name: "Nauru",
   },
   {
     code: "np",
-    pic: require('../assets/svg/flags/4x3/np.svg').default,
-    name: "Nepal"
+    pic: require("../assets/svg/flags/4x3/np.svg").default,
+    name: "Nepal",
   },
   {
     code: "nl",
-    pic: require('../assets/svg/flags/4x3/nl.svg').default,
-    name: "Netherlands"
+    pic: require("../assets/svg/flags/4x3/nl.svg").default,
+    name: "Netherlands",
   },
   {
     code: "nc",
-    pic: require('../assets/svg/flags/4x3/nc.svg').default,
-    name: "New Caledonia"
+    pic: require("../assets/svg/flags/4x3/nc.svg").default,
+    name: "New Caledonia",
   },
   {
     code: "nz",
-    pic: require('../assets/svg/flags/4x3/nz.svg').default,
-    name: "New Zealand"
+    pic: require("../assets/svg/flags/4x3/nz.svg").default,
+    name: "New Zealand",
   },
   {
     code: "ni",
-    pic: require('../assets/svg/flags/4x3/ni.svg').default,
-    name: "Nicaragua"
+    pic: require("../assets/svg/flags/4x3/ni.svg").default,
+    name: "Nicaragua",
   },
   {
     code: "ne",
-    pic: require('../assets/svg/flags/4x3/ne.svg').default,
-    name: "Niger"
+    pic: require("../assets/svg/flags/4x3/ne.svg").default,
+    name: "Niger",
   },
   {
     code: "ng",
-    pic: require('../assets/svg/flags/4x3/ng.svg').default,
-    name: "Nigeria"
+    pic: require("../assets/svg/flags/4x3/ng.svg").default,
+    name: "Nigeria",
   },
   {
     code: "nu",
-    pic: require('../assets/svg/flags/4x3/nu.svg').default,
-    name: "Niue"
+    pic: require("../assets/svg/flags/4x3/nu.svg").default,
+    name: "Niue",
   },
   {
     code: "nf",
-    pic: require('../assets/svg/flags/4x3/nf.svg').default,
-    name: "Norfolk Island"
+    pic: require("../assets/svg/flags/4x3/nf.svg").default,
+    name: "Norfolk Island",
   },
   {
     code: "kp",
-    pic: require('../assets/svg/flags/4x3/kp.svg').default,
-    name: "North Korea"
+    pic: require("../assets/svg/flags/4x3/kp.svg").default,
+    name: "North Korea",
   },
   {
     code: "mk",
-    pic: require('../assets/svg/flags/4x3/mk.svg').default,
-    name: "North Macedonia"
+    pic: require("../assets/svg/flags/4x3/mk.svg").default,
+    name: "North Macedonia",
   },
   {
     code: "gb-nir",
-    pic: require('../assets/svg/flags/4x3/gb-nir.svg').default,
-    name: "Northern Ireland"
+    pic: require("../assets/svg/flags/4x3/gb-nir.svg").default,
+    name: "Northern Ireland",
   },
   {
     code: "mp",
-    pic: require('../assets/svg/flags/4x3/mp.svg').default,
-    name: "Northern Mariana Islands"
+    pic: require("../assets/svg/flags/4x3/mp.svg").default,
+    name: "Northern Mariana Islands",
   },
   {
     code: "no",
-    pic: require('../assets/svg/flags/4x3/no.svg').default,
-    name: "Norway"
+    pic: require("../assets/svg/flags/4x3/no.svg").default,
+    name: "Norway",
   },
   {
     code: "om",
-    pic: require('../assets/svg/flags/4x3/om.svg').default,
-    name: "Oman"
+    pic: require("../assets/svg/flags/4x3/om.svg").default,
+    name: "Oman",
   },
   {
     code: "pk",
-    pic: require('../assets/svg/flags/4x3/pk.svg').default,
-    name: "Pakistan"
+    pic: require("../assets/svg/flags/4x3/pk.svg").default,
+    name: "Pakistan",
   },
   {
     code: "pw",
-    pic: require('../assets/svg/flags/4x3/pw.svg').default,
-    name: "Palau"
+    pic: require("../assets/svg/flags/4x3/pw.svg").default,
+    name: "Palau",
   },
   {
     code: "pa",
-    pic: require('../assets/svg/flags/4x3/pa.svg').default,
-    name: "Panama"
+    pic: require("../assets/svg/flags/4x3/pa.svg").default,
+    name: "Panama",
   },
   {
     code: "pg",
-    pic: require('../assets/svg/flags/4x3/pg.svg').default,
-    name: "Papua New Guinea"
+    pic: require("../assets/svg/flags/4x3/pg.svg").default,
+    name: "Papua New Guinea",
   },
   {
     code: "py",
-    pic: require('../assets/svg/flags/4x3/py.svg').default,
-    name: "Paraguay"
+    pic: require("../assets/svg/flags/4x3/py.svg").default,
+    name: "Paraguay",
   },
   {
     code: "pe",
-    pic: require('../assets/svg/flags/4x3/pe.svg').default,
-    name: "Peru"
+    pic: require("../assets/svg/flags/4x3/pe.svg").default,
+    name: "Peru",
   },
   {
     code: "ph",
-    pic: require('../assets/svg/flags/4x3/ph.svg').default,
-    name: "Philippines"
+    pic: require("../assets/svg/flags/4x3/ph.svg").default,
+    name: "Philippines",
   },
   {
     code: "pn",
-    pic: require('../assets/svg/flags/4x3/pn.svg').default,
-    name: "Pitcairn"
+    pic: require("../assets/svg/flags/4x3/pn.svg").default,
+    name: "Pitcairn",
   },
   {
     code: "pl",
-    pic: require('../assets/svg/flags/4x3/pl.svg').default,
-    name: "Poland"
+    pic: require("../assets/svg/flags/4x3/pl.svg").default,
+    name: "Poland",
   },
   {
     code: "pt",
-    pic: require('../assets/svg/flags/4x3/pt.svg').default,
-    name: "Portugal"
+    pic: require("../assets/svg/flags/4x3/pt.svg").default,
+    name: "Portugal",
   },
   {
     code: "pr",
-    pic: require('../assets/svg/flags/4x3/pr.svg').default,
-    name: "Puerto Rico"
+    pic: require("../assets/svg/flags/4x3/pr.svg").default,
+    name: "Puerto Rico",
   },
   {
     code: "qa",
-    pic: require('../assets/svg/flags/4x3/qa.svg').default,
-    name: "Qatar"
+    pic: require("../assets/svg/flags/4x3/qa.svg").default,
+    name: "Qatar",
   },
   {
     code: "cg",
-    pic: require('../assets/svg/flags/4x3/cg.svg').default,
-    name: "Republic of the Congo"
+    pic: require("../assets/svg/flags/4x3/cg.svg").default,
+    name: "Republic of the Congo",
   },
   {
     code: "ro",
-    pic: require('../assets/svg/flags/4x3/ro.svg').default,
-    name: "Romania"
+    pic: require("../assets/svg/flags/4x3/ro.svg").default,
+    name: "Romania",
   },
   {
     code: "ru",
-    pic: require('../assets/svg/flags/4x3/ru.svg').default,
-    name: "Russia"
+    pic: require("../assets/svg/flags/4x3/ru.svg").default,
+    name: "Russia",
   },
   {
     code: "rw",
-    pic: require('../assets/svg/flags/4x3/rw.svg').default,
-    name: "Rwanda"
+    pic: require("../assets/svg/flags/4x3/rw.svg").default,
+    name: "Rwanda",
   },
   {
     code: "re",
-    pic: require('../assets/svg/flags/4x3/re.svg').default,
-    name: "Réunion"
+    pic: require("../assets/svg/flags/4x3/re.svg").default,
+    name: "Réunion",
   },
   {
     code: "bl",
-    pic: require('../assets/svg/flags/4x3/bl.svg').default,
-    name: "Saint Barthélemy"
+    pic: require("../assets/svg/flags/4x3/bl.svg").default,
+    name: "Saint Barthélemy",
   },
   {
     code: "sh",
-    pic: require('../assets/svg/flags/4x3/sh.svg').default,
-    name: "Saint Helena, Ascension and Tristan da Cunha"
+    pic: require("../assets/svg/flags/4x3/sh.svg").default,
+    name: "Saint Helena, Ascension and Tristan da Cunha",
   },
   {
     code: "kn",
-    pic: require('../assets/svg/flags/4x3/kn.svg').default,
-    name: "Saint Kitts and Nevis"
+    pic: require("../assets/svg/flags/4x3/kn.svg").default,
+    name: "Saint Kitts and Nevis",
   },
   {
     code: "lc",
-    pic: require('../assets/svg/flags/4x3/lc.svg').default,
-    name: "Saint Lucia"
+    pic: require("../assets/svg/flags/4x3/lc.svg").default,
+    name: "Saint Lucia",
   },
   {
     code: "mf",
-    pic: require('../assets/svg/flags/4x3/mf.svg').default,
-    name: "Saint Martin"
+    pic: require("../assets/svg/flags/4x3/mf.svg").default,
+    name: "Saint Martin",
   },
   {
     code: "pm",
-    pic: require('../assets/svg/flags/4x3/pm.svg').default,
-    name: "Saint Pierre and Miquelon"
+    pic: require("../assets/svg/flags/4x3/pm.svg").default,
+    name: "Saint Pierre and Miquelon",
   },
   {
     code: "vc",
-    pic: require('../assets/svg/flags/4x3/vc.svg').default,
-    name: "Saint Vincent and the Grenadines"
+    pic: require("../assets/svg/flags/4x3/vc.svg").default,
+    name: "Saint Vincent and the Grenadines",
   },
   {
     code: "ws",
-    pic: require('../assets/svg/flags/4x3/ws.svg').default,
-    name: "Samoa"
+    pic: require("../assets/svg/flags/4x3/ws.svg").default,
+    name: "Samoa",
   },
   {
     code: "sm",
-    pic: require('../assets/svg/flags/4x3/sm.svg').default,
-    name: "San Marino"
+    pic: require("../assets/svg/flags/4x3/sm.svg").default,
+    name: "San Marino",
   },
   {
     code: "st",
-    pic: require('../assets/svg/flags/4x3/st.svg').default,
-    name: "Sao Tome and Principe"
+    pic: require("../assets/svg/flags/4x3/st.svg").default,
+    name: "Sao Tome and Principe",
   },
   {
     code: "sa",
-    pic: require('../assets/svg/flags/4x3/sa.svg').default,
-    name: "Saudi Arabia"
+    pic: require("../assets/svg/flags/4x3/sa.svg").default,
+    name: "Saudi Arabia",
   },
   {
     code: "gb-sct",
-    pic: require('../assets/svg/flags/4x3/gb-sct.svg').default,
-    name: "Scotland"
+    pic: require("../assets/svg/flags/4x3/gb-sct.svg").default,
+    name: "Scotland",
   },
   {
     code: "sn",
-    pic: require('../assets/svg/flags/4x3/sn.svg').default,
-    name: "Senegal"
+    pic: require("../assets/svg/flags/4x3/sn.svg").default,
+    name: "Senegal",
   },
   {
     code: "rs",
-    pic: require('../assets/svg/flags/4x3/rs.svg').default,
-    name: "Serbia"
+    pic: require("../assets/svg/flags/4x3/rs.svg").default,
+    name: "Serbia",
   },
   {
     code: "sc",
-    pic: require('../assets/svg/flags/4x3/sc.svg').default,
-    name: "Seychelles"
+    pic: require("../assets/svg/flags/4x3/sc.svg").default,
+    name: "Seychelles",
   },
   {
     code: "sl",
-    pic: require('../assets/svg/flags/4x3/sl.svg').default,
-    name: "Sierra Leone"
+    pic: require("../assets/svg/flags/4x3/sl.svg").default,
+    name: "Sierra Leone",
   },
   {
     code: "sg",
-    pic: require('../assets/svg/flags/4x3/sg.svg').default,
-    name: "Singapore"
+    pic: require("../assets/svg/flags/4x3/sg.svg").default,
+    name: "Singapore",
   },
   {
     code: "sx",
-    pic: require('../assets/svg/flags/4x3/sx.svg').default,
-    name: "Sint Maarten"
+    pic: require("../assets/svg/flags/4x3/sx.svg").default,
+    name: "Sint Maarten",
   },
   {
     code: "sk",
-    pic: require('../assets/svg/flags/4x3/sk.svg').default,
-    name: "Slovakia"
+    pic: require("../assets/svg/flags/4x3/sk.svg").default,
+    name: "Slovakia",
   },
   {
     code: "si",
-    pic: require('../assets/svg/flags/4x3/si.svg').default,
-    name: "Slovenia"
+    pic: require("../assets/svg/flags/4x3/si.svg").default,
+    name: "Slovenia",
   },
   {
     code: "sb",
-    pic: require('../assets/svg/flags/4x3/sb.svg').default,
-    name: "Solomon Islands"
+    pic: require("../assets/svg/flags/4x3/sb.svg").default,
+    name: "Solomon Islands",
   },
   {
     code: "so",
-    pic: require('../assets/svg/flags/4x3/so.svg').default,
-    name: "Somalia"
+    pic: require("../assets/svg/flags/4x3/so.svg").default,
+    name: "Somalia",
   },
   {
     code: "za",
-    pic: require('../assets/svg/flags/4x3/za.svg').default,
-    name: "South Africa"
+    pic: require("../assets/svg/flags/4x3/za.svg").default,
+    name: "South Africa",
   },
   {
     code: "gs",
-    pic: require('../assets/svg/flags/4x3/gs.svg').default,
-    name: "South Georgia and the South Sandwich Islands"
+    pic: require("../assets/svg/flags/4x3/gs.svg").default,
+    name: "South Georgia and the South Sandwich Islands",
   },
   {
     code: "kr",
-    pic: require('../assets/svg/flags/4x3/kr.svg').default,
-    name: "South Korea"
+    pic: require("../assets/svg/flags/4x3/kr.svg").default,
+    name: "South Korea",
   },
   {
     code: "ss",
-    pic: require('../assets/svg/flags/4x3/ss.svg').default,
-    name: "South Sudan"
+    pic: require("../assets/svg/flags/4x3/ss.svg").default,
+    name: "South Sudan",
   },
   {
     code: "es",
-    pic: require('../assets/svg/flags/4x3/es.svg').default,
-    name: "Spain"
+    pic: require("../assets/svg/flags/4x3/es.svg").default,
+    name: "Spain",
   },
   {
     code: "lk",
-    pic: require('../assets/svg/flags/4x3/lk.svg').default,
-    name: "Sri Lanka"
+    pic: require("../assets/svg/flags/4x3/lk.svg").default,
+    name: "Sri Lanka",
   },
   {
     code: "ps",
-    pic: require('../assets/svg/flags/4x3/ps.svg').default,
-    name: "State of Palestine"
+    pic: require("../assets/svg/flags/4x3/ps.svg").default,
+    name: "State of Palestine",
   },
   {
     code: "sd",
-    pic: require('../assets/svg/flags/4x3/sd.svg').default,
-    name: "Sudan"
+    pic: require("../assets/svg/flags/4x3/sd.svg").default,
+    name: "Sudan",
   },
   {
     code: "sr",
-    pic: require('../assets/svg/flags/4x3/sr.svg').default,
-    name: "Suriname"
+    pic: require("../assets/svg/flags/4x3/sr.svg").default,
+    name: "Suriname",
   },
   {
     code: "sj",
-    pic: require('../assets/svg/flags/4x3/sj.svg').default,
-    name: "Svalbard and Jan Mayen"
+    pic: require("../assets/svg/flags/4x3/sj.svg").default,
+    name: "Svalbard and Jan Mayen",
   },
   {
     code: "se",
-    pic: require('../assets/svg/flags/4x3/se.svg').default,
-    name: "Sweden"
+    pic: require("../assets/svg/flags/4x3/se.svg").default,
+    name: "Sweden",
   },
   {
     code: "ch",
-    pic: require('../assets/svg/flags/4x3/ch.svg').default,
-    name: "Switzerland"
+    pic: require("../assets/svg/flags/4x3/ch.svg").default,
+    name: "Switzerland",
   },
   {
     code: "sy",
-    pic: require('../assets/svg/flags/4x3/sy.svg').default,
-    name: "Syria"
+    pic: require("../assets/svg/flags/4x3/sy.svg").default,
+    name: "Syria",
   },
   {
     code: "tw",
-    pic: require('../assets/svg/flags/4x3/tw.svg').default,
-    name: "Taiwan"
+    pic: require("../assets/svg/flags/4x3/tw.svg").default,
+    name: "Taiwan",
   },
   {
     code: "tj",
-    pic: require('../assets/svg/flags/4x3/tj.svg').default,
-    name: "Tajikistan"
+    pic: require("../assets/svg/flags/4x3/tj.svg").default,
+    name: "Tajikistan",
   },
   {
     code: "tz",
-    pic: require('../assets/svg/flags/4x3/tz.svg').default,
-    name: "Tanzania"
+    pic: require("../assets/svg/flags/4x3/tz.svg").default,
+    name: "Tanzania",
   },
   {
     code: "th",
-    pic: require('../assets/svg/flags/4x3/th.svg').default,
-    name: "Thailand"
+    pic: require("../assets/svg/flags/4x3/th.svg").default,
+    name: "Thailand",
   },
   {
     code: "tl",
-    pic: require('../assets/svg/flags/4x3/tl.svg').default,
-    name: "Timor-Leste"
+    pic: require("../assets/svg/flags/4x3/tl.svg").default,
+    name: "Timor-Leste",
   },
   {
     code: "tg",
-    pic: require('../assets/svg/flags/4x3/tg.svg').default,
-    name: "Togo"
+    pic: require("../assets/svg/flags/4x3/tg.svg").default,
+    name: "Togo",
   },
   {
     code: "tk",
-    pic: require('../assets/svg/flags/4x3/tk.svg').default,
-    name: "Tokelau"
+    pic: require("../assets/svg/flags/4x3/tk.svg").default,
+    name: "Tokelau",
   },
   {
     code: "to",
-    pic: require('../assets/svg/flags/4x3/to.svg').default,
-    name: "Tonga"
+    pic: require("../assets/svg/flags/4x3/to.svg").default,
+    name: "Tonga",
   },
   {
     code: "tt",
-    pic: require('../assets/svg/flags/4x3/tt.svg').default,
-    name: "Trinidad and Tobago"
+    pic: require("../assets/svg/flags/4x3/tt.svg").default,
+    name: "Trinidad and Tobago",
   },
   {
     code: "ta",
-    pic: require('../assets/svg/flags/4x3/ta.svg').default,
-    name: "Tristan da Cunha"
+    pic: require("../assets/svg/flags/4x3/ta.svg").default,
+    name: "Tristan da Cunha",
   },
   {
     code: "tn",
-    pic: require('../assets/svg/flags/4x3/tn.svg').default,
-    name: "Tunisia"
+    pic: require("../assets/svg/flags/4x3/tn.svg").default,
+    name: "Tunisia",
   },
   {
     code: "tr",
-    pic: require('../assets/svg/flags/4x3/tr.svg').default,
-    name: "Turkey"
+    pic: require("../assets/svg/flags/4x3/tr.svg").default,
+    name: "Turkey",
   },
   {
     code: "tm",
-    pic: require('../assets/svg/flags/4x3/tm.svg').default,
-    name: "Turkmenistan"
+    pic: require("../assets/svg/flags/4x3/tm.svg").default,
+    name: "Turkmenistan",
   },
   {
     code: "tc",
-    pic: require('../assets/svg/flags/4x3/tc.svg').default,
-    name: "Turks and Caicos Islands"
+    pic: require("../assets/svg/flags/4x3/tc.svg").default,
+    name: "Turks and Caicos Islands",
   },
   {
     code: "tv",
-    pic: require('../assets/svg/flags/4x3/tv.svg').default,
-    name: "Tuvalu"
+    pic: require("../assets/svg/flags/4x3/tv.svg").default,
+    name: "Tuvalu",
   },
   {
     code: "ug",
-    pic: require('../assets/svg/flags/4x3/ug.svg').default,
-    name: "Uganda"
+    pic: require("../assets/svg/flags/4x3/ug.svg").default,
+    name: "Uganda",
   },
   {
     code: "ae",
-    pic: require('../assets/svg/flags/4x3/ae.svg').default,
-    name: "United Arab Emirates"
+    pic: require("../assets/svg/flags/4x3/ae.svg").default,
+    name: "United Arab Emirates",
   },
   {
     code: "gb",
-    pic: require('../assets/svg/flags/4x3/gb.svg').default,
-    name: "United Kingdom"
+    pic: require("../assets/svg/flags/4x3/gb.svg").default,
+    name: "United Kingdom",
   },
   {
     code: "un",
-    pic: require('../assets/svg/flags/4x3/un.svg').default,
-    name: "United Nations"
+    pic: require("../assets/svg/flags/4x3/un.svg").default,
+    name: "United Nations",
   },
   {
     code: "um",
-    pic: require('../assets/svg/flags/4x3/um.svg').default,
-    name: "United States Minor Outlying Islands"
+    pic: require("../assets/svg/flags/4x3/um.svg").default,
+    name: "United States Minor Outlying Islands",
   },
   {
     code: "uy",
-    pic: require('../assets/svg/flags/4x3/uy.svg').default,
-    name: "Uruguay"
+    pic: require("../assets/svg/flags/4x3/uy.svg").default,
+    name: "Uruguay",
   },
   {
     code: "uz",
-    pic: require('../assets/svg/flags/4x3/uz.svg').default,
-    name: "Uzbekistan"
+    pic: require("../assets/svg/flags/4x3/uz.svg").default,
+    name: "Uzbekistan",
   },
   {
     code: "vu",
-    pic: require('../assets/svg/flags/4x3/vu.svg').default,
-    name: "Vanuatu"
+    pic: require("../assets/svg/flags/4x3/vu.svg").default,
+    name: "Vanuatu",
   },
   {
     code: "ve",
-    pic: require('../assets/svg/flags/4x3/ve.svg').default,
-    name: "Venezuela"
+    pic: require("../assets/svg/flags/4x3/ve.svg").default,
+    name: "Venezuela",
   },
   {
     code: "vn",
-    pic: require('../assets/svg/flags/4x3/vn.svg').default,
-    name: "Vietnam"
+    pic: require("../assets/svg/flags/4x3/vn.svg").default,
+    name: "Vietnam",
   },
   {
     code: "vg",
-    pic: require('../assets/svg/flags/4x3/vg.svg').default,
-    name: "Virgin Islands (British)"
+    pic: require("../assets/svg/flags/4x3/vg.svg").default,
+    name: "Virgin Islands (British)",
   },
   {
     code: "vi",
-    pic: require('../assets/svg/flags/4x3/vi.svg').default,
-    name: "Virgin Islands (U.S.)"
+    pic: require("../assets/svg/flags/4x3/vi.svg").default,
+    name: "Virgin Islands (U.S.)",
   },
   {
     code: "gb-wls",
-    pic: require('../assets/svg/flags/4x3/gb-wls.svg').default,
-    name: "Wales"
+    pic: require("../assets/svg/flags/4x3/gb-wls.svg").default,
+    name: "Wales",
   },
   {
     code: "wf",
-    pic: require('../assets/svg/flags/4x3/wf.svg').default,
-    name: "Wallis and Futuna"
+    pic: require("../assets/svg/flags/4x3/wf.svg").default,
+    name: "Wallis and Futuna",
   },
   {
     code: "eh",
-    pic: require('../assets/svg/flags/4x3/eh.svg').default,
-    name: "Western Sahara"
+    pic: require("../assets/svg/flags/4x3/eh.svg").default,
+    name: "Western Sahara",
   },
   {
     code: "ye",
-    pic: require('../assets/svg/flags/4x3/ye.svg').default,
-    name: "Yemen"
+    pic: require("../assets/svg/flags/4x3/ye.svg").default,
+    name: "Yemen",
   },
   {
     code: "zm",
-    pic: require('../assets/svg/flags/4x3/zm.svg').default,
-    name: "Zambia"
+    pic: require("../assets/svg/flags/4x3/zm.svg").default,
+    name: "Zambia",
   },
   {
     code: "zw",
-    pic: require('../assets/svg/flags/4x3/zw.svg').default,
-    name: "Zimbabwe"
-  }
-]
-export default world
+    pic: require("../assets/svg/flags/4x3/zw.svg").default,
+    name: "Zimbabwe",
+  },
+];
+export default world;

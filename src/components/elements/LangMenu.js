@@ -80,30 +80,46 @@ const LangMenu = ({ setLanguage }) => {
         {languagesList && (
           <Dropdown.Menu className="dropdown-scroll">
             <div className="scroll-wrapper">
-              {languagesList.map((language) => {
-                const { id, name, code_a2 } = language;
-                const picURL = lang.find(
-                  (language) => language.code === code_a2
-                )?.pic;
-                return (
-                  <Dropdown.Item
-                    key={id}
-                    onClick={() => handleLanguageChange(code_a2)}
-                    className={short === code_a2 ? "active" : ""}
-                  >
-                    <img
-                      src={
-                        picURL ||
-                        "https://user-images.githubusercontent.com/641799/107672773-4d565e00-6c63-11eb-866d-f55c910c21c7.png"
-                      }
-                      width={18}
-                      alt={code_a2}
-                      className="pb-1 mx-1"
-                    />
-                    <small>{name}</small>
-                  </Dropdown.Item>
-                );
-              })}
+              {languagesList
+                .map((languageToFind) => {
+                  const language = lang.find(
+                    (language) => language.code === languageToFind.code_a2
+                  );
+                  return {
+                    ...languageToFind,
+                    pic: language.pic,
+                    menu: language.menu,
+                  };
+                })
+                .filter((language) => language)
+                .sort((lang1, lang2) => {
+                  if (lang1.menu === null && lang2.menu === null) return 0;
+                  if (lang1.menu === null) return 1;
+                  if (lang2.menu === null) return -1;
+                  return lang1.menu - lang2.menu;
+                })
+                .map((language) => {
+                  const { id, pic, name, menu, code_a2 } = language;
+                  return (
+                    <Dropdown.Item
+                      disabled={menu === null}
+                      key={id}
+                      onClick={() => handleLanguageChange(code_a2)}
+                      className={short === code_a2 ? "active" : ""}
+                    >
+                      <img
+                        src={
+                          pic ||
+                          "https://user-images.githubusercontent.com/641799/107672773-4d565e00-6c63-11eb-866d-f55c910c21c7.png"
+                        }
+                        width={18}
+                        alt={code_a2}
+                        className="pb-1 mx-1"
+                      />
+                      <small>{name}</small>
+                    </Dropdown.Item>
+                  );
+                })}
             </div>
           </Dropdown.Menu>
         )}
