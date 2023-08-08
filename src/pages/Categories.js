@@ -4,8 +4,6 @@ import axios from 'axios'
 
 const apiUrl = 'https://api-dev.buxonline.org/api/v1/category/list/'
 
-
-
 function Categories() {
 
   const [language, setLanguage] = useState(localStorage.getItem('language') || 'uk')
