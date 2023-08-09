@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import axios from "axios"
 
-import { HiChevronRight } from "react-icons/hi2"
-import cats from "../data/cats"
 import CustomPagination from "../components/Pagination/CustomPagination"
 
 function VacanciesList() {
@@ -69,13 +67,8 @@ function VacanciesList() {
   return (
     <>
       <div className="s-40"></div>
-      <h3 className="title-part mx-3">
-        <Link to="/categories" className="c-blue">
-          {cats[0].ru.page[1]} <HiChevronRight />{" "}
-        </Link>
-        {name}
-      </h3>
-      <div className="s-50"></div>
+      <h3 className="title-part mx-2">{name}</h3>
+      <div className="s-20"></div>
       <div className="row">
         {data.results.map((el) => (
           <div className="col-lg-4 px-4 my-4" key={el.id}>

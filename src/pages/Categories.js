@@ -40,23 +40,21 @@ function Categories() {
   return (
     <>
       <div className="s-70"></div>
-      <h3 className="title-part mx-3">Категорії</h3>
-      <div className="s-20"></div>
-      <div className="w-100">
-        {categories.map((el) => (
-          <Link
-            onClick={() => {
-              setSelectedCategoryName(el.role)
-              setSelectedCategoryName(el.role)
-              setLanguage(language)
-            }}
-            to={`/category/${el.id}/${el.role}/${language}`}
-            className={`button cat jcsb aic py-1 px-3 m-1 ${selectedCategoryName === el.role ? 'active' : ''}`}
-            key={el.id}
-          >
-            <span className="fz-14">{el.role}</span><span className="fz-14">{el.vacancies_count}</span>
-          </Link>
-        ))}
+        <div className="w-100 mx-4 px-2">
+          {categories.map((el) => (
+            <Link
+              onClick={() => {
+                setSelectedCategoryName(el.role)
+                setSelectedCategoryName(el.role)
+                setLanguage(language)
+              }}
+              to={`/category/${el.id}/${el.role}/${language}`}
+              className={`button cat jcsb aic py-1 px-3 m-1 ${selectedCategoryName === el.role ? 'active' : ''}`}
+              key={el.id}
+            >
+              <span className="fz-14">{el.role}</span><span className="fz-14">{el.vacancies_count}</span>
+            </Link>
+          ))}
       </div>
       <div className="s-100"></div>
       <div className="s-100"></div>
