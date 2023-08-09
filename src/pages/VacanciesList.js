@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import axios from "axios";
+import React, { useEffect, useState } from "react"
+import { Link, useParams } from "react-router-dom"
+import axios from "axios"
 
-import { HiChevronRight } from "react-icons/hi2";
-import cats from "../data/cats";
-import CustomPagination from "../components/Pagination/CustomPagination";
+import { HiChevronRight } from "react-icons/hi2"
+import cats from "../data/cats"
+import CustomPagination from "../components/Pagination/CustomPagination"
 
 function VacanciesList() {
-  const { id, name, language } = useParams();
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { id, name, language } = useParams()
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true)
 
-  const [currentPage, setCurrentPage] = useState(null);
-  const perPage = 10;
+  const [currentPage, setCurrentPage] = useState(null)
+  const perPage = 10
 
   useEffect(() => {
     if (currentPage) {
@@ -20,50 +20,50 @@ function VacanciesList() {
         try {
           const response = await axios.get(
             `https://api-dev.buxonline.org/api/v1/vacancy/list/?lang=${language}&category=${id}&page=${currentPage}`
-          );
-          setData(response.data);
-          setLoading(false);
+          )
+          setData(response.data)
+          setLoading(false)
         } catch (error) {
-          console.error("Ошибка при запросе:", error);
-          setLoading(false);
+          console.error("Ошибка при запросе:", error)
+          setLoading(false)
         }
-      };
-      localStorage.setItem("language", language);
-      fetchData();
+      }
+      localStorage.setItem("language", language)
+      fetchData()
     }
-  }, [id, language, currentPage]);
+  }, [id, language, currentPage])
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
           `https://api-dev.buxonline.org/api/v1/vacancy/list/?lang=${language}&category=${id}`
-        );
-        const totalVacancies = response.data.count;
+        )
+        const totalVacancies = response.data.count
 
-        const queryString = window.location.search;
-        const queryParams = new URLSearchParams(queryString);
-        const page = queryParams.get("page");
+        const queryString = window.location.search
+        const queryParams = new URLSearchParams(queryString)
+        const page = queryParams.get("page")
 
-        const totalPages = Math.ceil(totalVacancies / perPage);
+        const totalPages = Math.ceil(totalVacancies / perPage)
         const currentPage = !Number.isInteger(page)
           ? 1
           : page <= 0
           ? 1
           : page > totalPages
           ? totalPages
-          : page;
+          : page
 
-        setCurrentPage(currentPage);
+        setCurrentPage(currentPage)
       } catch (error) {
-        console.log(error);
+        console.log(error)
       }
-    };
-    fetchData();
-  }, [language, id]);
+    }
+    fetchData()
+  }, [language, id])
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>
   }
 
   return (
@@ -103,7 +103,7 @@ function VacanciesList() {
       </div>
       <div className="s-100"></div>
     </>
-  );
+  )
 }
 
-export { VacanciesList };
+export { VacanciesList }
