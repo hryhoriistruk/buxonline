@@ -58,7 +58,7 @@ function Canvas({children}) {
             <Link to={`/${language}`} className="mx-4 c-dark upp title-menu-link">
               {currentLanguageData.page_meta.menu_for_business}
             </Link>
-            <a href={'https://job.buxonline.org/'} className="button nav-button m-hide" target="blank">
+            <a href='https://job.buxonline.org/' className="button nav-button m-hide" target="blank">
               {currentLanguageData.page_meta.menu_send_cv}
             </a>
           </Navbar.Collapse>
@@ -76,7 +76,7 @@ function Canvas({children}) {
           {currentLanguageData && (
             <div className="row">
               <div className="col-lg-4">
-                <Link to='/' className='flex'>
+                <Link to={`/${language}`} className='flex'>
                   <img src={Logo} width="36" height="36" alt="Buxonline" className='logo-img' />
                   <span className="px-1"></span>
                   <p className='pl-2 mt-1 title-logo'>Buxonline</p>
@@ -86,15 +86,15 @@ function Canvas({children}) {
               </div>
               <div className="col-lg-4">
                 <div className="s-10"></div>
-                <Link to={currentLanguageData.page_meta.footer_bot} className='title-parts mini c-blue'>{currentLanguageData.page_meta.footer_bot}</Link>
+                <Link to='https://t.me/buxonline' className='title-parts mini c-blue'>{currentLanguageData.page_meta.footer_bot}</Link>
                 <div className="s-10"></div>
-                <a href={currentLanguageData.page_meta.menu_send_cv} className='title-parts mini c-blue pt-3' target='blank'>{currentLanguageData.page_meta.menu_send_cv}</a>
+                <a href='https://job.buxonline.org/' className='title-parts mini c-blue pt-3' target='blank'>{currentLanguageData.page_meta.menu_send_cv}</a>
               </div>
               <div className="col-lg-4">
                 <div className="s-10"></div>
-                <Link to={currentLanguageData.page_meta.footer_privacy} className='title-parts mini c-blue'>{currentLanguageData.page_meta.footer_privacy}</Link>
+                <Link to='/privacy' className='title-parts mini c-blue'>{currentLanguageData.page_meta.footer_privacy}</Link>
                 <div className="s-10"></div>
-                <Link to={currentLanguageData.page_meta.footer_cookie} className='title-parts mini c-blue pt-3'>{currentLanguageData.page_meta.footer_cookie}</Link>
+                <Link to='/cookie' className='title-parts mini c-blue pt-3'>{currentLanguageData.page_meta.footer_cookie}</Link>
                 <div className="s-50"></div>
               </div>
             </div>
