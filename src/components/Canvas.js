@@ -68,7 +68,7 @@ function Canvas({children}) {
       </Navbar>
       </Container>
       <Container>
-        {children}
+      {children}
       </Container>
       <footer className='bg-light'>
         <Container>
