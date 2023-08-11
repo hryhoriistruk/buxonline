@@ -1,26 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import {useParams} from 'react-router-dom'
-import axios from 'axios'
+import React from 'react'
 
 import image from '../assets/svg/home/hero.svg'
 
-function Hero() {
+function Hero({ apiData }) {
 
-  const { language } = useParams()
-  const [content, setContent] = useState({})
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`https://api-dev.buxonline.org/api/v1/landing/${language}/`)
-        setContent(response.data)
-      } catch (error) {
-        console.error('Error fetching data:', error)
-      }
-    }
-
-    fetchData()
-  }, [language])
+  const content = apiData || {}
 
   return (
     <div className="row">

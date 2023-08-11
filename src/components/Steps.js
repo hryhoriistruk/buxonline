@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import {useParams} from 'react-router-dom'
-import axios from 'axios'
+import React from 'react'
 
 import p1 from '../assets/svg/steps/route_1.svg'
 import p2 from '../assets/svg/steps/route_2.svg'
@@ -9,24 +7,9 @@ import p5 from '../assets/svg/steps/route_5.svg'
 import p6 from '../assets/svg/steps/route_6.svg'
 import p8 from '../assets/svg/steps/route_8.svg'
 
-//import land from '../data/land'
+function Steps({ apiData }) {
 
-function Steps() {
-  const { language } = useParams()
-  const [content, setContent] = useState({})
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`https://api-dev.buxonline.org/api/v1/landing/${language}/`)
-        setContent(response.data)
-      } catch (error) {
-        console.error('Error fetching data:', error)
-      }
-    }
-
-    fetchData()
-  }, [language])
+  const content = apiData || {}
 
   return (
     <>
@@ -42,7 +25,7 @@ function Steps() {
                   <div className="s-80"></div>
                   <h4 className="title-part mini">
                     <span>{content.steps[0].title}</span>
-                    <em className='bg-blue c-white px-1'>{content.steps[0].time} {language === 'uk' ? 'дні' : content.steps[0].label}</em>
+                    <em className='bg-blue c-white px-1'>{content.steps[0].time} {content.steps[0].label}</em>
                   </h4>
                   <p className='w-70'>{content.steps[0].text}</p>
                   <div className="s-20"></div>
@@ -70,7 +53,7 @@ function Steps() {
                   <div className="s-100"></div>
                   <h4 className="title-part mini">
                     <span>{content.steps[1].title}</span>
-                    <em className='bg-blue c-white px-1'>{content.steps[1].time} {language === 'uk' ? 'дні' : content.steps[1].label}</em>
+                    <em className='bg-blue c-white px-1'>{content.steps[1].time} {content.steps[1].label}</em>
                   </h4>
                   <p className='w-70'>{content.steps[1].text}</p>
                 </div>
@@ -86,7 +69,7 @@ function Steps() {
                   <div className="s-80"></div>
                   <h4 className="title-part mini">
                     <span>{content.steps[2].title}</span>
-                    <em className='bg-blue c-white px-1'>{content.steps[2].time} {language === 'uk' ? 'дні' : content.steps[2].label}</em>
+                    <em className='bg-blue c-white px-1'>{content.steps[2].time} {content.steps[2].label}</em>
                   </h4>
                   <p className='w-70'>{content.steps[2].text}</p>
                   <div className="s-20"></div>
@@ -127,7 +110,7 @@ function Steps() {
                       <div className="s-20"></div>
                       <h4 className="title-part mini">
                         <span>{content.steps[4].title}</span>
-                        <em className='bg-blue c-white px-1'>{content.steps[4].time} {language === 'uk' ? 'дні' : content.steps[4].label}</em>
+                        <em className='bg-blue c-white px-1'>{content.steps[4].time} {content.steps[4].label}</em>
                       </h4>
                       <p className='w-70'>{content.steps[4].text}</p>
                       <div className="s-20"></div>

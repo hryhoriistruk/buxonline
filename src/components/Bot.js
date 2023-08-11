@@ -1,28 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import {useParams} from 'react-router-dom'
-import axios from 'axios'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 import bpic from '../assets/svg/home/bot.svg'
 
-function Bot() {
 
-  const { language } = useParams()
-  const [content, setContent] = useState({})
+function Bot({ apiData }) {
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`https://api-dev.buxonline.org/api/v1/landing/${language}/`)
-        setContent(response.data)
-      } catch (error) {
-        console.error('Error fetching data:', error)
-      }
-    }
-
-    fetchData()
-  }, [language])
-
+  const content = apiData || {}
   return (
     <>
       <h3 className="title-part w-50 ma">{content.bot_team}</h3>
