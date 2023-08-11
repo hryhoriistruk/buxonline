@@ -14,7 +14,6 @@ import {Form} from '../components/Form'
 function Home() {
 
   const { language } = useParams()
-  //const [content, setContent] = useState({})
   const [apiData, setApiData] = useState({})
 
   useEffect(() => {
