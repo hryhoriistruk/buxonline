@@ -1,15 +1,14 @@
-import React from 'react'
+import React from "react";
 
-import p1 from '../assets/svg/steps/route_1.svg'
-import p2 from '../assets/svg/steps/route_2.svg'
-import p3 from '../assets/svg/steps/route_3.svg'
-import p5 from '../assets/svg/steps/route_5.svg'
-import p6 from '../assets/svg/steps/route_6.svg'
-import p8 from '../assets/svg/steps/route_8.svg'
+import p1 from "../assets/svg/steps/route_1.svg";
+import p2 from "../assets/svg/steps/route_2.svg";
+import p3 from "../assets/svg/steps/route_3.svg";
+import p5 from "../assets/svg/steps/route_5.svg";
+import p6 from "../assets/svg/steps/route_6.svg";
+import p8 from "../assets/svg/steps/route_8.svg";
 
-function Steps({ apiData }) {
-
-  const content = apiData || {}
+function Steps({ apiData: content }) {
+  if (!content) return <></>;
 
   return (
     <>
@@ -25,9 +24,11 @@ function Steps({ apiData }) {
                   <div className="s-80"></div>
                   <h4 className="title-part mini">
                     <span>{content.steps[0].title}</span>
-                    <em className='bg-blue c-white px-1'>{content.steps[0].time} {content.steps[0].label}</em>
+                    <em className="bg-blue c-white px-1">
+                      {content.steps[0].time} {content.steps[0].label}
+                    </em>
                   </h4>
-                  <p className='w-70'>{content.steps[0].text}</p>
+                  <p className="w-70">{content.steps[0].text}</p>
                   <div className="s-20"></div>
                 </div>
               </div>
@@ -53,9 +54,11 @@ function Steps({ apiData }) {
                   <div className="s-100"></div>
                   <h4 className="title-part mini">
                     <span>{content.steps[1].title}</span>
-                    <em className='bg-blue c-white px-1'>{content.steps[1].time} {content.steps[1].label}</em>
+                    <em className="bg-blue c-white px-1">
+                      {content.steps[1].time} {content.steps[1].label}
+                    </em>
                   </h4>
-                  <p className='w-70'>{content.steps[1].text}</p>
+                  <p className="w-70">{content.steps[1].text}</p>
                 </div>
               </div>
             </div>
@@ -69,9 +72,11 @@ function Steps({ apiData }) {
                   <div className="s-80"></div>
                   <h4 className="title-part mini">
                     <span>{content.steps[2].title}</span>
-                    <em className='bg-blue c-white px-1'>{content.steps[2].time} {content.steps[2].label}</em>
+                    <em className="bg-blue c-white px-1">
+                      {content.steps[2].time} {content.steps[2].label}
+                    </em>
                   </h4>
-                  <p className='w-70'>{content.steps[2].text}</p>
+                  <p className="w-70">{content.steps[2].text}</p>
                   <div className="s-20"></div>
                 </div>
               </div>
@@ -91,17 +96,18 @@ function Steps({ apiData }) {
                   <div className="s-20"></div>
                   <h4 className="title-part mini">
                     <span>{content.steps[3].title}</span>
-                    <em className='bg-blue c-white px-1'>{content.steps[3].time} {content.steps[3].label}</em>
+                    <em className="bg-blue c-white px-1">
+                      {content.steps[3].time} {content.steps[3].label}
+                    </em>
                   </h4>
-                  <p className='w-70'>{content.steps[3].text}</p>
+                  <p className="w-70">{content.steps[3].text}</p>
                   <div className="s-40"></div>
                 </div>
               </div>
             </div>
           </div>
           <div className="row">
-            <div className="col-lg-5 m-hide">
-            </div>
+            <div className="col-lg-5 m-hide"></div>
             <div className="col-lg-7">
               <div className="row">
                 <div className="col-lg-7">
@@ -110,9 +116,11 @@ function Steps({ apiData }) {
                       <div className="s-20"></div>
                       <h4 className="title-part mini">
                         <span>{content.steps[4].title}</span>
-                        <em className='bg-blue c-white px-1'>{content.steps[4].time} {content.steps[4].label}</em>
+                        <em className="bg-blue c-white px-1">
+                          {content.steps[4].time} {content.steps[4].label}
+                        </em>
                       </h4>
-                      <p className='w-70'>{content.steps[4].text}</p>
+                      <p className="w-70">{content.steps[4].text}</p>
                       <div className="s-20"></div>
                     </div>
                   </div>
@@ -140,9 +148,11 @@ function Steps({ apiData }) {
                   <div className="s-60"></div>
                   <h4 className="title-part mini">
                     <span>{content.steps[5].title}</span>
-                    <em className='bg-blue c-white px-1'>{content.steps[5].time} {content.steps[5].label}</em>
+                    <em className="bg-blue c-white px-1">
+                      {content.steps[5].time} {content.steps[5].label}
+                    </em>
                   </h4>
-                  <p className='w-70'>{content.steps[5].text}</p>
+                  <p className="w-70">{content.steps[5].text}</p>
                   <div className="s-60"></div>
                 </div>
               </div>
@@ -160,9 +170,11 @@ function Steps({ apiData }) {
                       <div className="s-60"></div>
                       <h4 className="title-part mini">
                         <span>{content.steps[6].title}</span>
-                        <em className='bg-blue c-white px-1'>{content.steps[6].time} {content.steps[6].label}</em>
+                        <em className="bg-blue c-white px-1">
+                          {content.steps[6].time} {content.steps[6].label}
+                        </em>
                       </h4>
-                      <p className='w-70'>{content.steps[6].text}</p>
+                      <p className="w-70">{content.steps[6].text}</p>
                       <div className="s-20"></div>
                     </div>
                   </div>
@@ -180,9 +192,11 @@ function Steps({ apiData }) {
                       <div className="s-50"></div>
                       <h4 className="title-part mini">
                         <span>{content.steps[7].title}</span>
-                        <em className='bg-blue c-white px-1'>{content.steps[7].time} {content.steps[7].label}</em>
+                        <em className="bg-blue c-white px-1">
+                          {content.steps[7].time} {content.steps[7].label}
+                        </em>
                       </h4>
-                      <p className='w-70'>{content.steps[7].text}</p>
+                      <p className="w-70">{content.steps[7].text}</p>
                       <div className="s-20"></div>
                     </div>
                   </div>
@@ -200,14 +214,20 @@ function Steps({ apiData }) {
           <div className="row">
             <div className="col-lg-4"></div>
             <div className="col-lg-4 m-tc">
-              <a href='https://job.buxonline.org/' className='button' target='blank'>{content.btn_text}</a>
+              <a
+                href="https://job.buxonline.org/"
+                className="button"
+                target="blank"
+              >
+                {content.btn_text}
+              </a>
             </div>
             <div className="col-lg-4"></div>
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export {Steps}
+export { Steps };
