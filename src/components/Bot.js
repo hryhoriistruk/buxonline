@@ -3,26 +3,27 @@ import { Link } from 'react-router-dom'
 
 import bpic from '../assets/svg/home/bot.svg'
 
-import land from '../data/land'
 
-function Bot() {
+function Bot({ apiData }) {
+
+  const content = apiData || {}
   return (
     <>
-      <h3 className="title-part w-50 ma">{land[0].ru.bot[0]}</h3>
+      <h3 className="title-part w-50 ma">{content.bot_team}</h3>
       <div className="s-40"></div>
       <div className="row">
         <div className="col-lg-2 m-hide"></div>
         <div className="col-lg-4 m-tc">
           <div className="s-10"></div>
-          <h3 className="title-part mini">{land[0].ru.bot[1]}</h3>
-          <p>{land[0].ru.bot[2]}</p>
-          <h3 className="title-part mini">{land[0].ru.bot[3]}</h3>
-          <p>{land[0].ru.bot[4]}</p>
+          <h3 className="title-part mini">{content.bot_qa}</h3>
+          <p>{content.bot_chat}</p>
+          <h3 className="title-part mini">{content.bot_att}</h3>
+          <p>{content.bot_lng}</p>
           <div className="s-20"></div>
-          <Link to={land[0].ru.footer.bot[1]} className='button'>{land[0].ru.footer.bot[0]}</Link>
+          <Link to='https://t.me/buxonline' className='button'>{content.bot_team}</Link>
         </div>
         <div className="col-lg-6 m-tc py-4">
-          <img src={bpic} width={320} alt={land[0].ru.bot[0]} />
+          <img src={bpic} width={320} alt={content.bot_team} />
         </div>
       </div>
     </>

@@ -1,10 +1,11 @@
 import React from 'react'
 
-import land from '../data/land'
-
 import pic from '../assets/svg/home/resume.svg'
 
-function Form() {
+function Form({ apiData }) {
+
+  const content = apiData || {}
+
   return (
     <div id="resume">
       <div className="w-80 ma">
@@ -12,16 +13,16 @@ function Form() {
         <div className="row">
           <div className="col-lg-2 m-hide"></div>
           <div className="col-lg-4">
-            <h4 className="title-part">{land[0].ru.nav.button[0]}</h4>
+            <h4 className="title-part">{content.btn_text}</h4>
             <div className="s-20"></div>
-            <p>{land[0].ru.form.text}</p>
+            <p>{content.form}</p>
             <div className="s-20"></div>
-            <a href={land[0].ru.nav.button[1]} className='button w-70 ma' target='blank'>{land[0].ru.nav.button[0]}</a>
+            <a href='https://job.buxonline.org/' className='button w-70 ma' target='blank'>{content.btn_text}</a>
           </div>
           <div className="col-lg-1"></div>
           <div className="col-lg-5">
             <div className="s-30"></div>
-            <img src={pic} alt={land[0].ru.nav.button} />
+            <img src={pic} alt={content.btn_text} />
           </div>
         </div>
         <div className="s-100"></div>
