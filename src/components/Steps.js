@@ -1,11 +1,11 @@
-import React from "react";
+import React from "react"
 
-import p1 from "../assets/svg/steps/route_1.svg";
-import p2 from "../assets/svg/steps/route_2.svg";
-import p3 from "../assets/svg/steps/route_3.svg";
-import p5 from "../assets/svg/steps/route_5.svg";
-import p6 from "../assets/svg/steps/route_6.svg";
-import p8 from "../assets/svg/steps/route_8.svg";
+import p1 from "../assets/svg/steps/route_1.svg"
+import p2 from "../assets/svg/steps/route_2.svg"
+import p3 from "../assets/svg/steps/route_3.svg"
+import p5 from "../assets/svg/steps/route_5.svg"
+import p6 from "../assets/svg/steps/route_6.svg"
+import p8 from "../assets/svg/steps/route_8.svg"
 
 function Steps({ apiData: content }) {
   if (!content) return <></>
@@ -28,7 +28,7 @@ function Steps({ apiData: content }) {
                       {content.steps[0].time} {content.steps[0].label}
                     </em>
                   </h4>
-                  <p className="w-70">{content.steps[0].text}</p>
+                  <p className="w-70 ex-3">{content.steps[0].text}</p>
                   <div className="s-20"></div>
                 </div>
               </div>
@@ -58,7 +58,7 @@ function Steps({ apiData: content }) {
                       {content.steps[1].time} {content.steps[1].label}
                     </em>
                   </h4>
-                  <p className="w-70">{content.steps[1].text}</p>
+                  <p className="w-70 ex-3">{content.steps[1].text}</p>
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@ function Steps({ apiData: content }) {
                       {content.steps[2].time} {content.steps[2].label}
                     </em>
                   </h4>
-                  <p className="w-70">{content.steps[2].text}</p>
+                  <p className="w-70 ex-3">{content.steps[2].text}</p>
                   <div className="s-20"></div>
                 </div>
               </div>
@@ -100,7 +100,7 @@ function Steps({ apiData: content }) {
                       {content.steps[3].time} {content.steps[3].label}
                     </em>
                   </h4>
-                  <p className="w-70">{content.steps[3].text}</p>
+                  <p className="w-70 ex-3">{content.steps[3].text}</p>
                   <div className="s-40"></div>
                 </div>
               </div>
@@ -120,7 +120,7 @@ function Steps({ apiData: content }) {
                           {content.steps[4].time} {content.steps[4].label}
                         </em>
                       </h4>
-                      <p className="w-70">{content.steps[4].text}</p>
+                      <p className="w-70 ex-3">{content.steps[4].text}</p>
                       <div className="s-20"></div>
                     </div>
                   </div>
@@ -152,7 +152,7 @@ function Steps({ apiData: content }) {
                       {content.steps[5].time} {content.steps[5].label}
                     </em>
                   </h4>
-                  <p className="w-70">{content.steps[5].text}</p>
+                  <p className="w-70 ex-3">{content.steps[5].text}</p>
                   <div className="s-60"></div>
                 </div>
               </div>
@@ -174,7 +174,7 @@ function Steps({ apiData: content }) {
                           {content.steps[6].time} {content.steps[6].label}
                         </em>
                       </h4>
-                      <p className="w-70">{content.steps[6].text}</p>
+                      <p className="w-70 ex-3">{content.steps[6].text}</p>
                       <div className="s-20"></div>
                     </div>
                   </div>
@@ -196,7 +196,7 @@ function Steps({ apiData: content }) {
                           {content.steps[7].time} {content.steps[7].label}
                         </em>
                       </h4>
-                      <p className="w-70">{content.steps[7].text}</p>
+                      <p className="w-70 ex-3">{content.steps[7].text}</p>
                       <div className="s-20"></div>
                     </div>
                   </div>
@@ -227,7 +227,7 @@ function Steps({ apiData: content }) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export { Steps };
+export { Steps }

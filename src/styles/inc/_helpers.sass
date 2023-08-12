@@ -267,6 +267,33 @@
 .upp
   text-transform: uppercase
 
+.ex-3
+  overflow: hidden
+  height: 56px
+  display: -webkit-box
+  -webkit-line-clamp: 3
+  -webkit-box-orient: vertical
+  text-overflow: ellipsis
+  +v-md
+    height: 300px !important
+    text-overflow: none
+    min-height: 100%
+    padding-bottom: 0 !important
+  +v-sm
+    height: 200px !important
+    text-overflow: none
+    min-height: 50%
+    padding-bottom: 0 !important
+  +v-xs
+    height: 320px !important
+    text-overflow: none
+    min-height: 100%
+    padding-bottom: 0 !important
+  &:hover
+    text-overflow: none
+    overflow: visible
+    height: auto
+
 .ex
   overflow: hidden
   height: 116px
@@ -293,7 +320,6 @@
     overflow: visible
     height: auto
     text-overflow: none
-    height: 300px
 
 lh
   &-1
