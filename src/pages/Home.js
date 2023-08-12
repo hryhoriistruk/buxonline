@@ -33,7 +33,7 @@ function Home() {
     <>
       <Hero apiData={apiData} language={language} />
       <About apiData={apiData} language={language} />
-      <Reviews />
+      <Reviews apiData={apiData} language={language} />
       <Steps apiData={apiData} language={language} />
       <Features apiData={apiData} language={language} />
       <Bot apiData={apiData} language={language} />
