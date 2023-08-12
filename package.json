@@ -13,6 +13,7 @@
     "react-dom": "^18.2.0",
     "react-flag-kit": "^1.1.1",
     "react-helmet": "^6.1.0",
+    "react-i18next": "^13.1.2",
     "react-icons": "^4.8.0",
     "react-languages-select": "^1.0.20",
     "react-router-dom": "^6.11.2",

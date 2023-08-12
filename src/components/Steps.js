@@ -7,9 +7,8 @@ import p5 from '../assets/svg/steps/route_5.svg'
 import p6 from '../assets/svg/steps/route_6.svg'
 import p8 from '../assets/svg/steps/route_8.svg'
 
-function Steps({ apiData }) {
-
-  const content = apiData || {}
+function Steps({ apiData: content }) {
+  if (!content) return <></>
 
   return (
     <>

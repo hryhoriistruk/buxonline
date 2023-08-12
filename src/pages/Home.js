@@ -14,19 +14,19 @@ import {Form} from '../components/Form'
 function Home() {
 
   const { language } = useParams()
-  const [apiData, setApiData] = useState({})
+  const [apiData, setApiData] = useState(null)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://api-dev.buxonline.org/api/v1/landing/${language}/`);
-        setApiData(response.data);
+        const response = await axios.get(`https://api-dev.buxonline.org/api/v1/landing/${language}/`)
+        setApiData(response.data)
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching data:', error)
       }
-    };
+    }
 
-    fetchData();
+    fetchData()
   }, [language])
 
   return (

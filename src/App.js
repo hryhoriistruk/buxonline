@@ -1,5 +1,6 @@
-import React from "react"
-import { Routes, Route } from "react-router-dom"
+import React, {useState, useEffect} from "react"
+import { Routes, Route, Navigate } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 import "./styles/custom.sass"
 
 import { Home } from "./pages/Home"
@@ -15,9 +16,22 @@ import { SingleVacancy } from "./pages/SingleVacancy"
 import {Canvas} from "./components/Canvas"
 
 const App = () => {
+
+  const { i18n } = useTranslation()
+
+  const [language, setLanguage] = useState(localStorage.getItem('language') || 'uk')
+
+  useEffect(() => {
+    const detectedLanguage = i18n.language || 'uk'
+    localStorage.setItem('language', language)
+    language ? setLanguage(language) : setLanguage(detectedLanguage)
+  }, [language, i18n.language])
+
+
   return (
     <Canvas>
         <Routes>
+          <Route path="/" element={<Navigate to={`/${language}`} replace={true} />} />
           <Route path="/:language" element={<Home />} />
           <Route path="/categories/:language" element={<Categories />} />
           <Route
