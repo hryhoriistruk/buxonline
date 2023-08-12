@@ -1,7 +1,9 @@
 import React from 'react'
 import land from '../data/land'
 
-function Reviews() {
+function Reviews({apiData: content }) {
+  if (!content) return <></>
+
   return (
     <>
       <div className="s-80"></div>
@@ -19,9 +21,9 @@ function Reviews() {
         <div className="col-lg-4">
             <img src={land[0].ru.reviews.review[1].photo} alt={land[0].ru.reviews.review[1].name} className="w-100 r-16" />
             <div className="s-20"></div>
-            <h3 className="title-part mini tc">{land[0].ru.reviews.review[1].name}</h3>
-            <p className='tc'><strong>{land[0].ru.reviews.review[1].position}</strong></p>
-            <div className="s-20 px-1 ex">{land[0].ru.reviews.review[1].text}</div>
+            <h3 className="title-part mini tc">{content.feedbacks[0].full_name}</h3>
+            <p className='tc'><strong>{content.feedbacks[0].position}</strong></p>
+            <div className="s-20 px-1 ex">{content.feedbacks[0].text}</div>
             <p></p>
         </div>
         <div className="col-lg-4 tc">
@@ -36,7 +38,7 @@ function Reviews() {
               <div className="s-10"></div>
               <p className='w-60 ma'>{land[0].ru.reviews.success[0]} {Math.ceil(land[0].ru.reviews.users / 10) * 10} {land[0].ru.reviews.success[1]}</p>
               <div className="s-10"></div>
-              <a href={land[0].ru.nav.button[1]} className='button w-70 ma' target='blank'>{land[0].ru.nav.button[0]}</a>
+              <a href='https://job.buxonline.org/' className='button w-70 ma' target='blank'>{content.btn_text}</a>
             </div>
           </div>
         </div>
