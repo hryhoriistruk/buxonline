@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { useTranslation } from "react-i18next"
 
 const apiUrl = 'https://api-dev.buxonline.org/api/v1/category/list/'
 
 function Categories() {
 
+  const { i18n } = useTranslation()
+
   const [language, setLanguage] = useState(localStorage.getItem('language') || 'uk')
 
   useEffect(() => {
+    const detectedLanguage = i18n.language || 'uk'
+    language ? setLanguage(language) : setLanguage(detectedLanguage)
     localStorage.setItem('language', language)
-  }, [language])
+  }, [language, i18n.language])
 
   const [categories, setCategories] = useState([])
   const [loading, setLoading] = useState(true)

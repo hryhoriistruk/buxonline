@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import axios from "axios"
+import { useTranslation } from "react-i18next"
 
 import CustomPagination from "../components/Pagination/CustomPagination"
 
 function VacanciesList() {
+
+  const { i18n } = useTranslation()
   const { id, name, language } = useParams()
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
@@ -14,6 +17,7 @@ function VacanciesList() {
 
   useEffect(() => {
     if (currentPage) {
+      const detectedLanguage = i18n.language || 'uk'
       const fetchData = async () => {
         try {
           const response = await axios.get(
@@ -26,10 +30,10 @@ function VacanciesList() {
           setLoading(false)
         }
       }
-      localStorage.setItem("language", language)
+      language ? localStorage.setItem("language", language) : localStorage.setItem("language", detectedLanguage)
       fetchData()
     }
-  }, [id, language, currentPage])
+  }, [id, language, currentPage, i18n.language])
 
   useEffect(() => {
     const fetchData = async () => {

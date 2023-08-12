@@ -8,7 +8,6 @@ import { Privacy } from "./pages/Privacy"
 import { Cookie } from "./pages/Cookie"
 import { NotFound } from "./pages/NotFound"
 
-
 import { Categories } from "./pages/Categories"
 import { VacanciesList } from "./pages/VacanciesList"
 import { SingleVacancy } from "./pages/SingleVacancy"
@@ -23,8 +22,8 @@ const App = () => {
 
   useEffect(() => {
     const detectedLanguage = i18n.language || 'uk'
-    localStorage.setItem('language', language)
     language ? setLanguage(language) : setLanguage(detectedLanguage)
+    localStorage.setItem('language', language)
   }, [language, i18n.language])
 
 
