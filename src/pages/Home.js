@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
+import React, { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
+import axios from "axios"
 
-import { Hero } from "../components/Hero";
-import { About } from "../components/About";
-import { Reviews } from "../components/Reviews";
-import { Steps } from "../components/Steps";
-import { Features } from "../components/Features";
-import { Bot } from "../components/Bot";
-import { Vacancies } from "../components/Vacancies";
-import { Form } from "../components/Form";
+import { Hero } from "../components/Hero"
+import { About } from "../components/About"
+import { Reviews } from "../components/Reviews"
+import { Steps } from "../components/Steps"
+import { Features } from "../components/Features"
+import { Bot } from "../components/Bot"
+import { Vacancies } from "../components/Vacancies"
+import { Form } from "../components/Form"
 
 function Home() {
 
@@ -37,10 +37,10 @@ function Home() {
       <Steps apiData={apiData} language={language} />
       <Features apiData={apiData} language={language} />
       <Bot apiData={apiData} language={language} />
-      <Vacancies />
+      <Vacancies language={language} />
       <Form apiData={apiData} language={language} />
     </>
-  );
+  )
 }
 
-export { Home };
+export { Home }
