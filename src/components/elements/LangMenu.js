@@ -2,8 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { Dropdown } from 'react-bootstrap'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from "react-i18next"
 
 const LangMenu = ({ setLanguage }) => {
+
+  const { i18n } = useTranslation()
+
   const [languages, setLanguages] = useState([])
   const [current, setCurrent] = useState('')
   const [short, setShort] = useState('')
@@ -12,10 +16,11 @@ const LangMenu = ({ setLanguage }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const detectedLanguage = i18n.language || 'uk'
         const response = await axios.get('https://api-dev.buxonline.org/api/v1/language/list/')
         setLanguages(response.data)
-        const storedLanguage = localStorage.getItem('language') || 'uk'
-        const currentLanguage = window.location.pathname.split('/')[1] || storedLanguage
+        const storedLanguage = localStorage.getItem('language') || detectedLanguage
+        const currentLanguage = window.location.pathname.split('/')[4] || storedLanguage
         setLanguage(currentLanguage)
         setCurrent(currentLanguage)
       } catch (error) {
@@ -24,7 +29,7 @@ const LangMenu = ({ setLanguage }) => {
     }
 
     fetchData()
-  }, [setLanguage])
+  }, [setLanguage, i18n.language])
 
   useEffect(() => {
     const selectedLanguage = languages.find((item) => item.code_a2 === current)
