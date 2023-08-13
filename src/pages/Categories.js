@@ -8,18 +8,17 @@ const apiUrl = 'https://api-dev.buxonline.org/api/v1/category/list/'
 function Categories() {
 
   const { i18n } = useTranslation()
-
   const [language, setLanguage] = useState(localStorage.getItem('language') || 'uk')
+
+  const [categories, setCategories] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [selectedCategoryName, setSelectedCategoryName] = useState('')
 
   useEffect(() => {
     const detectedLanguage = i18n.language || 'uk'
     language ? setLanguage(language) : setLanguage(detectedLanguage)
     localStorage.setItem('language', language)
   }, [language, i18n.language])
-
-  const [categories, setCategories] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [selectedCategoryName, setSelectedCategoryName] = useState('')
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,7 +48,6 @@ function Categories() {
           {categories.map((el) => (
             <Link
               onClick={() => {
-                setSelectedCategoryName(el.role)
                 setSelectedCategoryName(el.role)
                 setLanguage(language)
               }}

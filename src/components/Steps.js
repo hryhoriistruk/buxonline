@@ -16,7 +16,7 @@ function Steps({ apiData: content }) {
         <div className="col-12 steps">
           <div className="s-80"></div>
           <h4 className="title-part">{content.steps_title}</h4>
-          <div className="s-20"></div>
+          <div className="s-10"></div>
           <div className="row">
             <div className="col-lg-5">
               <div className="flex jcfe">
@@ -63,7 +63,7 @@ function Steps({ apiData: content }) {
               </div>
             </div>
           </div>
-          <div className="s-90"></div>
+          <div className="s-100"></div>
           <div className="row">
             <div className="col-lg-1"></div>
             <div className="col-lg-6">
@@ -106,6 +106,7 @@ function Steps({ apiData: content }) {
               </div>
             </div>
           </div>
+          <div className="s-10"></div>
           <div className="row">
             <div className="col-lg-5 m-hide"></div>
             <div className="col-lg-7">
@@ -159,6 +160,7 @@ function Steps({ apiData: content }) {
             </div>
             <div className="col-lg-1"></div>
           </div>
+          <div className="s-10"></div>
           <div className="row">
             <div className="col-lg-1"></div>
             <div className="col-lg-10">
