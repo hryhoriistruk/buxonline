@@ -62,7 +62,7 @@ const LangMenu = ({ setLanguage }) => {
 
   return (
     <>
-      <Dropdown>
+      <Dropdown className='nav-lang'>
         <Dropdown.Toggle variant="light">
           {current && short && (
             <>
