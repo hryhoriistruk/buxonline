@@ -37,7 +37,7 @@ function Home() {
       <Steps apiData={apiData} language={language} />
       <Features apiData={apiData} language={language} />
       <Bot apiData={apiData} language={language} />
-      <Vacancies language={language} />
+      <Vacancies apiData={apiData} language={language} />
       <Form apiData={apiData} language={language} />
     </>
   )

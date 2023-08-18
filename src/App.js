@@ -31,7 +31,6 @@ const App = () => {
     <Canvas>
       <Routes>
         <Route path="/" element={<Navigate to={`/${language}`} replace={true} />} />
-        <Route path="/" element={<Navigate to={`/${language}`} replace={true} />} />
         <Route path="/:language" element={<Home />} />
         <Route path="/categories/:language" element={<Categories />} />
         <Route
@@ -41,7 +40,7 @@ const App = () => {
         <Route path="/vacancy/:id/:language" element={<SingleVacancy />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/cookie" element={<Cookie />} />
-        <Route path="/**" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Canvas>
   )

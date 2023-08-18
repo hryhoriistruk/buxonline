@@ -7,15 +7,15 @@ function Reviews({apiData: content }) {
   return (
     <>
       <div className="s-80"></div>
-      <h2 className="title-part">{land[0].ru.reviews.title}</h2>
+      <h2 className="title-part">{content.reviews_title}</h2>
       <div className="s-40"></div>
       <div className="row">
         <div className="col-lg-4">
             <img src={land[0].ru.reviews.review[0].photo} alt={land[0].ru.reviews.review[0].name} className="rev w-100 r-8" />
             <div className="s-20"></div>
-            <h3 className="title-part mini tc">{land[0].ru.reviews.review[0].name}</h3>
-            <p className='tc'><strong>{land[0].ru.reviews.review[0].position}</strong></p>
-            <div className="s-20 px-1 ex">{land[0].ru.reviews.review[1].text}</div>
+            <h3 className="title-part mini tc">{content.feedbacks[1].full_name}</h3>
+            <p className='tc'><strong>{content.feedbacks[1].position}</strong></p>
+            <div className="s-20 px-1 ex">{content.feedbacks[1].text}</div>
             <p></p>
         </div>
         <div className="col-lg-4">
@@ -36,7 +36,7 @@ function Reviews({apiData: content }) {
                 <div className="avatar r-32 bg-blue c-white">+{land[0].ru.reviews.users}</div>
               </div>
               <div className="s-10"></div>
-              <p className='w-60 ma'>{land[0].ru.reviews.success[0]} {Math.ceil(land[0].ru.reviews.users / 10) * 10} {land[0].ru.reviews.success[1]}</p>
+              <p className='w-60 ma'>{content.we_are_employed}</p>
               <div className="s-10"></div>
               <a href='https://job.buxonline.org/' className='button w-70 ma' target='blank'>{content.btn_text}</a>
             </div>
