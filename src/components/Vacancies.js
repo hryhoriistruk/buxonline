@@ -3,9 +3,11 @@ import { useParams } from 'react-router-dom'
 import Slider from 'react-slick'
 import axios from 'axios'
 
-import land from '../data/land'
+//import land from '../data/land'
 
-function Vacancies() {
+function Vacancies({ apiData }) {
+
+  const content = apiData || {}
   const { language } = useParams()
   const [data, setData] = useState(Array(15).fill([]))
 
@@ -73,7 +75,7 @@ function Vacancies() {
   return (
     <>
       <div className="s-70"></div>
-      <h3 className="title-part mx-3">{land[0].ru.vacancy.title}</h3>
+      <h3 className="title-part mx-3">{content.hot_vacancies}</h3>
       <div className="s-50"></div>
       <Slider {...settings}>
         {data.map((categoryData) =>
