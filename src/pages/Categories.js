@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useTranslation } from "react-i18next"
 
-import {Title} from '../components/elements/Title'
-
 function Categories() {
 
   const { i18n } = useTranslation()
@@ -45,7 +43,7 @@ function Categories() {
 
   return (
     <>
-      <Title />
+      <div className="s-70"></div>
         <div className="w-100 mx-4 px-2">
           {categories.map((el) => (
             <Link
