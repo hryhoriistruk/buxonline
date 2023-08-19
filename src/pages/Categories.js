@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useTranslation } from "react-i18next"
+import { Title } from '../components/elements/Title'
 
 function Categories() {
 
@@ -43,21 +44,21 @@ function Categories() {
 
   return (
     <>
-      <div className="s-70"></div>
-        <div className="w-100 mx-4 px-2">
-          {categories.map((el) => (
-            <Link
-              onClick={() => {
-                setSelectedCategoryName(el.role)
-                setLanguage(language)
-              }}
-              to={`/category/${el.id}/${el.role}/${language}`}
-              className={`button cat jcsb aic py-1 px-3 m-1 ${selectedCategoryName === el.role ? 'active' : ''}`}
-              key={el.id}
-            >
-              <span className="fz-14">{el.role}</span><span className="fz-14">{el.vacancies_count}</span>
-            </Link>
-          ))}
+      <Title />
+      <div className="w-100 mx-4 px-2">
+        {categories.map((el) => (
+          <Link
+            onClick={() => {
+              setSelectedCategoryName(el.role)
+              setLanguage(language)
+            }}
+            to={`/category/${el.id}/${el.role}/${language}`}
+            className={`button cat jcsb aic py-1 px-3 m-1 ${selectedCategoryName === el.role ? 'active' : ''}`}
+            key={el.id}
+          >
+            <span className="fz-14">{el.role}</span><span className="fz-14">{el.vacancies_count}</span>
+          </Link>
+        ))}
       </div>
       <div className="s-100"></div>
       <div className="s-100"></div>
