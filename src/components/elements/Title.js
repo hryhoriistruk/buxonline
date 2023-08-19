@@ -5,7 +5,7 @@ import axios from 'axios'
 const Title = () => {
 
   const { language } = useParams()
-  const [apiData, setApiData] = useState('Категорії')
+  const [apiData, setApiData] = useState('')
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,9 +23,7 @@ const Title = () => {
   return (
     <>
       <div className="s-40"></div>
-      <h3 className="title-part mx-2">
-        {apiData.results[0] && apiData.results[0].meta && apiData.results[0].meta.categories}
-      </h3>
+      <h3 className="title-part mx-2">{apiData ? apiData.results[0].meta.categories: ''}</h3>
       <div className="s-20"></div>
     </>
   )
