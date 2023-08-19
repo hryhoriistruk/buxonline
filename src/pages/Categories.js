@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useTranslation } from "react-i18next"
 
-const apiUrl = 'https://api-dev.buxonline.org/api/v1/category/list/'
+import {Title} from '../components/elements/Title'
 
 function Categories() {
 
   const { i18n } = useTranslation()
   const [language, setLanguage] = useState(localStorage.getItem('language') || 'uk')
+
+  const apiUrl = 'https://api-dev.buxonline.org/api/v1/category/list/'
 
   const [categories, setCategories] = useState([])
   const [loading, setLoading] = useState(true)
@@ -43,7 +45,7 @@ function Categories() {
 
   return (
     <>
-      <div className="s-70"></div>
+      <Title />
         <div className="w-100 mx-4 px-2">
           {categories.map((el) => (
             <Link
