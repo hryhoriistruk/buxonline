@@ -4,6 +4,7 @@ import axios from "axios";
 import { useTranslation } from "react-i18next";
 
 import CustomPagination from "../components/Pagination/CustomPagination";
+import { Audio } from "react-loader-spinner";
 
 function VacanciesList() {
   const { i18n } = useTranslation();
@@ -67,7 +68,11 @@ function VacanciesList() {
   }, [language, id]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="loader-wrapper">
+        <Audio color={"#2E85EC"} />
+      </div>
+    );
   }
 
   return (
