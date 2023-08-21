@@ -1,45 +1,49 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import axios from 'axios'
-import { useTranslation } from "react-i18next"
-import { Title } from '../components/elements/Title'
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Audio } from "react-loader-spinner";
+import axios from "axios";
+import { useTranslation } from "react-i18next";
+import { Title } from "../components/elements/Title";
 
 function Categories() {
+  const { i18n } = useTranslation();
+  const [language, setLanguage] = useState(
+    localStorage.getItem("language") || "uk"
+  );
 
-  const { i18n } = useTranslation()
-  const [language, setLanguage] = useState(localStorage.getItem('language') || 'uk')
-
-  const apiUrl = 'https://api-dev.buxonline.org/api/v1/category/list/'
-
-  const [categories, setCategories] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [selectedCategoryName, setSelectedCategoryName] = useState('')
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedCategoryName, setSelectedCategoryName] = useState("");
 
   useEffect(() => {
-    const detectedLanguage = i18n.language || 'uk'
-    language ? setLanguage(language) : setLanguage(detectedLanguage)
-    localStorage.setItem('language', language)
-  }, [language, i18n.language])
+    const detectedLanguage = i18n.language || "uk";
+    language ? setLanguage(language) : setLanguage(detectedLanguage);
+    localStorage.setItem("language", language);
+  }, [language, i18n.language]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(apiUrl)
-        setCategories(response.data)
-        setLoading(false)
+        const apiUrl = `https://api-dev.buxonline.org/api/v1/category/list/?lang=uk`;
+        const response = await axios.get(apiUrl);
+        console.log(response.data);
+        setCategories(response.data);
+        setLoading(false);
       } catch (error) {
-        console.error('Ошибка при запросе:', error)
-        setLoading(false)
+        console.error("Ошибка при запросе:", error);
+        setLoading(false);
       }
-    }
+    };
 
-    fetchData()
-  }, [])
-
-
+    fetchData();
+  }, [language]);
 
   if (loading) {
-    return <div>Loading...</div>
+    return (
+      <div className="loader-wrapper">
+        <Audio color={"#2E85EC"} />
+      </div>
+    );
   }
 
   return (
@@ -49,21 +53,24 @@ function Categories() {
         {categories.map((el) => (
           <Link
             onClick={() => {
-              setSelectedCategoryName(el.role)
-              setLanguage(language)
+              setSelectedCategoryName(el.role);
+              setLanguage(language);
             }}
             to={`/category/${el.id}/${el.role}/${language}`}
-            className={`button cat jcsb aic py-1 px-3 m-1 ${selectedCategoryName === el.role ? 'active' : ''}`}
+            className={`button cat jcsb aic py-1 px-3 m-1 ${
+              selectedCategoryName === el.role ? "active" : ""
+            }`}
             key={el.id}
           >
-            <span className="fz-14">{el.role}</span><span className="fz-14">{el.vacancies_count}</span>
+            <span className="fz-14">{el.role}</span>
+            <span className="fz-14">{el.vacancies_count}</span>
           </Link>
         ))}
       </div>
       <div className="s-100"></div>
       <div className="s-100"></div>
     </>
-  )
+  );
 }
 
-export { Categories }
+export { Categories };

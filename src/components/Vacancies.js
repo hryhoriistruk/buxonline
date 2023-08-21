@@ -1,40 +1,47 @@
-import React, { useState, useEffect, useMemo } from 'react'
-import { useParams } from 'react-router-dom'
-import Slider from 'react-slick'
-import axios from 'axios'
+import React, { useState, useEffect, useMemo } from "react";
+import { useParams } from "react-router-dom";
+import Slider from "react-slick";
+import axios from "axios";
+import { Audio } from "react-loader-spinner";
 
 //import land from '../data/land'
 
 function Vacancies({ apiData }) {
+  const content = apiData || {};
+  const { language } = useParams();
+  const [data, setData] = useState(Array(15).fill([]));
 
-  const content = apiData || {}
-  const { language } = useParams()
-  const [data, setData] = useState(Array(15).fill([]))
-
-  const categories = useMemo(() => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [])
+  const categories = useMemo(
+    () => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    []
+  );
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const promises = categories.map(async category => {
+        const promises = categories.map(async (category) => {
           const response = await axios.get(
             `https://api-dev.buxonline.org/api/v1/vacancy/list/?category=${category}&lang=${language}&page=2&per_page=1`
-          )
-          return response.data.results
-        })
+          );
+          return response.data.results;
+        });
 
-        const newData = await Promise.all(promises)
-        setData(newData)
+        const newData = await Promise.all(promises);
+        setData(newData);
       } catch (error) {
-        console.error('Error fetching data:', error)
+        console.error("Error fetching data:", error);
       }
-    }
+    };
 
-    fetchData()
-  }, [categories, language])
+    fetchData();
+  }, [categories, language]);
 
-  if (data.some(categoryData => categoryData.length === 0)) {
-    return <p>Loading...</p>
+  if (data.some((categoryData) => categoryData.length === 0)) {
+    return (
+      <div className="loader-wrapper">
+        <Audio color={"#2E85EC"} />
+      </div>
+    );
   }
 
   const settings = {
@@ -70,7 +77,7 @@ function Vacancies({ apiData }) {
         },
       },
     ],
-  }
+  };
 
   return (
     <>
@@ -79,11 +86,13 @@ function Vacancies({ apiData }) {
       <div className="s-50"></div>
       <Slider {...settings}>
         {data.map((categoryData) =>
-          categoryData.map(el => (
+          categoryData.map((el) => (
             <div className="px-4 my-4" key={el.id}>
               <h4 className="c-blue hot-title">{el.title}</h4>
               <p className="c-dark my-3 hot-text">
-                {el.text.length > 200 ? el.text.substring(0, 200) + '...' : el.text}
+                {el.text.length > 200
+                  ? el.text.substring(0, 200) + "..."
+                  : el.text}
               </p>
               <div className="s-10"></div>
               <a href={`/vacancy/${el.id}/${language}`} className="button">
@@ -95,7 +104,7 @@ function Vacancies({ apiData }) {
       </Slider>
       <div className="s-100"></div>
     </>
-  )
+  );
 }
 
-export {Vacancies}
+export { Vacancies };
