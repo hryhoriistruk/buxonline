@@ -1,71 +1,73 @@
-import React, { useEffect, useState } from "react"
-import { Link, useParams } from "react-router-dom"
-import axios from "axios"
-import { useTranslation } from "react-i18next"
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
+import { useTranslation } from "react-i18next";
 
-import CustomPagination from "../components/Pagination/CustomPagination"
+import CustomPagination from "../components/Pagination/CustomPagination";
 
 function VacanciesList() {
+  const { i18n } = useTranslation();
+  const { id, name, language } = useParams();
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const { i18n } = useTranslation()
-  const { id, name, language } = useParams()
-  const [data, setData] = useState([])
-  const [loading, setLoading] = useState(true)
-
-  const [currentPage, setCurrentPage] = useState(null)
-  const perPage = 10
+  const [currentPage, setCurrentPage] = useState(null);
+  const perPage = 9;
 
   useEffect(() => {
     if (currentPage) {
-      const detectedLanguage = i18n.language || 'uk'
+      const detectedLanguage = i18n.language || "uk";
       const fetchData = async () => {
         try {
           const response = await axios.get(
-            `https://api-dev.buxonline.org/api/v1/vacancy/list/?lang=${language}&category=${id}&page=${currentPage}`
-          )
-          setData(response.data)
-          setLoading(false)
+            `https://api-dev.buxonline.org/api/v1/vacancy/list/?lang=${language}&category=${id}&page=${currentPage}&per_page=${perPage}`
+          );
+          setData(response.data);
+          setLoading(false);
         } catch (error) {
-          console.error("Ошибка при запросе:", error)
-          setLoading(false)
+          console.error("Ошибка при запросе:", error);
+          setLoading(false);
         }
-      }
-      language ? localStorage.setItem("language", language) : localStorage.setItem("language", detectedLanguage)
-      fetchData()
+      };
+      language
+        ? localStorage.setItem("language", language)
+        : localStorage.setItem("language", detectedLanguage);
+      fetchData();
     }
-  }, [id, language, currentPage, i18n.language])
+  }, [id, language, currentPage, i18n.language]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://api-dev.buxonline.org/api/v1/vacancy/list/?lang=${language}&category=${id}`
-        )
-        const totalVacancies = response.data.count
+          `https://api-dev.buxonline.org/api/v1/vacancy/list/?lang=${language}&category=${id}&per_page=${perPage}`
+        );
+        const totalVacancies = response.data.count;
 
-        const queryString = window.location.search
-        const queryParams = new URLSearchParams(queryString)
-        const page = queryParams.get("page")
+        const queryString = window.location.search;
+        const queryParams = new URLSearchParams(queryString);
+        const page = queryParams.get("page");
 
-        const totalPages = Math.ceil(totalVacancies / perPage)
-        const currentPage = !Number.isInteger(page)
+        const totalPages = Math.ceil(totalVacancies / perPage);
+
+        const currentPage = !Number.isInteger(Number(page))
           ? 1
           : page <= 0
           ? 1
           : page > totalPages
           ? totalPages
-          : page
+          : page;
 
-        setCurrentPage(currentPage)
+        setCurrentPage(currentPage);
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
-    }
-    fetchData()
-  }, [language, id])
+    };
+    fetchData();
+  }, [language, id]);
 
   if (loading) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   return (
@@ -90,7 +92,7 @@ function VacanciesList() {
         ))}
       </div>
       <div className="s-20"></div>
-      <div className="row justify-content-center">
+      <div className="d-flex justify-content-center">
         <CustomPagination
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
@@ -100,7 +102,7 @@ function VacanciesList() {
       </div>
       <div className="s-100"></div>
     </>
-  )
+  );
 }
 
-export { VacanciesList }
+export { VacanciesList };
