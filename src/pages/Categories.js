@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Audio } from "react-loader-spinner";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { Title } from "../components/elements/Title";
+import { languagesList } from "../constants";
 
 function Categories() {
   const { i18n } = useTranslation();
@@ -11,9 +12,20 @@ function Categories() {
     localStorage.getItem("language") || "uk"
   );
 
+  const { language: languageParam } = useParams();
+  const navigate = useNavigate();
+
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategoryName, setSelectedCategoryName] = useState("");
+
+  useEffect(() => {
+    if (
+      !languagesList.find((language) => language["code_a2"] === languageParam)
+    ) {
+      navigate("/categories/uk");
+    }
+  }, []);
 
   useEffect(() => {
     const detectedLanguage = i18n.language || "uk";

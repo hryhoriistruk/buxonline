@@ -1,33 +1,51 @@
-import React, { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
-import axios from "axios"
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
 
-import { Hero } from "../components/Hero"
-import { About } from "../components/About"
-import { Reviews } from "../components/Reviews"
-import { Steps } from "../components/Steps"
-import { Features } from "../components/Features"
-import { Bot } from "../components/Bot"
-import { Vacancies } from "../components/Vacancies"
-import { Form } from "../components/Form"
+import { Hero } from "../components/Hero";
+import { About } from "../components/About";
+import { Reviews } from "../components/Reviews";
+import { Steps } from "../components/Steps";
+import { Features } from "../components/Features";
+import { Bot } from "../components/Bot";
+import { Vacancies } from "../components/Vacancies";
+import { Form } from "../components/Form";
+import { languagesList } from "../constants";
+import { useRef } from "react";
 
 function Home() {
+  const { language } = useParams();
+  const navigate = useNavigate();
+  const [apiData, setApiData] = useState(null);
+  const [isAllowedToFetch, setIsAllowedToFetch] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
 
-  const { language } = useParams()
-  const [apiData, setApiData] = useState(null)
+  useEffect(() => {
+    if (!languagesList.find((language) => language["code_a2"] === language)) {
+      navigate("/uk");
+    }
+    setIsAllowedToFetch(true);
+    setIsChecked(true);
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://api-dev.buxonline.org/api/v1/landing/${language}/`)
-        setApiData(response.data)
+        const response = await axios.get(
+          `https://api-dev.buxonline.org/api/v1/landing/${language}/`
+        );
+        setApiData(response.data);
       } catch (error) {
-        console.error('Error fetching data:', error)
+        console.error("Error fetching data:", error);
       }
-    }
+    };
 
-    fetchData()
-  }, [language])
+    isAllowedToFetch && fetchData();
+  }, [language, isAllowedToFetch]);
+
+  if (!isChecked) {
+    return <></>;
+  }
 
   return (
     <>
@@ -40,7 +58,7 @@ function Home() {
       <Vacancies apiData={apiData} language={language} />
       <Form apiData={apiData} language={language} />
     </>
-  )
+  );
 }
 
-export { Home }
+export { Home };
