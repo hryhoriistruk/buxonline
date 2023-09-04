@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 
 const SendResumeBtn = ({ children }) => {
   const { language } = useParams();
+  console.log(language);
   return (
     <>
       <a
