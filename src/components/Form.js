@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 
-import pic from '../assets/svg/home/resume.svg'
+import pic from "../assets/svg/home/resume.svg";
+import SendResumeBtn from "./SendResumeBtn";
 
 function Form({ apiData }) {
-
-  const content = apiData || {}
+  const content = apiData || {};
 
   return (
     <div id="resume">
@@ -17,7 +17,7 @@ function Form({ apiData }) {
             <div className="s-20"></div>
             <p>{content.form}</p>
             <div className="s-20"></div>
-            <a href='https://job.buxonline.org/' className='button w-70 ma' target='blank'>{content.btn_text}</a>
+            <SendResumeBtn>{content.btn_text}</SendResumeBtn>
           </div>
           <div className="col-lg-1"></div>
           <div className="col-lg-5">
@@ -29,7 +29,7 @@ function Form({ apiData }) {
         <div className="s-100"></div>
       </div>
     </div>
-  )
+  );
 }
 
-export {Form}
+export { Form };
