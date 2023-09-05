@@ -21,7 +21,11 @@ function Home() {
   const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
-    if (!languagesList.find((language) => language["code_a2"] === language)) {
+    const isLanguage = languagesList.find(
+      (languageItem) => languageItem["code_a2"] == language
+    );
+
+    if (!isLanguage) {
       navigate("/uk");
     }
     setIsAllowedToFetch(true);
