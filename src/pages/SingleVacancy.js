@@ -35,18 +35,29 @@ function SingleVacancy() {
 
   useEffect(() => {
     if (vacancy) {
-      const htmlString = vacancy.text;
-      const parser = new DOMParser();
-      const htmlDoc = parser.parseFromString(htmlString, "text/html");
+      try {
+        const htmlString = vacancy.text;
+        const parser = new DOMParser();
+        const htmlDoc = parser.parseFromString(htmlString, "text/html");
 
-      const childNodes = Array.from(htmlDoc.body.childNodes);
+        const childNodes = Array.from(htmlDoc.body.childNodes);
 
-      const childElements = childNodes.filter(
-        (node) => node.nodeType === Node.ELEMENT_NODE
-      );
-      setVacancyContent(childElements);
+        const childElements = childNodes.filter(
+          (node) => node.nodeType === Node.ELEMENT_NODE
+        );
+
+        if (childElements.length === 0) {
+          throw "Text content";
+        }
+
+        setVacancyContent({ type: "html", content: childElements });
+      } catch (e) {
+        setVacancyContent({ type: "text", content: vacancy.text });
+      }
     }
   }, [vacancy]);
+
+  console.log(vacancyContent);
 
   if (loading) {
     return (
@@ -55,7 +66,33 @@ function SingleVacancy() {
       </div>
     );
   }
+
   if (!vacancyContent) return <></>;
+  if (vacancyContent.type === "text") {
+    const paragraphs = vacancyContent.content.split("\n");
+    return (
+      <>
+        <div className="s-40"></div>
+        <h3 className="title-part mx-3">{vacancy.title}</h3>
+        <div className="row">
+          <div className={`col-lg-11 px-4 m-4 ma ${language}`}>
+            {paragraphs.map((paragraph, index) => (
+              <p key={index} className="title-desc c-dark">
+                {paragraph}
+              </p>
+            ))}
+            <div className="s-60"></div>
+            <div className="w-100 tc">
+              <Link to={"https://job.buxonline.org/"} className="button">
+                {vacancy.meta.apply_for_job}
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="s-100"></div>
+      </>
+    );
+  }
 
   return (
     <>
@@ -68,12 +105,12 @@ function SingleVacancy() {
           <div className={clsx(style["vacancy-title-text"])}>
             <div
               dangerouslySetInnerHTML={{
-                __html: vacancyContent[0].outerHTML,
+                __html: vacancyContent.content[0].outerHTML,
               }}
             />
             <div
               dangerouslySetInnerHTML={{
-                __html: vacancyContent[1].outerHTML,
+                __html: vacancyContent.content[1].outerHTML,
               }}
             />
           </div>
@@ -85,13 +122,13 @@ function SingleVacancy() {
             </div>
             <div
               dangerouslySetInnerHTML={{
-                __html: vacancyContent[4].outerHTML,
+                __html: vacancyContent.content[4].outerHTML,
               }}
             />
           </div>
           <div
             dangerouslySetInnerHTML={{
-              __html: vacancyContent[5].outerHTML,
+              __html: vacancyContent.content[5].outerHTML,
             }}
           />
         </div>
@@ -102,13 +139,13 @@ function SingleVacancy() {
             </div>
             <div
               dangerouslySetInnerHTML={{
-                __html: vacancyContent[2].outerHTML,
+                __html: vacancyContent.content[2].outerHTML,
               }}
             />
           </div>
           <div
             dangerouslySetInnerHTML={{
-              __html: vacancyContent[3].outerHTML,
+              __html: vacancyContent.content[3].outerHTML,
             }}
           />
         </div>
@@ -119,18 +156,18 @@ function SingleVacancy() {
             </div>
             <div
               dangerouslySetInnerHTML={{
-                __html: vacancyContent[6].outerHTML,
+                __html: vacancyContent.content[6].outerHTML,
               }}
             />
           </div>
           <div
             dangerouslySetInnerHTML={{
-              __html: vacancyContent[7].outerHTML,
+              __html: vacancyContent.content[7].outerHTML,
             }}
           />
           <div
             dangerouslySetInnerHTML={{
-              __html: vacancyContent[8].outerHTML,
+              __html: vacancyContent.content[8].outerHTML,
             }}
           />
         </div>
