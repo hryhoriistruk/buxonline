@@ -1,0 +1,90 @@
+.vacancy-grid-table {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 63px;
+  column-gap: 111px;
+
+  @media (max-width: 770px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.yellow-underline {
+  position: relative;
+  display: flex;
+
+  margin-bottom: 26px;
+}
+
+.yellow-fat-underline {
+  position: relative;
+  font-size: 40px;
+  font-weight: 600;
+  color: #3f7ee8;
+  margin-bottom: 48px;
+}
+
+.yellow-fat-underline::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  z-index: -1;
+  left: 0;
+  background-color: #ffe247;
+}
+.yellow-fat-underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 4px;
+  z-index: -1;
+  left: 0;
+  background-color: #ffe247;
+}
+
+.yellow-underline h3 {
+  color: #3f7ee8;
+  font-size: 22px;
+  margin: 0;
+}
+
+.yellow-underline::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  z-index: -1;
+  left: 0;
+  background-color: #ffe247;
+}
+
+.vacancy-title-text h2 {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 21px;
+}
+
+.vacancy-title-text p {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.vacancy-block li {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.vacancy-block ul {
+  margin: 0;
+}
+
+.vacancy-block p {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 0;
+  margin-top: 30px;
+}
