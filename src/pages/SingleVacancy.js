@@ -43,11 +43,7 @@ function SingleVacancy() {
       <h3 className="title-part mx-3">{vacancy.title}</h3>
       <div className="row">
         <div className={`col-lg-11 px-4 m-4 ma ${language}`}>
-          {paragraphs.map((paragraph, index) => (
-            <p key={index} className="title-desc c-dark">
-              {paragraph}
-            </p>
-          ))}
+          <div dangerouslySetInnerHTML={{ __html: vacancy.text }}></div>
           <div className="s-60"></div>
           <div className="w-100 tc">
             <Link to={"https://job.buxonline.org/"} className="button">
