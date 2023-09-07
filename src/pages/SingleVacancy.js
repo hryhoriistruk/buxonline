@@ -57,8 +57,6 @@ function SingleVacancy() {
     }
   }, [vacancy]);
 
-  console.log(vacancyContent);
-
   if (loading) {
     return (
       <div className="loader-wrapper">
@@ -165,11 +163,15 @@ function SingleVacancy() {
               __html: vacancyContent.content[7].outerHTML,
             }}
           />
-          <div
-            dangerouslySetInnerHTML={{
-              __html: vacancyContent.content[8].outerHTML,
-            }}
-          />
+          {vacancyContent.content[8] && (
+            <>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: vacancyContent.content[8].outerHTML,
+                }}
+              />
+            </>
+          )}
         </div>
       </div>
       <div className="s-60"></div>
