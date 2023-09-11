@@ -1,8 +1,7 @@
-import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const SendResumeBtn = ({ children }) => {
-  const { language } = useParams();
-  console.log(language);
+  const { language } = useSelector((state) => state.global);
   return (
     <>
       <a

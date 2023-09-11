@@ -693,3 +693,5 @@ export const languagesList = [
     "google_lang_id": 1037,
   },
 ];
+
+export const default_language = "uk";

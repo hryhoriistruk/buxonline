@@ -5,69 +5,58 @@ import { useTranslation } from "react-i18next";
 
 import CustomPagination from "../components/Pagination/CustomPagination";
 import { Audio } from "react-loader-spinner";
+import { useSelector } from "react-redux";
+import { useMutation } from "react-query";
+import { fetchVacanciesListRequest } from "../services/requests";
 
 function VacanciesList() {
-  const { i18n } = useTranslation();
-  const { id, name, language } = useParams();
+  const { language } = useSelector((state) => state.global);
+  const { id, name } = useParams();
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
 
+  const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(null);
   const perPage = 9;
 
-  useEffect(() => {
-    if (currentPage) {
-      const detectedLanguage = i18n.language || "uk";
-      const fetchData = async () => {
-        try {
-          const response = await axios.get(
-            `https://api-dev.buxonline.org/api/v1/vacancy/list/?lang=${language}&category=${id}&page=${currentPage}&per_page=${perPage}`
-          );
-          setData(response.data);
-          setLoading(false);
-        } catch (error) {
-          console.error("Ошибка при запросе:", error);
-          setLoading(false);
+  const { mutate: fetchVacanciesList } = useMutation(
+    fetchVacanciesListRequest,
+    {
+      onSuccess: (responseData) => {
+        if (!currentPage) {
+          const totalVacancies = responseData.count;
+
+          const queryString = window.location.search;
+          const queryParams = new URLSearchParams(queryString);
+          const page = queryParams.get("page");
+
+          const totalPages = Math.ceil(totalVacancies / perPage);
+
+          const currentPage = !Number.isInteger(Number(page))
+            ? 1
+            : page <= 0
+            ? 1
+            : page > totalPages
+            ? totalPages
+            : page;
+          setCurrentPage(currentPage);
+        } else {
+          setData(responseData);
+          setIsLoading(false);
         }
-      };
-      language
-        ? localStorage.setItem("language", language)
-        : localStorage.setItem("language", detectedLanguage);
-      fetchData();
+      },
     }
-  }, [id, language, currentPage, i18n.language]);
+  );
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `https://api-dev.buxonline.org/api/v1/vacancy/list/?lang=${language}&category=${id}&per_page=${perPage}`
-        );
-        const totalVacancies = response.data.count;
+    fetchVacanciesList(
+      currentPage
+        ? { language, id, currentPage, perPage }
+        : { language, id, currentPage: 1, perPage }
+    );
+    setIsLoading(true);
+  }, [currentPage]);
 
-        const queryString = window.location.search;
-        const queryParams = new URLSearchParams(queryString);
-        const page = queryParams.get("page");
-
-        const totalPages = Math.ceil(totalVacancies / perPage);
-
-        const currentPage = !Number.isInteger(Number(page))
-          ? 1
-          : page <= 0
-          ? 1
-          : page > totalPages
-          ? totalPages
-          : page;
-
-        setCurrentPage(currentPage);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchData();
-  }, [language, id]);
-
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="loader-wrapper">
         <Audio color={"#2E85EC"} />
@@ -90,7 +79,7 @@ function VacanciesList() {
                 : el.text}
             </p>
             <div className="s-10"></div>
-            <Link to={`/vacancy/${el.id}/${language}`} className="button">
+            <Link to={`/${language}/vacancy/${el.id}`} className="button">
               {el.meta.more}
             </Link>
           </div>

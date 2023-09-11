@@ -10,46 +10,32 @@ import { Features } from "../components/Features";
 import { Bot } from "../components/Bot";
 import { Vacancies } from "../components/Vacancies";
 import { Form } from "../components/Form";
-import { languagesList } from "../constants";
-import { useRef } from "react";
+import { useSelector } from "react-redux";
+import { useMutation } from "react-query";
+import { fetchHomeRequest } from "../services/requests";
+import { Audio } from "react-loader-spinner";
 
 function Home() {
-  const { language } = useParams();
-  const navigate = useNavigate();
-  const [apiData, setApiData] = useState(null);
-  const [isAllowedToFetch, setIsAllowedToFetch] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
+  const { language } = useSelector((state) => state.global);
+
+  const {
+    data: apiData,
+    mutate: fetchHome,
+    isLoading,
+  } = useMutation(fetchHomeRequest);
 
   useEffect(() => {
-    const isLanguage = languagesList.find(
-      (languageItem) => languageItem["code_a2"] == language
+    fetchHome(language);
+  }, [language]);
+
+  if (isLoading)
+    return (
+      <>
+        <div className="loader-wrapper">
+          <Audio color={"#2E85EC"} />
+        </div>
+      </>
     );
-
-    if (!isLanguage) {
-      navigate("/uk");
-    }
-    setIsAllowedToFetch(true);
-    setIsChecked(true);
-  }, []);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `https://api-dev.buxonline.org/api/v1/landing/${language}/`
-        );
-        setApiData(response.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    isAllowedToFetch && fetchData();
-  }, [language, isAllowedToFetch]);
-
-  if (!isChecked) {
-    return <></>;
-  }
 
   return (
     <>

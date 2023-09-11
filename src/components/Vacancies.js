@@ -3,12 +3,12 @@ import { useParams } from "react-router-dom";
 import Slider from "react-slick";
 import axios from "axios";
 import { Audio } from "react-loader-spinner";
+import { useSelector } from "react-redux";
 
 //import land from '../data/land'
 
 function Vacancies({ apiData }) {
-  const content = apiData || {};
-  const { language } = useParams();
+  const { language } = useSelector((state) => state.global);
   const [data, setData] = useState(Array(15).fill([]));
 
   const categories = useMemo(
@@ -34,7 +34,7 @@ function Vacancies({ apiData }) {
     };
 
     fetchData();
-  }, [categories, language]);
+  }, []);
 
   if (data.some((categoryData) => categoryData.length === 0)) {
     return (
@@ -82,7 +82,7 @@ function Vacancies({ apiData }) {
   return (
     <>
       <div className="s-70"></div>
-      <h3 className="title-part mx-3">{content.hot_vacancies}</h3>
+      <h3 className="title-part mx-3">{apiData.hot_vacancies}</h3>
       <div className="s-50"></div>
       <Slider {...settings}>
         {data.map((categoryData) =>

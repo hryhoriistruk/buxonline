@@ -4,34 +4,22 @@ import { ReactComponent as WalletIcon } from "../assets/svg/singleVacancyPage/wa
 import { ReactComponent as StarIcon } from "../assets/svg/singleVacancyPage/star.svg";
 import { ReactComponent as DocumentIcon } from "../assets/svg/singleVacancyPage/document.svg";
 
-import axios from "axios";
 import { Audio } from "react-loader-spinner";
-import clsx from "clsx";
 import style from "../styles/pages/SingleVacancy.module.scss";
+import { useQuery } from "react-query";
+import { fetchVacancyRequest } from "../services/requests";
+import { useSelector } from "react-redux";
+import clsx from "clsx";
 
 function SingleVacancy() {
-  const { id, language } = useParams();
-
-  const [vacancy, setVacancy] = useState(null);
+  const { id } = useParams();
+  const { language } = useSelector((state) => state.global);
   const [vacancyContent, setVacancyContent] = useState(null);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `https://api-dev.buxonline.org/api/v1/vacancy/${id}?to_lang=${language}`
-        );
-        setVacancy(response.data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Ошибка при запросе:", error);
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [id, language]);
+  const { data: vacancy, isLoading } = useQuery(
+    ["fetch-vacancy", { id, language }],
+    fetchVacancyRequest
+  );
 
   useEffect(() => {
     if (vacancy) {
@@ -57,7 +45,7 @@ function SingleVacancy() {
     }
   }, [vacancy]);
 
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="loader-wrapper">
         <Audio color={"#2E85EC"} />
