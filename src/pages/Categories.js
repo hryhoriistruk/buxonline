@@ -5,52 +5,19 @@ import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { Title } from "../components/elements/Title";
 import { languagesList } from "../constants";
+import { useMutation, useQuery } from "react-query";
+import { fetchCategoriesRequest } from "../services/requests";
+import { useSelector } from "react-redux";
 
 function Categories() {
-  const { i18n } = useTranslation();
-  const [language, setLanguage] = useState(
-    localStorage.getItem("language") || "uk"
+  const { language } = useSelector((state) => state.global);
+
+  const { data: categories, isLoading } = useQuery(
+    "fetch-categories",
+    fetchCategoriesRequest
   );
 
-  const { language: languageParam } = useParams();
-  const navigate = useNavigate();
-
-  const [categories, setCategories] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [selectedCategoryName, setSelectedCategoryName] = useState("");
-
-  useEffect(() => {
-    if (
-      !languagesList.find((language) => language["code_a2"] === languageParam)
-    ) {
-      navigate("/categories/uk");
-    }
-  }, []);
-
-  useEffect(() => {
-    const detectedLanguage = i18n.language || "uk";
-    language ? setLanguage(language) : setLanguage(detectedLanguage);
-    localStorage.setItem("language", language);
-  }, [language, i18n.language]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const apiUrl = `https://api-dev.buxonline.org/api/v1/category/list/?lang=uk`;
-        const response = await axios.get(apiUrl);
-        console.log(response.data);
-        setCategories(response.data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Ошибка при запросе:", error);
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [language]);
-
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="loader-wrapper">
         <Audio color={"#2E85EC"} />
@@ -64,14 +31,8 @@ function Categories() {
       <div className="w-100 mx-4 px-2">
         {categories.map((el) => (
           <Link
-            onClick={() => {
-              setSelectedCategoryName(el.role);
-              setLanguage(language);
-            }}
-            to={`/category/${el.id}/${el.role}/${language}`}
-            className={`button cat jcsb aic py-1 px-3 m-1 ${
-              selectedCategoryName === el.role ? "active" : ""
-            }`}
+            to={`/${language}/category/${el.id}/${el.role}/`}
+            className={`button cat jcsb aic py-1 px-3 m-1`}
             key={el.id}
           >
             <span className="fz-14">{el.role}</span>
