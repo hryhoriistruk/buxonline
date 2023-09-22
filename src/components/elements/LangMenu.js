@@ -6,6 +6,7 @@ import { languagesList as languages } from "../../constants";
 import { useSelector } from "react-redux";
 import { dispatchRedux } from "../../redux/store";
 import { setLanguage } from "../../redux/slices/globalSlice/globalSlice";
+import { default_language } from "../../constants";
 
 const LangMenu = () => {
   const { language } = useSelector((state) => state.global);
@@ -25,12 +26,14 @@ const LangMenu = () => {
       <Dropdown className="nav-lang">
         <Dropdown.Toggle variant="light">
           <img
-            src={require(`../../assets/svg/flags/4x3/${language}.svg`)}
+            src={require(`../../assets/svg/flags/4x3/${
+              language || default_language
+            }.svg`)}
             alt={"pic"}
             width={18}
             style={{ marginTop: -1.5, display: "inline-block" }}
           />
-          <small>{language.toUpperCase()}</small>
+          <small>{(language || default_language).toUpperCase()}</small>
         </Dropdown.Toggle>
         <Dropdown.Menu className="dropdown-scroll">
           <div className="scroll-wrapper">

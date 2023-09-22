@@ -54,7 +54,7 @@ function VacanciesList() {
         : { language, id, currentPage: 1, perPage }
     );
     setIsLoading(true);
-  }, [currentPage]);
+  }, [currentPage, language]);
 
   if (isLoading) {
     return (

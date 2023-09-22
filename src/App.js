@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+import { Routes, Route, Navigate, useParams } from "react-router-dom";
 import "./styles/custom.sass";
 
 import { Home } from "./pages/Home";
@@ -14,6 +13,7 @@ import { SingleVacancy } from "./pages/SingleVacancy";
 import { default_language, languagesList } from "./constants";
 import { Canvas } from "./components/Canvas";
 import LanguageLayout from "./components/LanguageLayout";
+import RedirectElement from "./components/RedirectElement";
 
 const App = () => {
   return (
@@ -61,7 +61,24 @@ const App = () => {
             </>
           );
         })}
-
+        {languagesList.map(({ code_a2 }) => {
+          return (
+            <>
+              <Route
+                path={`/categories/${code_a2}`}
+                element={<RedirectElement />}
+              />
+              <Route
+                path={`/category/:id/:name/${code_a2}`}
+                element={<RedirectElement />}
+              />
+              <Route
+                path={`/vacancy/:id/${code_a2}`}
+                element={<RedirectElement />}
+              />
+            </>
+          );
+        })}
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/cookie" element={<Cookie />} />
         <Route path="*" element={<NotFound />} />
