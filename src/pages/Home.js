@@ -14,6 +14,8 @@ import { useSelector } from "react-redux";
 import { useMutation } from "react-query";
 import { fetchHomeRequest } from "../services/requests";
 import { Audio } from "react-loader-spinner";
+import Layout from "../components/Layout";
+import { metaData } from "../constants/metaData";
 
 function Home() {
   const { language } = useSelector((state) => state.global);
@@ -39,14 +41,20 @@ function Home() {
 
   return (
     <>
-      <Hero apiData={apiData} language={language} />
-      <About apiData={apiData} language={language} />
-      <Reviews apiData={apiData} language={language} />
-      <Steps apiData={apiData} language={language} />
-      <Features apiData={apiData} language={language} />
-      <Bot apiData={apiData} language={language} />
-      <Vacancies apiData={apiData} language={language} />
-      <Form apiData={apiData} language={language} />
+      <Layout
+        title={metaData["home"].title}
+        description={metaData["home"].description}
+        canonical={`${metaData["home"].canonical}/${language}`}
+      >
+        <Hero apiData={apiData} language={language} />
+        <About apiData={apiData} language={language} />
+        <Reviews apiData={apiData} language={language} />
+        <Steps apiData={apiData} language={language} />
+        <Features apiData={apiData} language={language} />
+        <Bot apiData={apiData} language={language} />
+        <Vacancies apiData={apiData} language={language} />
+        <Form apiData={apiData} language={language} />
+      </Layout>
     </>
   );
 }

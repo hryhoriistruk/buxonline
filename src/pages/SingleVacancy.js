@@ -10,6 +10,8 @@ import { useQuery } from "react-query";
 import { fetchVacancyRequest } from "../services/requests";
 import { useSelector } from "react-redux";
 import clsx from "clsx";
+import Layout from "../components/Layout";
+import { metaData } from "../constants/metaData";
 
 function SingleVacancy() {
   const { id } = useParams();
@@ -56,121 +58,134 @@ function SingleVacancy() {
   if (!vacancyContent) return <></>;
   if (vacancyContent.type === "text") {
     const paragraphs = vacancyContent.content.split("\n");
+
     return (
       <>
-        <div className="s-40"></div>
-        <h3 className="title-part mx-3">{vacancy.title}</h3>
-        <div className="row">
-          <div className={`col-lg-11 px-4 m-4 ma ${language}`}>
-            {paragraphs.map((paragraph, index) => (
-              <p key={index} className="title-desc c-dark">
-                {paragraph}
-              </p>
-            ))}
-            <div className="s-60"></div>
-            <div className="w-100 tc">
-              <Link to={"https://job.buxonline.org/"} className="button">
-                {vacancy.meta.apply_for_job}
-              </Link>
+        <Layout
+          title={`${metaData["vacancy"].title}${vacancy.title}`}
+          description={paragraphs.splice(0, 3).join("") + "..."}
+          canonical={`/${language}/${metaData["vacancy"].canonical}/${id}`}
+        >
+          <div className="s-40"></div>
+          <h3 className="title-part mx-3">{vacancy.title}</h3>
+          <div className="row">
+            <div className={`col-lg-11 px-4 m-4 ma ${language}`}>
+              {paragraphs.map((paragraph, index) => (
+                <p key={index} className="title-desc c-dark">
+                  {paragraph}
+                </p>
+              ))}
+              <div className="s-60"></div>
+              <div className="w-100 tc">
+                <Link to={"https://job.buxonline.org/"} className="button">
+                  {vacancy.meta.apply_for_job}
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="s-100"></div>
+          <div className="s-100"></div>
+        </Layout>
       </>
     );
   }
 
   return (
     <>
-      <div className="s-40"></div>
-      <div className={clsx(style["vacancy-grid-table"])}>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <h3 className={clsx(style["yellow-fat-underline"])}>
-            {vacancy.title}
-          </h3>
-          <div className={clsx(style["vacancy-title-text"])}>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: vacancyContent.content[0].outerHTML,
-              }}
-            />
-            <div
-              dangerouslySetInnerHTML={{
-                __html: vacancyContent.content[1].outerHTML,
-              }}
-            />
-          </div>
-        </div>
-        <div className={clsx(style["vacancy-block"])}>
-          <div className={clsx(style["yellow-underline"])}>
-            <div style={{ position: "relative", marginRight: "60px" }}>
-              <DocumentIcon style={{ position: "absolute", top: "-15px" }} />
-            </div>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: vacancyContent.content[4].outerHTML,
-              }}
-            />
-          </div>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: vacancyContent.content[5].outerHTML,
-            }}
-          />
-        </div>
-        <div className={clsx(style["vacancy-block"])}>
-          <div className={clsx(style["yellow-underline"])}>
-            <div style={{ position: "relative", marginRight: "60px" }}>
-              <WalletIcon style={{ position: "absolute", top: "-15px" }} />
-            </div>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: vacancyContent.content[2].outerHTML,
-              }}
-            />
-          </div>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: vacancyContent.content[3].outerHTML,
-            }}
-          />
-        </div>
-        <div className={clsx(style["vacancy-block"])}>
-          <div className={clsx(style["yellow-underline"])}>
-            <div style={{ position: "relative", marginRight: "60px" }}>
-              <StarIcon style={{ position: "absolute", top: "-15px" }} />
-            </div>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: vacancyContent.content[6].outerHTML,
-              }}
-            />
-          </div>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: vacancyContent.content[7].outerHTML,
-            }}
-          />
-          {vacancyContent.content[8] && (
-            <>
+      <Layout
+        title={`${metaData["vacancy"].title}${vacancy.title}`}
+        description={vacancyContent.content[1].textContent}
+        canonical={`/${language}/${metaData["vacancy"].canonical}/${id}`}
+      >
+        <div className="s-40"></div>
+        <div className={clsx(style["vacancy-grid-table"])}>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <h3 className={clsx(style["yellow-fat-underline"])}>
+              {vacancy.title}
+            </h3>
+            <div className={clsx(style["vacancy-title-text"])}>
               <div
                 dangerouslySetInnerHTML={{
-                  __html: vacancyContent.content[8].outerHTML,
+                  __html: vacancyContent.content[0].outerHTML,
                 }}
               />
-            </>
-          )}
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: vacancyContent.content[1].outerHTML,
+                }}
+              />
+            </div>
+          </div>
+          <div className={clsx(style["vacancy-block"])}>
+            <div className={clsx(style["yellow-underline"])}>
+              <div style={{ position: "relative", marginRight: "60px" }}>
+                <DocumentIcon style={{ position: "absolute", top: "-15px" }} />
+              </div>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: vacancyContent.content[4].outerHTML,
+                }}
+              />
+            </div>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: vacancyContent.content[5].outerHTML,
+              }}
+            />
+          </div>
+          <div className={clsx(style["vacancy-block"])}>
+            <div className={clsx(style["yellow-underline"])}>
+              <div style={{ position: "relative", marginRight: "60px" }}>
+                <WalletIcon style={{ position: "absolute", top: "-15px" }} />
+              </div>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: vacancyContent.content[2].outerHTML,
+                }}
+              />
+            </div>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: vacancyContent.content[3].outerHTML,
+              }}
+            />
+          </div>
+          <div className={clsx(style["vacancy-block"])}>
+            <div className={clsx(style["yellow-underline"])}>
+              <div style={{ position: "relative", marginRight: "60px" }}>
+                <StarIcon style={{ position: "absolute", top: "-15px" }} />
+              </div>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: vacancyContent.content[6].outerHTML,
+                }}
+              />
+            </div>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: vacancyContent.content[7].outerHTML,
+              }}
+            />
+            {vacancyContent.content[8] && (
+              <>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: vacancyContent.content[8].outerHTML,
+                  }}
+                />
+              </>
+            )}
+          </div>
         </div>
-      </div>
-      <div className="s-60"></div>
-      <div className="w-100 tc">
-        <Link to={"https://job.buxonline.org/"} className="button">
-          {vacancy.meta.apply_for_job}
-        </Link>
-      </div>
-      {/* </div>
+        <div className="s-60"></div>
+        <div className="w-100 tc">
+          <Link to={"https://job.buxonline.org/"} className="button">
+            {vacancy.meta.apply_for_job}
+          </Link>
+        </div>
+        {/* </div>
       </div> */}
-      <div className="s-100"></div>
+        <div className="s-100"></div>
+      </Layout>
     </>
   );
 }

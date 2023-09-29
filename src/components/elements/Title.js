@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useSelector } from "react-redux";
 
-const Title = () => {
+const Title = (props) => {
+  const { setTitle } = props;
   const { language } = useSelector((state) => state.global);
   const [apiData, setApiData] = useState("");
 
@@ -21,6 +22,10 @@ const Title = () => {
 
     fetchData();
   }, [language]);
+
+  useEffect(() => {
+    apiData && setTitle(apiData.results[0].meta.categories);
+  }, [apiData]);
 
   return (
     <>
