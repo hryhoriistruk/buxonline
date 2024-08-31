@@ -1,4 +1,17 @@
-const cats = [
+interface Category {
+  ru: {
+    page: string[];
+    data: Role[];
+  };
+}
+
+interface Role {
+  id: number;
+  role: string;
+  synonyms: string[];
+}
+
+const cats: Category[] = [
   {
     ru: {
       page: ['Выберите категорию', 'Вакансии'],
@@ -167,7 +180,6 @@ const cats = [
           id: 33,
           role: "Data Analyst",
           synonyms: ["Data Scientist", "Data Specialist"]
-        },
         {
           id: 34,
           role: "IT Consultant",
@@ -234,7 +246,7 @@ const cats = [
           synonyms: ["Information Technology Security Specialist"]
         },
         {
-          id:47,
+          id: 47,
           role: "IT Service Manager",
           synonyms: ["Information Technology Service Manager"]
         },
@@ -261,5 +273,6 @@ const cats = [
       ]
     }
   }
-]
-export default cats
+];
+
+export default cats;

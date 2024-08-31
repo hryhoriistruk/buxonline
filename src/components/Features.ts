@@ -1,9 +1,18 @@
-import React from 'react'
+import React from 'react';
 
+interface FeaturesProps {
+  apiData: {
+    feat_title: string;
+    feat_cta: string;
+    feat_find: string;
+    feat_time: string;
+    feat_law: string;
+    feat_happy: string;
+  } | null;
+}
 
-function Features({ apiData }) {
-
-  const content = apiData || {}
+const Features: React.FC<FeaturesProps> = ({ apiData }) => {
+  const content = apiData || {};
 
   return (
     <div className='features'>
@@ -55,7 +64,7 @@ function Features({ apiData }) {
       </div>
       <div className="s-80"></div>
     </div>
-  )
-}
+  );
+};
 
-export {Features}
+export { Features };

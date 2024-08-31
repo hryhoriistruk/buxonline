@@ -2,7 +2,20 @@ import React from "react";
 import land from "../data/land";
 import SendResumeBtn from "./SendResumeBtn";
 
-function Reviews({ apiData: content }) {
+interface ReviewsProps {
+  apiData: {
+    reviews_title: string;
+    feedbacks: {
+      full_name: string;
+      position: string;
+      text: string;
+    }[];
+    we_are_employed: string;
+    btn_text: string;
+  };
+}
+
+const Reviews: React.FC<ReviewsProps> = ({ apiData: content }) => {
   if (!content) return <></>;
 
   return (
@@ -77,6 +90,6 @@ function Reviews({ apiData: content }) {
       <div className="s-40"></div>
     </>
   );
-}
+};
 
 export { Reviews };

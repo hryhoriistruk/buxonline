@@ -3,10 +3,13 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useSelector } from "react-redux";
 
-const Title = (props) => {
-  const { setTitle } = props;
-  const { language } = useSelector((state) => state.global);
-  const [apiData, setApiData] = useState("");
+interface TitleProps {
+  setTitle: (title: string) => void;
+}
+
+const Title: React.FC<TitleProps> = ({ setTitle }) => {
+  const { language } = useSelector((state: any) => state.global);
+  const [apiData, setApiData] = useState<any>("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,8 +27,10 @@ const Title = (props) => {
   }, [language]);
 
   useEffect(() => {
-    apiData && setTitle(apiData.results[0].meta.categories);
-  }, [apiData]);
+    if (apiData) {
+      setTitle(apiData.results[0].meta.categories);
+    }
+  }, [apiData, setTitle]);
 
   return (
     <>

@@ -1,20 +1,32 @@
-import React, { useState, useEffect, useMemo } from "react";
-import { useParams } from "react-router-dom";
-import Slider from "react-slick";
-import axios from "axios";
-import { Audio } from "react-loader-spinner";
-import { useSelector } from "react-redux";
+import React, { useState, useEffect, useMemo } from 'react';
+import { useParams } from 'react-router-dom';
+import Slider from 'react-slick';
+import axios from 'axios';
+import { Audio } from 'react-loader-spinner';
+import { useSelector } from 'react-redux';
 
-//import land from '../data/land'
+interface Vacancy {
+  id: number;
+  title: string;
+  text: string;
+  meta: {
+    more: string;
+  };
+}
 
-function Vacancies({ apiData }) {
-  const { language } = useSelector((state) => state.global);
-  const [data, setData] = useState(Array(15).fill([]));
+interface ApiData {
+  hot_vacancies: string;
+}
 
-  const categories = useMemo(
-    () => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-    []
-  );
+interface State {
+  language: string;
+}
+
+function Vacancies({ apiData }: { apiData: ApiData }) {
+  const { language } = useSelector((state: State) => state.language);
+  const [data, setData] = useState<Vacancy[][]>(Array(15).fill([]));
+
+  const categories = useMemo(() => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,7 +41,7 @@ function Vacancies({ apiData }) {
         const newData = await Promise.all(promises);
         setData(newData);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       }
     };
 
@@ -90,9 +102,7 @@ function Vacancies({ apiData }) {
             <div className="px-4 my-4" key={el.id}>
               <h4 className="c-blue hot-title">{el.title}</h4>
               <p className="c-dark my-3 hot-text">
-                {el.text.length > 200
-                  ? el.text.substring(0, 200) + "..."
-                  : el.text}
+                {el.text.length > 200 ? el.text.substring(0, 200) + "..." : el.text}
               </p>
               <div className="s-10"></div>
               <a href={`/vacancy/${el.id}/${language}`} className="button">

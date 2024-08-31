@@ -1,10 +1,18 @@
 import React from "react";
-
 import image from "../assets/svg/home/hero.svg";
 import SendResumeBtn from "./SendResumeBtn";
 
-function Hero({ apiData }) {
+interface HeroProps {
+  apiData: {
+    hero_title: string;
+    hero_desc: string;
+    btn_text: string;
+  } | null;
+}
+
+const Hero: React.FC<HeroProps> = ({ apiData }) => {
   const content = apiData || {};
+
   return (
     <div className="row">
       <div className="col-lg-6 flex aic">
@@ -21,6 +29,6 @@ function Hero({ apiData }) {
       </div>
     </div>
   );
-}
+};
 
 export { Hero };

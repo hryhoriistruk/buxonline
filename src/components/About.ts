@@ -1,11 +1,23 @@
 import React from "react";
 import SendResumeBtn from "./SendResumeBtn";
 
-function About({ apiData }) {
+interface AboutProps {
+  apiData: {
+    about_title: string;
+    about_description: string;
+    about_subtitle_1: string;
+    about_text_1: string;
+    about_subtitle_2: string;
+    about_text_2: string;
+    btn_text: string;
+  };
+}
+
+const About: React.FC<AboutProps> = ({ apiData }) => {
   const content = apiData || {};
 
   return (
-    <>
+
       <div className="row">
         <div className="col-lg-6">
           <div className="s-80"></div>
@@ -35,6 +47,6 @@ function About({ apiData }) {
       </div>
     </>
   );
-}
+};
 
 export { About };

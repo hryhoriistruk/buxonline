@@ -1,23 +1,25 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import axios from 'axios';
 
-import { Hero } from "../components/Hero";
-import { About } from "../components/About";
-import { Reviews } from "../components/Reviews";
-import { Steps } from "../components/Steps";
-import { Features } from "../components/Features";
-import { Bot } from "../components/Bot";
-import { Vacancies } from "../components/Vacancies";
-import { Form } from "../components/Form";
-import { useSelector } from "react-redux";
-import { useMutation } from "react-query";
-import { fetchHomeRequest } from "../services/requests";
-import { Audio } from "react-loader-spinner";
-import Layout from "../components/Layout";
-import { metaData } from "../constants/metaData";
+import { Hero } from '../components/Hero';
+import { About } from '../components/About';
+import { Reviews } from '../components/Reviews';
+import { Steps } from '../components/Steps';
+import { Features } from '../components/Features';
+import { Bot } from '../components/Bot';
+import { Vacancies } from '../components/Vacancies';
+import { Form } from '../components/Form';
+import { useSelector } from 'react-redux';
+import { useMutation } from 'react-query';
+import { fetchHomeRequest } from '../services/requests';
+import { Audio } from 'react-loader-spinner';
+import Layout from '../components/Layout';
+import { metaData } from '../constants/metaData';
 
-function Home() {
+interface Props {}
+
+function Home(): JSX.Element {
   const { language } = useSelector((state) => state.global);
 
   const {
@@ -30,7 +32,7 @@ function Home() {
     fetchHome(language);
   }, [language]);
 
-  if (isLoading)
+  if (isLoading) {
     return (
       <>
         <div className="loader-wrapper">
@@ -38,6 +40,7 @@ function Home() {
         </div>
       </>
     );
+  }
 
   return (
     <>
@@ -59,4 +62,4 @@ function Home() {
   );
 }
 
-export { Home };
+export default Home;

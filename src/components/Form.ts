@@ -1,9 +1,15 @@
 import React from "react";
-
 import pic from "../assets/svg/home/resume.svg";
 import SendResumeBtn from "./SendResumeBtn";
 
-function Form({ apiData }) {
+interface FormProps {
+  apiData: {
+    btn_text: string;
+    form: string;
+  } | null;
+}
+
+const Form: React.FC<FormProps> = ({ apiData }) => {
   const content = apiData || {};
 
   return (
@@ -30,6 +36,6 @@ function Form({ apiData }) {
       </div>
     </div>
   );
-}
+};
 
 export { Form };

@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import axios from "axios";
-import { useTranslation } from "react-i18next";
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import axios from 'axios';
+import { useTranslation } from 'react-i18next';
 
-import CustomPagination from "../components/Pagination/CustomPagination";
-import { Audio } from "react-loader-spinner";
-import { useSelector } from "react-redux";
-import { useMutation } from "react-query";
-import { fetchVacanciesListRequest } from "../services/requests";
-import Layout from "../components/Layout";
-import { metaData } from "../constants/metaData";
+import CustomPagination from '../components/Pagination/CustomPagination';
+import { Audio } from 'react-loader-spinner';
+import { useSelector } from 'react-redux';
+import { useMutation } from 'react-query';
+import { fetchVacanciesListRequest } from '../services/requests';
+import Layout from '../components/Layout';
+import { metaData } from '../constants/metaData';
 
 function VacanciesList() {
   const { language } = useSelector((state) => state.global);
@@ -29,7 +29,7 @@ function VacanciesList() {
 
           const queryString = window.location.search;
           const queryParams = new URLSearchParams(queryString);
-          const page = queryParams.get("page");
+          const page = queryParams.get('page');
 
           const totalPages = Math.ceil(totalVacancies / perPage);
 
@@ -61,7 +61,7 @@ function VacanciesList() {
   if (isLoading) {
     return (
       <div className="loader-wrapper">
-        <Audio color={"#2E85EC"} />
+        <Audio color="#2E85EC" />
       </div>
     );
   }
@@ -69,11 +69,9 @@ function VacanciesList() {
   return (
     <>
       <Layout
-        title={`${metaData["vacancies"].title}${name}`}
-        description={metaData["vacancies"].description}
-        canonical={`${language}${
-          metaData["vacancies"].canonical
-        }/${id}/${name.replaceAll(" ", "%20")}`}
+        title={`${metaData['vacancies'].title}${name}`}
+        description={metaData['vacancies'].description}
+        canonical={`${language}${metaData['vacancies'].canonical}/${id}/${name.replaceAll(' ', '%20')}`}
       >
         <div className="s-40"></div>
         <h3 className="title-part mx-2">{name}</h3>
@@ -84,7 +82,7 @@ function VacanciesList() {
               <h4 className="c-blue">{el.title ? el.title : el.role}</h4>
               <p className="c-dark my-3">
                 {el.text.length > 200
-                  ? el.text.substring(0, 200) + "..."
+                  ? el.text.substring(0, 200) + '...'
                   : el.text}
               </p>
               <div className="s-10"></div>

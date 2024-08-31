@@ -8,11 +8,15 @@ import { dispatchRedux } from "../../redux/store";
 import { setLanguage } from "../../redux/slices/globalSlice/globalSlice";
 import { default_language } from "../../constants";
 
-const LangMenu = () => {
-  const { language } = useSelector((state) => state.global);
+interface LangMenuProps {
+  // no props
+}
+
+const LangMenu: React.FC<LangMenuProps> = () => {
+  const { language } = useSelector((state: any) => state.global);
   const navigate = useNavigate();
 
-  const handleLanguageChange = (code) => {
+  const handleLanguageChange = (code: string) => {
     const currentUrl = window.location.pathname;
     let updatedUrl = currentUrl.split("/");
     updatedUrl[1] = code;
@@ -37,7 +41,7 @@ const LangMenu = () => {
         </Dropdown.Toggle>
         <Dropdown.Menu className="dropdown-scroll">
           <div className="scroll-wrapper">
-            {languages.map((item) => (
+            {languages.map((item: any) => (
               <Dropdown.Item
                 key={item.id}
                 onClick={() => handleLanguageChange(item.code_a2)}

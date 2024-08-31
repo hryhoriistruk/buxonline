@@ -9,14 +9,31 @@ import support from "../assets/svg/home/standwith.svg";
 import { useSelector } from "react-redux";
 import { languagesList } from "../constants";
 
-function Canvas({ children }) {
+interface CanvasProps {
+  children: React.ReactNode;
+}
+
+interface LanguageItem {
+  code_a2: string;
+  page_meta: {
+    menu_vacancies: string;
+    menu_for_business: string;
+    menu_send_cv: string;
+    footer_rights: string;
+    footer_bot: string;
+    footer_privacy: string;
+    footer_cookie: string;
+  };
+}
+
+const Canvas: React.FC<CanvasProps> = ({ children }) => {
   let date = new Date().getFullYear();
-  const [lang, setLanguage] = useState();
+  const [lang, setLanguage] = useState<string | undefined>();
 
   const { language } = useSelector((state) => state.global);
 
   const currentLanguageData = languagesList.find(
-    (languageItem) => languageItem.code_a2 === language
+    (languageItem: LanguageItem) => languageItem.code_a2 === language
   );
 
   return (
@@ -121,6 +138,6 @@ function Canvas({ children }) {
       </footer>
     </>
   );
-}
+};
 
 export { Canvas };

@@ -1,11 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
-import land from '../data/land'
-import man from '../assets/svg/home/man.svg'
+import land from '../data/land';
+import man from '../assets/svg/home/man.svg';
 
-function NotFound() {
+interface Props {}
+
+function NotFound(): JSX.Element {
   return (
     <>
       <div className="s-100"></div>
@@ -13,7 +15,7 @@ function NotFound() {
         <div className="col-lg-2"></div>
         <div className="col-lg-5">
           <Helmet>
-            <h2>{land[0].ru.err.subtitle}</h2>
+            <title>{land[0].ru.err.subtitle}</title>
           </Helmet>
           <h2 className="title-part c-dark">{land[0].ru.err.subtitle}</h2>
           <div className="s-10"></div>
@@ -21,7 +23,7 @@ function NotFound() {
           <div className="s-10"></div>
           <p>{land[0].ru.err.text}</p>
           <div className="s-10"></div>
-          <Link to='/' className='button'>{land[0].ru.err.link}</Link>
+          <Link to="/" className="button">{land[0].ru.err.link}</Link>
         </div>
         <div className="col-lg-5">
           <img src={man} alt={land[0].ru.err.subtitle} />
@@ -29,7 +31,7 @@ function NotFound() {
       </div>
       <div className="s-100"></div>
     </>
-  )
+  );
 }
 
-export {NotFound}
+export default NotFound;
