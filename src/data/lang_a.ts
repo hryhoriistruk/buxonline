@@ -1,7 +1,15 @@
-const lang_a = [
-  {
-    code: "uk",
-    pic: require('../assets/svg/flags/4x3/uk.svg').default,
+interface Language {
+
+    code:string;
+pic: string;
+name: string;
+menu: string[];
+}
+
+const lang_a: Language[] = [
+{
+code: "uk",
+pic: require('../assets/svg/flags/4x3/uk.svg').default,
     name: "Ukrainian",
     menu: ['Вакансії', 'Для Бізнесу', 'Відправити Резюме']
   },
@@ -93,20 +101,4 @@ const lang_a = [
     code: "mt",
     pic: require('../assets/svg/flags/4x3/mt.svg').default,
     name: "Maltese",
-    menu: ['Vaganzi', 'Għal In-Negozju', 'Ibgħat ir-Riżumé']
-  },
-  {
-    code: "no",
-    pic: require('../assets/svg/flags/4x3/no.svg').default,
-    name: "Norwegian",
-    menu: ['Ledige stillinger', 'For Bedrifter', 'Send CV']
-  },
-  {
-    code: "ro",
-    pic: require('../assets/svg/flags/4x3/ro.svg').default,
-    name: "Romanian",
-    menu: ['Locuri de Muncă', 'Pentru Companii', 'Trimite CV-ul']
-  }
-]
-
-export default lang_a
+    menu: ['Vaganzi', 'Għal In-N
