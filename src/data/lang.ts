@@ -1,25 +1,53 @@
-const lang = [
+import { ReactNode } from "react";
+
+interface PageMeta {
+  menu_vacancies: string;
+  menu_for_business: string;
+  menu_send_cv: string;
+  menu_categories: string;
+  footer_bot: string;
+  footer_privacy: string;
+  footer_cookie: string;
+  footer_rights: string;
+  err_title: string;
+  err_subtitle: string;
+  err_text: string;
+  err_link: string;
+}
+
+interface Language {
+  id: number;
+  page_meta: PageMeta;
+  pic: any; // replace 'any' with the actual type of the image file
+  name: string;
+  code: string;
+}
+
+const lang: Language[] = [
   {
-      id: 1,
-      page_meta: {
-        menu_vacancies: "Вакансії",
-        menu_for_business: "Для Бізнесу",
-        menu_send_cv: "Відправити Резюме",
-        menu_categories: "Категорії",
-        footer_bot: "Підключитися до телеграм-бота",
-        footer_privacy: "Політика конфіденційності",
-        footer_cookie: "Політика використання файлів cookie",
-        footer_rights: "Всі права захищені",
-        err_title: "Сторінка не знайдена",
-        err_subtitle: "Помилка 404",
-        err_text: "Запрошувану сторінку не знайдено. Можливо, ви ввели неправильну адресу або видалено сторінку.",
-        err_link: "Повернутися на головну"
-      },
-      pic: require('../assets/svg/flags/4x3/uk.svg').default,
-      name: "Ukrainian",
-      code: "uk"
+    id: 1,
+    page_meta: {
+      menu_vacancies: "Вакансії",
+      menu_for_business: "Для Бізнесу",
+      menu_send_cv: "Відправити Резюме",
+      menu_categories: "Категорії",
+      footer_bot: "Підключитися до телеграм-бота",
+      footer_privacy: "Політика конфіденційності",
+      footer_cookie: "Політика використання файлів cookie",
+      footer_rights: "Всі права захищені",
+      err_title: "Сторінка не знайдена",
+      err_subtitle: "Помилка 404",
+      err_text: "Запрошувану сторінку не знайдено. Можливо, ви ввели неправильну адресу або видалено сторінку.",
+      err_link: "Повернутися на головну"
+    },
+    pic: require('../assets/svg/flags/4x3/uk.svg').default,
+    name: "Ukrainian",
+    code: "uk"
   },
   {
+
+
+
       id: 2,
       page_meta: {
         menu_vacancies: "Jobs",

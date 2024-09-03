@@ -1,7 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-
-function Privacy() {
+const Privacy: React.FC = () => {
   return (
     <>
       <div className="row">

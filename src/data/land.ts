@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 import photo1 from '../assets/png/reviews/rev1.png';
 import photo2 from '../assets/png/reviews/rev2.png';
 import photo3 from '../assets/png/reviews/rev3.png';

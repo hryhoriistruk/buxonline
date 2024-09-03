@@ -8,11 +8,11 @@ import {SearchKeyWordPage} from "./pages/SearchKeyWordPage";
 const router = createBrowserRouter([
     {
         path: '', element: <MainLayOut/>, children: [
-            {index: true, element: <Navigate to={'movies'}/>},
-            {path: 'movies', element: <MoviesPage/>},
-            {path: 'movies/:id', element: <MovieInfoPage/>},
-            {path: 'genres', element: <GenresPage/>, children:[
-                    {path:':idGenres', element:<GenreIdPage/>}
+            {index: true, element: <Navigate to={'вакансії'}/>},
+            {path: 'вакансії', element: <VacanciesPage/>},
+            {path: 'вакансії/:id', element: <VacancyInfoPage/>},
+
+                    {path:':idTypes', element:<TypeIsdPage/>}
                 ]},
             {path: 'search', element: <SearchPage/>, children:[
                     {path:':searchWord', element:<SearchKeyWordPage/>}

@@ -1,4 +1,12 @@
-const world = [
+import { ReactNode } from "react";
+
+interface Country {
+  code: string;
+  pic: string;
+  name: string;
+}
+
+const world: Country[] = [
   {
     code: "ua",
     pic: require("../assets/svg/flags/4x3/ua.svg").default,
@@ -275,11 +283,6 @@ const world = [
     name: "Christmas Island",
   },
   {
-    code: "cp",
-    pic: require("../assets/svg/flags/4x3/cp.svg").default,
-    name: "Clipperton Island",
-  },
-  {
     code: "cc",
     pic: require("../assets/svg/flags/4x3/cc.svg").default,
     name: "Cocos (Keeling) Islands",
@@ -293,6 +296,21 @@ const world = [
     code: "km",
     pic: require("../assets/svg/flags/4x3/km.svg").default,
     name: "Comoros",
+  },
+  {
+    code: "cd",
+    pic: require("../assets/svg/flags/4x3/cd.svg").default,
+    name: "Congo (Democratic Republic of the)",
+  },
+  {
+    code: "cg",
+    pic: require("../assets/svg/flags/4x3/cg.svg").default,
+    name: "Congo",
+  },
+  {
+    code: "eu",
+    pic: require("../assets/svg/flags/4x3/eu.svg").default,
+    name: "European Union",
   },
   {
     code: "ck",
@@ -328,16 +346,6 @@ const world = [
     code: "cz",
     pic: require("../assets/svg/flags/4x3/cz.svg").default,
     name: "Czech Republic",
-  },
-  {
-    code: "ci",
-    pic: require("../assets/svg/flags/4x3/ci.svg").default,
-    name: "Côte d'Ivoire",
-  },
-  {
-    code: "cd",
-    pic: require("../assets/svg/flags/4x3/cd.svg").default,
-    name: "Democratic Republic of the Congo",
   },
   {
     code: "dk",
@@ -380,11 +388,6 @@ const world = [
     name: "El Salvador",
   },
   {
-    code: "gb-eng",
-    pic: require("../assets/svg/flags/4x3/gb-eng.svg").default,
-    name: "England",
-  },
-  {
     code: "gq",
     pic: require("../assets/svg/flags/4x3/gq.svg").default,
     name: "Equatorial Guinea",
@@ -400,19 +403,9 @@ const world = [
     name: "Estonia",
   },
   {
-    code: "sz",
-    pic: require("../assets/svg/flags/4x3/sz.svg").default,
-    name: "Eswatini",
-  },
-  {
     code: "et",
     pic: require("../assets/svg/flags/4x3/et.svg").default,
     name: "Ethiopia",
-  },
-  {
-    code: "eu",
-    pic: require("../assets/svg/flags/4x3/eu.svg").default,
-    name: "Europe",
   },
   {
     code: "fk",
@@ -425,11 +418,6 @@ const world = [
     name: "Faroe Islands",
   },
   {
-    code: "fm",
-    pic: require("../assets/svg/flags/4x3/fm.svg").default,
-    name: "Federated States of Micronesia",
-  },
-  {
     code: "fj",
     pic: require("../assets/svg/flags/4x3/fj.svg").default,
     name: "Fiji",
@@ -438,6 +426,11 @@ const world = [
     code: "fi",
     pic: require("../assets/svg/flags/4x3/fi.svg").default,
     name: "Finland",
+  },
+  {
+    code: "fr",
+    pic: require("../assets/svg/flags/4x3/fr.svg").default,
+    name: "France",
   },
   {
     code: "gf",
@@ -458,11 +451,6 @@ const world = [
     code: "ga",
     pic: require("../assets/svg/flags/4x3/ga.svg").default,
     name: "Gabon",
-  },
-  {
-    code: "es-ga",
-    pic: require("../assets/svg/flags/4x3/es-ga.svg").default,
-    name: "Galicia",
   },
   {
     code: "gm",
@@ -550,11 +538,6 @@ const world = [
     name: "Heard Island and McDonald Islands",
   },
   {
-    code: "va",
-    pic: require("../assets/svg/flags/4x3/va.svg").default,
-    name: "Holy See",
-  },
-  {
     code: "hn",
     pic: require("../assets/svg/flags/4x3/hn.svg").default,
     name: "Honduras",
@@ -610,6 +593,16 @@ const world = [
     name: "Israel",
   },
   {
+    code: "it",
+    pic: require("../assets/svg/flags/4x3/it.svg").default,
+    name: "Italy",
+  },
+  {
+    code: "ci",
+    pic: require("../assets/svg/flags/4x3/ci.svg").default,
+    name: "Côte d'Ivoire",
+  },
+  {
     code: "jm",
     pic: require("../assets/svg/flags/4x3/jm.svg").default,
     name: "Jamaica",
@@ -628,6 +621,11 @@ const world = [
     code: "jo",
     pic: require("../assets/svg/flags/4x3/jo.svg").default,
     name: "Jordan",
+  },
+  {
+    code: "kz",
+    pic: require("../assets/svg/flags/4x3/kz.svg").default,
+    name: "Kazakhstan",
   },
   {
     code: "ke",
@@ -657,7 +655,7 @@ const world = [
   {
     code: "la",
     pic: require("../assets/svg/flags/4x3/la.svg").default,
-    name: "Laos",
+    name: "Lao People's Democratic Republic",
   },
   {
     code: "lv",
@@ -702,7 +700,7 @@ const world = [
   {
     code: "mo",
     pic: require("../assets/svg/flags/4x3/mo.svg").default,
-    name: "Macau",
+    name: "Macao",
   },
   {
     code: "mg",
@@ -765,9 +763,14 @@ const world = [
     name: "Mexico",
   },
   {
+    code: "fm",
+    pic: require("../assets/svg/flags/4x3/fm.svg").default,
+    name: "Micronesia (Federated States of)",
+  },
+  {
     code: "md",
     pic: require("../assets/svg/flags/4x3/md.svg").default,
-    name: "Moldova",
+    name: "Moldova (Republic of)",
   },
   {
     code: "mc",
@@ -870,11 +873,6 @@ const world = [
     name: "North Macedonia",
   },
   {
-    code: "gb-nir",
-    pic: require("../assets/svg/flags/4x3/gb-nir.svg").default,
-    name: "Northern Ireland",
-  },
-  {
     code: "mp",
     pic: require("../assets/svg/flags/4x3/mp.svg").default,
     name: "Northern Mariana Islands",
@@ -898,6 +896,11 @@ const world = [
     code: "pw",
     pic: require("../assets/svg/flags/4x3/pw.svg").default,
     name: "Palau",
+  },
+  {
+    code: "ps",
+    pic: require("../assets/svg/flags/4x3/ps.svg").default,
+    name: "Palestine, State of",
   },
   {
     code: "pa",
@@ -950,9 +953,9 @@ const world = [
     name: "Qatar",
   },
   {
-    code: "cg",
-    pic: require("../assets/svg/flags/4x3/cg.svg").default,
-    name: "Republic of the Congo",
+    code: "re",
+    pic: require("../assets/svg/flags/4x3/re.svg").default,
+    name: "Réunion",
   },
   {
     code: "ro",
@@ -962,22 +965,12 @@ const world = [
   {
     code: "ru",
     pic: require("../assets/svg/flags/4x3/ru.svg").default,
-    name: "Russia",
+    name: "Russian Federation",
   },
   {
     code: "rw",
     pic: require("../assets/svg/flags/4x3/rw.svg").default,
     name: "Rwanda",
-  },
-  {
-    code: "re",
-    pic: require("../assets/svg/flags/4x3/re.svg").default,
-    name: "Réunion",
-  },
-  {
-    code: "bl",
-    pic: require("../assets/svg/flags/4x3/bl.svg").default,
-    name: "Saint Barthélemy",
   },
   {
     code: "sh",
@@ -997,7 +990,7 @@ const world = [
   {
     code: "mf",
     pic: require("../assets/svg/flags/4x3/mf.svg").default,
-    name: "Saint Martin",
+    name: "Saint Martin (French part)",
   },
   {
     code: "pm",
@@ -1030,11 +1023,6 @@ const world = [
     name: "Saudi Arabia",
   },
   {
-    code: "gb-sct",
-    pic: require("../assets/svg/flags/4x3/gb-sct.svg").default,
-    name: "Scotland",
-  },
-  {
     code: "sn",
     pic: require("../assets/svg/flags/4x3/sn.svg").default,
     name: "Senegal",
@@ -1062,7 +1050,7 @@ const world = [
   {
     code: "sx",
     pic: require("../assets/svg/flags/4x3/sx.svg").default,
-    name: "Sint Maarten",
+    name: "Sint Maarten (Dutch part)",
   },
   {
     code: "sk",
@@ -1095,11 +1083,6 @@ const world = [
     name: "South Georgia and the South Sandwich Islands",
   },
   {
-    code: "kr",
-    pic: require("../assets/svg/flags/4x3/kr.svg").default,
-    name: "South Korea",
-  },
-  {
     code: "ss",
     pic: require("../assets/svg/flags/4x3/ss.svg").default,
     name: "South Sudan",
@@ -1113,11 +1096,6 @@ const world = [
     code: "lk",
     pic: require("../assets/svg/flags/4x3/lk.svg").default,
     name: "Sri Lanka",
-  },
-  {
-    code: "ps",
-    pic: require("../assets/svg/flags/4x3/ps.svg").default,
-    name: "State of Palestine",
   },
   {
     code: "sd",
@@ -1135,6 +1113,11 @@ const world = [
     name: "Svalbard and Jan Mayen",
   },
   {
+    code: "sz",
+    pic: require("../assets/svg/flags/4x3/sz.svg").default,
+    name: "Swaziland",
+  },
+  {
     code: "se",
     pic: require("../assets/svg/flags/4x3/se.svg").default,
     name: "Sweden",
@@ -1147,7 +1130,7 @@ const world = [
   {
     code: "sy",
     pic: require("../assets/svg/flags/4x3/sy.svg").default,
-    name: "Syria",
+    name: "Syrian Arab Republic",
   },
   {
     code: "tw",
@@ -1162,7 +1145,7 @@ const world = [
   {
     code: "tz",
     pic: require("../assets/svg/flags/4x3/tz.svg").default,
-    name: "Tanzania",
+    name: "Tanzania, United Republic of",
   },
   {
     code: "th",
@@ -1195,11 +1178,6 @@ const world = [
     name: "Trinidad and Tobago",
   },
   {
-    code: "ta",
-    pic: require("../assets/svg/flags/4x3/ta.svg").default,
-    name: "Tristan da Cunha",
-  },
-  {
     code: "tn",
     pic: require("../assets/svg/flags/4x3/tn.svg").default,
     name: "Tunisia",
@@ -1230,6 +1208,11 @@ const world = [
     name: "Uganda",
   },
   {
+    code: "ua",
+    pic: require("../assets/svg/flags/4x3/ua.svg").default,
+    name: "Ukraine",
+  },
+  {
     code: "ae",
     pic: require("../assets/svg/flags/4x3/ae.svg").default,
     name: "United Arab Emirates",
@@ -1237,17 +1220,17 @@ const world = [
   {
     code: "gb",
     pic: require("../assets/svg/flags/4x3/gb.svg").default,
-    name: "United Kingdom",
-  },
-  {
-    code: "un",
-    pic: require("../assets/svg/flags/4x3/un.svg").default,
-    name: "United Nations",
+    name: "United Kingdom of Great Britain and Northern Ireland",
   },
   {
     code: "um",
     pic: require("../assets/svg/flags/4x3/um.svg").default,
     name: "United States Minor Outlying Islands",
+  },
+  {
+    code: "us",
+    pic: require("../assets/svg/flags/4x3/us.svg").default,
+    name: "United States of America",
   },
   {
     code: "uy",
@@ -1267,12 +1250,12 @@ const world = [
   {
     code: "ve",
     pic: require("../assets/svg/flags/4x3/ve.svg").default,
-    name: "Venezuela",
+    name: "Venezuela (Bolivarian Republic of)",
   },
   {
     code: "vn",
     pic: require("../assets/svg/flags/4x3/vn.svg").default,
-    name: "Vietnam",
+    name: "Viet Nam",
   },
   {
     code: "vg",
@@ -1285,23 +1268,13 @@ const world = [
     name: "Virgin Islands (U.S.)",
   },
   {
-    code: "gb-wls",
-    pic: require("../assets/svg/flags/4x3/gb-wls.svg").default,
-    name: "Wales",
-  },
-  {
-    code: "wf",
-    pic: require("../assets/svg/flags/4x3/wf.svg").default,
-    name: "Wallis and Futuna",
-  },
-  {
     code: "eh",
     pic: require("../assets/svg/flags/4x3/eh.svg").default,
     name: "Western Sahara",
   },
   {
     code: "ye",
-    pic: require("../assets/svg/flags/4x3/ye.svg").default,
+    pic: require("../assets/svg/flags/4x3/ye.svg).default,
     name: "Yemen",
   },
   {
@@ -1315,4 +1288,5 @@ const world = [
     name: "Zimbabwe",
   },
 ];
-export default world;
+
+export default flags;

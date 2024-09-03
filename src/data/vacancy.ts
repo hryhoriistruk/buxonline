@@ -1,4 +1,4 @@
-import cats from './cats';
+import { ReactNode } from "react";
 
 interface Synonym {
   synonyms: string[];
