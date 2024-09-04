@@ -2,7 +2,7 @@ import {createBrowserRouter, Navigate} from "react-router-dom";
 
 import {MainLayOut} from "./layouts";
 import {VacanciesList} from "./pages";
-import {GenreIdPage} from "./pages/VacanciesList";
+import {Vacancies} from "./pages";
 import {SearchKeyWordPage} from "./pages/SearchKeyWordPage";
 
 const router = createBrowserRouter([
