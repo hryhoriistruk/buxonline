@@ -1,7 +1,7 @@
 import {createBrowserRouter, Navigate} from "react-router-dom";
 
 import {MainLayOut} from "./layouts";
-import {GenresPage, MovieInfoPage, MoviesPage, SearchPage} from "./pages";
+import {VacanciesPage} from "./pages";
 import {GenreIdPage} from "./pages/VacanciesList";
 import {SearchKeyWordPage} from "./pages/SearchKeyWordPage";
 
