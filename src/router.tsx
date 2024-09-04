@@ -1,7 +1,7 @@
 import {createBrowserRouter, Navigate} from "react-router-dom";
 
 import {MainLayOut} from "./layouts";
-import {VacanciesPage} from "./pages";
+import {VacanciesList} from "./pages";
 import {GenreIdPage} from "./pages/VacanciesList";
 import {SearchKeyWordPage} from "./pages/SearchKeyWordPage";
 
