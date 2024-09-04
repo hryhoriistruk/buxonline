@@ -6,7 +6,7 @@ import {useAppSelector} from "../hooks";
 import css from './pages.module.css'
 
 const MainLayOut = () => {
-    const {movieById, isLoading} = useAppSelector(state => state.movies)
+    const {vacanciesById, isLoading} = useAppSelector(state => state.movies)
 
     return (
         <div>
